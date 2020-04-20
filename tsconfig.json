@@ -1,14 +1,31 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "esnext",
-    "jsx": "preserve",
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": ["dom", "esnext"],
+    "jsx": "preserve",
+    "outDir": "./dist",
     "strict": true,
-    "noEmit": true,
-    "isolatedModules": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "noUnusedLocals": false
+
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "sourceMap": true,
+
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true
   },
-  "exclude": ["node_modules", "public", ".cache"]
+  "include": ["src/**/*", "types"]
 }
