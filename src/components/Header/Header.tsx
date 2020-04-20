@@ -35,7 +35,7 @@ const Header: React.FunctionComponent<any> = ({ siteTitle }: any) => {
             {siteTitle}
           </Link>
         </h1>
-        <p>WHAT IS LOVE BABY DON`T HURT ME</p>
+        <p sx={{ variant: "styles.p" }}>WHAT IS LOVE BABY DON`T HURT ME</p>
         <Button
           variant="primary"
           onClick={() => {
