@@ -33,7 +33,9 @@ module.exports = {
     "react/prop-types": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     // Enable prettier rules
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", {}, {
+      "usePrettierrc": false
+    }],
     // interface start with capital I
     "@typescript-eslint/interface-name-prefix": "off",
     // allow "any" as type

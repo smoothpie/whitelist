@@ -14,14 +14,14 @@ const Header: React.FunctionComponent<any> = ({ siteTitle }: any) => {
       sx={{
         backgroundColor: ["primary", "secondary", "thirdly"],
         color: "text",
-        marginBottom: [5, 6, 7],
+        marginBottom: [5, 6, 7]
       }}
     >
       <div
         style={{
           margin: "0 auto",
           maxWidth: 960,
-          padding: "1.45rem 1.0875rem",
+          padding: "1.45rem 1.0875rem"
         }}
       >
         <h1 sx={{ m: "100px" }}>
@@ -29,7 +29,7 @@ const Header: React.FunctionComponent<any> = ({ siteTitle }: any) => {
             to="/"
             style={{
               color: "white",
-              textDecoration: "none",
+              textDecoration: "none"
             }}
           >
             {siteTitle}
@@ -55,11 +55,11 @@ const Header: React.FunctionComponent<any> = ({ siteTitle }: any) => {
 };
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string
 };
 
 Header.defaultProps = {
-  siteTitle: "",
+  siteTitle: ""
 };
 
 export default Header;
