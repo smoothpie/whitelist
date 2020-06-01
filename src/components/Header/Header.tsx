@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { StyledLink } from "../Typography";
 import {
   HeaderStyle,
   HeaderContainer,
-  Logo,
-  StyledLink,
-  StyledImg,
-  StyledInstagram
+  StyledLogo,
+  StyledInstagram,
+  StyledTelegram,
+  StyledYclients,
+  ContactsP
 } from "./styled";
-import Instagram from "../../assets/images/svg/instagram.svg";
 
-const Header: React.FunctionComponent<any> = ({ siteTitle = "" }: any) => {
+const Header: React.FunctionComponent<any> = () => {
+  const [isScroll, setScroll] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY >= 87 && !isScroll) {
+        setScroll(true);
+      }
+      if (currentScrollY < 87 && isScroll) {
+        setScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isScroll]);
+
   const {
     header: { frontmatter },
     logo: {
@@ -40,19 +56,25 @@ const Header: React.FunctionComponent<any> = ({ siteTitle = "" }: any) => {
   const { title, tel, address, place } = frontmatter;
 
   return (
-    <HeaderStyle>
-      <HeaderContainer>
-        <p>{title}</p>
-        <p>{tel}</p>
-        <p>{address}</p>
-        <p>{place}</p>
-        <Logo>
+    <HeaderStyle view={!isScroll}>
+      <HeaderContainer view={!isScroll}>
+        <div>
+          <ContactsP>{title}</ContactsP>
+          <ContactsP>{tel}</ContactsP>
+          <ContactsP>{address}</ContactsP>
+          <ContactsP>{place}</ContactsP>
+        </div>
+        <div>
           <StyledLink to="/">
-            <StyledImg fluid={logo} />
+            <StyledLogo fluid={logo} />
           </StyledLink>
-        </Logo>
-        <StyledInstagram wdth="20px" />
-        <StyledInstagram />
+        </div>
+        <div>
+          <StyledTelegram />
+          <StyledYclients />
+          <StyledInstagram wdth="20px" />
+          <StyledInstagram wdth="20px" clr="#F783AC" />
+        </div>
       </HeaderContainer>
     </HeaderStyle>
   );
