@@ -14,7 +14,7 @@ import Contacts from "../components/Contacts";
 
 const IndexPage: React.FC = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="911barber" />
     <MainSlider />
     <Team />
     <Training />
