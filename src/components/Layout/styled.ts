@@ -7,4 +7,17 @@ export const LayoutContainer = styled.div`
 
 export const Main = styled.main`
   background: #1b1b1b;
+  margin: 0 auto;
+  padding-top: 103px;
+`;
+
+export const Footer = styled.footer`
+  border-top: 1px solid grey;
+  background: #1b1b1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3.5rem;
+  font-size: 0.9rem;
 `;

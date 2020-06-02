@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const MainSliderSection = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  padding-top: 120px;
+  width: 100%;
+`;
+
+export const SliderItem = styled.div`
+  /* width: 100%; */
+  color: gold;
+  background: green;
+  text-align: center;
 `;
