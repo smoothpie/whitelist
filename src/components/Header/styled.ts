@@ -55,9 +55,9 @@ export const StyledTelegram = styled(Telegram)`
   width: 20px;
   padding: 0.5rem 1rem;
   &:hover {
-    color: #ffffff;
+    color: #eeeeee;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
 `;
 
@@ -65,9 +65,9 @@ export const StyledYclients = styled(Yclients)`
   width: 20px;
   padding: 0.5rem 1rem;
   &:hover {
-    color: #ffffff;
+    color: #eeeeee;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
 `;
 
@@ -76,9 +76,9 @@ export const StyledInstagram = styled(Instagram)`
   padding: 0.5rem 1rem;
   color: ${props => props.clr || "#e3b873"};
   &:hover {
-    color: #ffffff;
+    color: #eeeeee;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
 `;
 

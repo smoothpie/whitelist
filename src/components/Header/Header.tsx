@@ -11,7 +11,7 @@ import {
   ContactsP
 } from "./styled";
 
-const Header: React.FunctionComponent<any> = () => {
+const Header: React.FC<any> = () => {
   const [isScroll, setScroll] = useState(false);
   useEffect(() => {
     const handleScroll = () => {

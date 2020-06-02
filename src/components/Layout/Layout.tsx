@@ -2,6 +2,7 @@ import React from "react";
 import "normalize.css";
 import Header from "../Header";
 import { LayoutContainer } from "./styled";
+import FooterSection from "../FooterSection";
 
 const Layout: React.FC = ({ children }: any) => {
   return (
@@ -15,15 +16,14 @@ const Layout: React.FC = ({ children }: any) => {
         }}
       >
         <main
-          // todo: FIX HEIGHT
           style={{
             margin: `0 auto`,
-            maxWidth: 1440,
-            height: 1500
+            maxWidth: 1440
           }}
         >
           {children}
         </main>
+        <FooterSection />
         <footer>© {new Date().getFullYear()}, 911barber</footer>
       </div>
     </LayoutContainer>
