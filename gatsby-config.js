@@ -6,7 +6,8 @@ module.exports = {
   siteMetadata: {
     title: "911barber",
     description: "Minsk, Belarus, Barbershop",
-    author: "@dariavv"
+    author: "@dariavv",
+    siteUrl: "https://www.example.com"
   },
   plugins: [
     "gatsby-plugin-sass",
