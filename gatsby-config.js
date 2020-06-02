@@ -7,7 +7,7 @@ module.exports = {
     title: "911barber",
     description: "Minsk, Belarus, Barbershop",
     author: "@dariavv",
-    siteUrl: "https://www.example.com"
+    siteUrl: "https://911barber-dev.netlify.app/"
   },
   plugins: [
     "gatsby-plugin-sass",

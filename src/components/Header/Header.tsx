@@ -16,10 +16,10 @@ const Header: React.FC<any> = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY >= 87 && !isScroll) {
+      if (currentScrollY >= 100 && !isScroll) {
         setScroll(true);
       }
-      if (currentScrollY < 87 && isScroll) {
+      if (currentScrollY < 100 && isScroll) {
         setScroll(false);
       }
     };

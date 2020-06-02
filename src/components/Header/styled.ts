@@ -4,6 +4,10 @@ import Instagram from "../../assets/images/svg/instagram.svg";
 import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
 
+export interface IView {
+  view?: boolean | any;
+}
+
 export const HeaderStyle = styled.header`
   position: fixed;
   top: 0;
@@ -12,7 +16,7 @@ export const HeaderStyle = styled.header`
   width: 100%;
   color: #e3b873;
   background: #1b1b1b;
-  box-shadow: ${({ view }: any) =>
+  box-shadow: ${({ view }: IView) =>
     view ? "none" : "0px 10px 50px rgba(0, 0, 0, 0.7)"};
   transition: all 0.3s ease-out;
 `;
@@ -23,16 +27,16 @@ export const HeaderContainer = styled.div`
   align-items: center;
   max-width: 1440px;
   margin: 0 auto;
-  padding: ${({ view }: any) => (view ? "15px 20px" : "10px 20px")};
+  padding: ${({ view }: IView) => (view ? "15px 20px" : "10px 20px")};
   transition: all 0.3s ease-out;
   @media (max-width: 1600px) {
-    padding: ${({ view }: any) => (view ? "15px 120px" : "10px 120px")};
+    padding: ${({ view }: IView) => (view ? "15px 120px" : "10px 120px")};
   }
   @media (max-width: 768px) {
-    padding: ${({ view }: any) => (view ? "15px 60px" : "10px 60px")};
+    padding: ${({ view }: IView) => (view ? "15px 60px" : "10px 60px")};
   }
   @media (max-width: 460px) {
-    padding: ${({ view }: any) => (view ? "15px 25px" : "10px 25px")};
+    padding: ${({ view }: IView) => (view ? "15px 25px" : "10px 25px")};
   }
 `;
 
