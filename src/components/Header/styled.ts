@@ -48,6 +48,7 @@ export const LogoWrapper = styled.div`
 
 export const StyledLogo = styled(Logo)`
   width: 195px;
+  margin-right: 48px; // todo: maybe refactoring contacts
 `;
 
 // TODO: refactoring icons

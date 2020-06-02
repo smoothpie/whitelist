@@ -8,7 +8,7 @@ export const LayoutContainer = styled.div`
 export const Main = styled.main`
   background: #1b1b1b;
   margin: 0 auto;
-  padding-top: 103px;
+  padding-top: 100px;
 `;
 
 export const Footer = styled.footer`
