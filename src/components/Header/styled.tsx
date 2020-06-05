@@ -5,6 +5,12 @@ import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
 import { IView } from "../../interfaces";
 
+const Hover = `&:hover {
+  color: #eeeeee;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  }`;
+
 export const HeaderStyle = styled.header`
   position: fixed;
   top: 0;
@@ -37,6 +43,8 @@ export const HeaderContainer = styled.div`
   }
 `;
 
+export const Block = styled.div``;
+
 export const ContactsP = styled.p`
   margin: 0;
   padding-bottom: 0.3rem;
@@ -52,38 +60,21 @@ export const StyledLogo = styled(Logo)`
   margin-right: 63px; // todo: maybe refactoring contacts
 `;
 
-// TODO: refactoring icons
 export const StyledTelegram = styled(Telegram)`
   width: 20px;
   padding: 0.5rem 1rem;
-  &:hover {
-    color: #eeeeee;
-    cursor: pointer;
-    transition: all 0.5s ease;
-  }
+  ${Hover}
 `;
 
 export const StyledYclients = styled(Yclients)`
   width: 20px;
   padding: 0.5rem 1rem;
-  &:hover {
-    color: #eeeeee;
-    cursor: pointer;
-    transition: all 0.5s ease;
-  }
+  ${Hover}
 `;
 
 export const StyledInstagram = styled(Instagram)`
   width: ${props => props.wdth || "15px"};
   padding: 0.5rem 1rem;
   color: ${props => props.clr || "#e3b873"};
-  &:hover {
-    color: #eeeeee;
-    cursor: pointer;
-    transition: all 0.5s ease;
-  }
+  ${Hover}
 `;
-
-// export const StyledInstagram = styled(Instagram)`
-//   width: ${props => (props.wdth ? "15px" : "30px")};
-// `;

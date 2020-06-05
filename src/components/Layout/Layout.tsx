@@ -9,14 +9,7 @@ const Layout: React.FC = ({ children }: any) => {
   return (
     <LayoutContainer>
       <Header />
-      <Main
-      // style={{
-      //   margin: `0 auto`
-      //   maxWidth: 1440
-      // }}
-      >
-        {children}
-      </Main>
+      <Main>{children}</Main>
       <FooterSection />
       <Footer>© {new Date().getFullYear()}, 911barber.by</Footer>
     </LayoutContainer>

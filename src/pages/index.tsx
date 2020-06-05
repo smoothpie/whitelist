@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "gatsby";
 
 import Layout from "../components/Layout";
 import SEO from "../components/Seo";
@@ -23,7 +22,6 @@ const IndexPage: React.FC = () => (
     <Cosmetics />
     <Reviews />
     <Contacts />
-    {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 );
 

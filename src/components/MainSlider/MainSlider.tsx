@@ -1,6 +1,5 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-// import { StyledLink } from "../Typography";
 import { MainSliderSection, SliderItem, StyledImage, Overlay } from "./styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

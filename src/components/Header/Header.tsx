@@ -8,7 +8,8 @@ import {
   StyledInstagram,
   StyledTelegram,
   StyledYclients,
-  ContactsP
+  ContactsP,
+  Block
 } from "./styled";
 
 const Header: React.FC<any> = () => {
@@ -58,23 +59,23 @@ const Header: React.FC<any> = () => {
   return (
     <HeaderStyle view={!isScroll}>
       <HeaderContainer view={!isScroll}>
-        <div>
+        <Block>
           <ContactsP>{title}</ContactsP>
           <ContactsP>{tel}</ContactsP>
           <ContactsP>{address}</ContactsP>
           <ContactsP>{place}</ContactsP>
-        </div>
-        <div>
+        </Block>
+        <Block>
           <StyledLink to="/">
             <StyledLogo fluid={logo} />
           </StyledLink>
-        </div>
-        <div>
+        </Block>
+        <Block>
           <StyledTelegram />
           <StyledYclients />
           <StyledInstagram wdth="20px" />
           <StyledInstagram wdth="20px" clr="#F783AC" />
-        </div>
+        </Block>
       </HeaderContainer>
     </HeaderStyle>
   );

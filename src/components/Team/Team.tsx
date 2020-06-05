@@ -1,6 +1,4 @@
 import React from "react";
-// import { useStaticQuery, graphql } from "gatsby";
-// import { StyledLink } from "../Typography";
 import { TeamSection } from "./styled";
 
 const Team: React.FC = () => {

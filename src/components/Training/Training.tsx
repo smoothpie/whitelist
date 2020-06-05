@@ -1,6 +1,4 @@
 import React from "react";
-// import { useStaticQuery, graphql } from "gatsby";
-// import { StyledLink } from "../Typography";
 import { TrainingSection } from "./styled";
 
 const Training: React.FC = () => {
