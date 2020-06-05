@@ -3,8 +3,9 @@ import Logo from "gatsby-image";
 import Instagram from "../../assets/images/svg/instagram.svg";
 import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
+import Phone from "../../assets/images/svg/phone.svg";
 import { IView } from "../../interfaces";
-import { Hover } from "../Typography";
+import { Hover, StyledLinkA } from "../Typography";
 
 export const HeaderStyle = styled.header`
   position: fixed;
@@ -40,9 +41,15 @@ export const HeaderContainer = styled.div`
 
 export const Block = styled.div``;
 
+export const Tel = styled(StyledLinkA)`
+  font-size: 1.3rem;
+  padding-bottom: 0.3rem;
+`;
+
 export const ContactsP = styled.p`
   margin: 0;
   padding-bottom: 0.3rem;
+  font-size: 0.9rem;
 `;
 
 export const LogoWrapper = styled.div`
@@ -52,24 +59,27 @@ export const LogoWrapper = styled.div`
 
 export const StyledLogo = styled(Logo)`
   width: 195px;
-  margin-right: 63px; // todo: maybe refactoring contacts
+  margin-right: 3px;
 `;
 
 export const StyledTelegram = styled(Telegram)`
   width: 20px;
-  padding: 0.5rem 1rem;
-  ${Hover}
+  padding: 0.5rem 0.9rem;
 `;
 
 export const StyledYclients = styled(Yclients)`
   width: 20px;
-  padding: 0.5rem 1rem;
-  ${Hover}
+  padding: 0.5rem 0.9rem;
 `;
 
 export const StyledInstagram = styled(Instagram)`
   width: ${props => props.wdth || "15px"};
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.9rem;
   color: ${props => props.clr || "#e3b873"};
   ${Hover}
+`;
+
+export const StyledPhone = styled(Phone)`
+  width: 15px;
+  padding-right: 0.5rem;
 `;

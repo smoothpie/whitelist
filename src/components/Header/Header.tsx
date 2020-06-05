@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { StyledLink } from "../Typography";
+import { StyledLink, StyledLinkA } from "../Typography";
 import {
   HeaderStyle,
   HeaderContainer,
@@ -8,6 +8,8 @@ import {
   StyledInstagram,
   StyledTelegram,
   StyledYclients,
+  Tel,
+  StyledPhone,
   ContactsP,
   Block
 } from "./styled";
@@ -38,7 +40,6 @@ const Header: React.FC<any> = () => {
       header: markdownRemark(frontmatter: { type: { eq: "header" } }) {
         id
         frontmatter {
-          title
           tel
           address
           place
@@ -54,14 +55,14 @@ const Header: React.FC<any> = () => {
     }
   `);
 
-  const { title, tel, address, place } = frontmatter;
+  const { tel, address, place } = frontmatter;
 
   return (
     <HeaderStyle view={!isScroll}>
       <HeaderContainer view={!isScroll}>
         <Block>
-          <ContactsP>{title}</ContactsP>
-          <ContactsP>{tel}</ContactsP>
+          <StyledPhone />
+          <Tel href="tel:+375 336 619 911">{tel}</Tel>
           <ContactsP>{address}</ContactsP>
           <ContactsP>{place}</ContactsP>
         </Block>
@@ -71,10 +72,27 @@ const Header: React.FC<any> = () => {
           </StyledLink>
         </Block>
         <Block>
-          <StyledTelegram />
-          <StyledYclients />
-          <StyledInstagram wdth="20px" />
-          <StyledInstagram wdth="20px" clr="#F783AC" />
+          <StyledLinkA href="https://www.t.me/minsk911/" target="blank_">
+            <StyledTelegram />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://n247635.yclients.com/company:242564?o=m704631"
+            target="blank_"
+          >
+            <StyledYclients />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://www.instagram.com/911barber.by/"
+            target="blank_"
+          >
+            <StyledInstagram wdth="20px" />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://www.instagram.com/911barbieshop/"
+            target="blank_"
+          >
+            <StyledInstagram wdth="20px" clr="#F783AC" />
+          </StyledLinkA>
         </Block>
       </HeaderContainer>
     </HeaderStyle>
