@@ -4,12 +4,7 @@ import Instagram from "../../assets/images/svg/instagram.svg";
 import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
 import { IView } from "../../interfaces";
-
-const Hover = `&:hover {
-  color: #eeeeee;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  }`;
+import { Hover } from "../Typography";
 
 export const HeaderStyle = styled.header`
   position: fixed;
