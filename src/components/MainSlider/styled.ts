@@ -20,7 +20,7 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
-  background: #000000;
+  z-index: 2;
+  background-color: #000000;
   opacity: 0.2;
 `;

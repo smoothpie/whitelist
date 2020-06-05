@@ -10,10 +10,10 @@ export const HeaderStyle = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 5;
   width: 100%;
   color: #e3b873;
-  background: ${({ view }: IView) => (view ? "transtarent" : "#1b1b1b")};
+  background-color: ${({ view }: IView) => (view ? "transparent" : "#1b1b1b")};
   box-shadow: ${({ view }: IView) =>
     view ? "none" : "0px 10px 50px rgba(0, 0, 0, 0.7)"};
   transition: all 0.3s ease-out;
