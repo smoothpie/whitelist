@@ -1,3 +1,3 @@
-export interface IApp {
-  name: string;
+export interface IView {
+  view?: boolean | any;
 }

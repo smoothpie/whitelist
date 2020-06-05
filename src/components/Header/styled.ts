@@ -3,10 +3,7 @@ import Logo from "gatsby-image";
 import Instagram from "../../assets/images/svg/instagram.svg";
 import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
-
-export interface IView {
-  view?: boolean | any;
-}
+import { IView } from "../../interfaces";
 
 export const HeaderStyle = styled.header`
   position: fixed;
@@ -15,7 +12,7 @@ export const HeaderStyle = styled.header`
   z-index: 100;
   width: 100%;
   color: #e3b873;
-  background: #1b1b1b;
+  background: ${({ view }: IView) => (view ? "transtarent" : "#1b1b1b")};
   box-shadow: ${({ view }: IView) =>
     view ? "none" : "0px 10px 50px rgba(0, 0, 0, 0.7)"};
   transition: all 0.3s ease-out;

@@ -7,13 +7,11 @@ export const MainSliderSection = styled.section`
 
 export const SliderItem = styled.div`
   width: 100%;
-  /* text-align: center; */
 `;
 
 export const StyledImage = styled(Image)`
   width: 100%;
-  height: 800px;
-  overflow: hidden;
+  height: 950px;
 `;
 
 export const Overlay = styled.div`
