@@ -1,5 +1,6 @@
 import React from "react";
 import "normalize.css";
+import "./fonts.scss";
 import Header from "../Header";
 import { LayoutContainer, Main, Footer } from "./styled";
 import FooterSection from "../FooterSection";
