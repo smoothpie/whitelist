@@ -1,12 +1,13 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import ArrowPrev from "../../assets/images/svg/arrow-left.svg";
+import ArrowNext from "../../assets/images/svg/arrow-right.svg";
 import {
   MainSliderSection,
   SliderItem,
   StyledImage,
-  Overlay,
-  StyledArrowPrev,
-  StyledArrowNext
+  ArrowContainerPrev,
+  ArrowContainerNext
 } from "./styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -57,15 +58,22 @@ const MainSlider: React.FC = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     pauseOnHover: false,
-    nextArrow: <StyledArrowNext />,
-    prevArrow: <StyledArrowPrev />
+    nextArrow: (
+      <ArrowContainerNext>
+        <ArrowNext />
+      </ArrowContainerNext>
+    ),
+    prevArrow: (
+      <ArrowContainerPrev>
+        <ArrowPrev />
+      </ArrowContainerPrev>
+    )
   };
 
   return (
     <MainSliderSection>
       <Slider {...settings}>
         <SliderItem>
-          <Overlay />
           <StyledImage fluid={slide1} />
         </SliderItem>
         <SliderItem>

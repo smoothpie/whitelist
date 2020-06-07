@@ -1,51 +1,35 @@
 import styled from "styled-components";
 import Image from "gatsby-image";
-import ArrowLeft from "../../assets/images/svg/arrow-left.svg";
-import ArrowRight from "../../assets/images/svg/arrow-right.svg";
-import { Hover } from "../Typography";
+
+import { Hover, BeforeNone } from "../Typography";
 
 export const MainSliderSection = styled.section``;
 
-export const SliderItem = styled.div``;
+export const SliderItem = styled.div`
+  position: relative;
+`;
 
 export const StyledImage = styled(Image)`
   width: 100%;
   height: 100vh;
+  filter: brightness(85%);
 `;
 
-export const Overlay = styled.div`
+export const ArrowContainer = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  background-color: #000000;
-  opacity: 0.2;
-`;
-
-export const StyledArrowPrev = styled(ArrowLeft)`
-  position: absolute;
-  top: 50%;
-  left: 50px;
-  width: 20px;
-  color: white;
+  top: calc(50% - 20px);
   z-index: 3;
-  height: 100%;
-  padding: 30px;
   opacity: 0.5;
+  width: 20px;
+  color: #ffffff;
   ${Hover};
+  ${BeforeNone};
 `;
 
-export const StyledArrowNext = styled(ArrowRight)`
-  position: absolute;
-  top: 50%;
+export const ArrowContainerPrev = styled(ArrowContainer)`
+  left: 50px;
+`;
+
+export const ArrowContainerNext = styled(ArrowContainer)`
   right: 50px;
-  width: 20px;
-  color: white;
-  z-index: 3;
-  height: 100%;
-  padding: 30px;
-  opacity: 0.5;
-  ${Hover}
 `;

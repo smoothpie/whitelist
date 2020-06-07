@@ -39,11 +39,13 @@ export const HeaderContainer = styled.div`
   }
 `;
 
-export const Block = styled.div``;
+export const Block = styled.div`
+  width: 200px;
+`;
 
 export const Tel = styled(StyledLinkA)`
   font-size: 1.3rem;
-  padding-bottom: 0.3rem;
+  padding: 0 0 0.3rem 0.5rem;
 `;
 
 export const ContactsP = styled.p`
@@ -59,27 +61,25 @@ export const LogoWrapper = styled.div`
 
 export const StyledLogo = styled(Logo)`
   width: 195px;
-  margin-right: 3px;
 `;
 
 export const StyledTelegram = styled(Telegram)`
   width: 20px;
-  padding: 0.5rem 0.9rem;
+  margin: 0.5rem 0.9rem;
 `;
 
 export const StyledYclients = styled(Yclients)`
   width: 20px;
-  padding: 0.5rem 0.9rem;
+  margin: 0.5rem 0.9rem;
 `;
 
 export const StyledInstagram = styled(Instagram)`
   width: ${props => props.wdth || "15px"};
-  padding: 0.5rem 0.9rem;
+  margin: 0.5rem 0.9rem;
   color: ${props => props.clr || "#e3b873"};
   ${Hover}
 `;
 
 export const StyledPhone = styled(Phone)`
   width: 15px;
-  padding-right: 0.5rem;
 `;

@@ -8,6 +8,10 @@ export const Hover = `&:hover {
   opacity: 1;
   }`;
 
+export const BeforeNone = `&::before {
+  display: none;
+}`;
+
 //**************** LINKS ********************
 export const StyledLinkA = styled.a`
   color: #e3b873;
