@@ -38,7 +38,6 @@ const Header: React.FC<any> = () => {
   } = useStaticQuery(graphql`
     query {
       header: markdownRemark(frontmatter: { type: { eq: "header" } }) {
-        id
         frontmatter {
           tel
           address
