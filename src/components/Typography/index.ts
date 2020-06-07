@@ -5,6 +5,7 @@ export const Hover = `&:hover {
   color: #eeeeee;
   cursor: pointer;
   transition: all 0.5s ease;
+  opacity: 1;
   }`;
 
 //**************** LINKS ********************

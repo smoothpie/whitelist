@@ -1,6 +1,13 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { MainSliderSection, SliderItem, StyledImage, Overlay } from "./styled";
+import {
+  MainSliderSection,
+  SliderItem,
+  StyledImage,
+  Overlay,
+  StyledArrowPrev,
+  StyledArrowNext
+} from "./styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -42,14 +49,16 @@ const MainSlider: React.FC = () => {
     }
   `);
   const settings = {
-    dots: true,
-    arrows: false,
+    dots: false,
+    arrows: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true
+    autoplaySpeed: 5000,
+    pauseOnHover: false,
+    nextArrow: <StyledArrowNext />,
+    prevArrow: <StyledArrowPrev />
   };
 
   return (
