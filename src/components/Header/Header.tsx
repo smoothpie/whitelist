@@ -62,8 +62,8 @@ const Header: React.FC<any> = () => {
         <Block>
           <StyledPhone />
           <Tel href="tel:+375 336 619 911">{tel}</Tel>
-          <ContactsP>{address}</ContactsP>
-          <ContactsP>{place}</ContactsP>
+          {/* <ContactsP>{address}</ContactsP>
+          <ContactsP>{place}</ContactsP> */}
         </Block>
         <Block>
           <StyledLink to="/">

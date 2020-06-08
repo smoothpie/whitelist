@@ -8,7 +8,7 @@ export const Hover = `&:hover {
   opacity: 1;
   }`;
 
-export const BeforeNone = `&::before {
+export const BeforeNone = `&:before {
   display: none;
 }`;
 
@@ -27,14 +27,20 @@ export const StyledLink = styled(Link)`
 
 //**************** HEADINGS ********************
 export const H1 = styled.h1`
-  color: #e3b873;
+  font-family: "Manrope-Regular", sans-serif;
+  font-size: 3.5rem;
+  color: #eeeeee;
 `;
 export const H2 = styled.h2`
-  color: #e3b873;
+  font-size: 2.5rem;
+  color: #eeeeee;
 `;
 export const H3 = styled.h3`
-  color: #e3b873;
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: #eeeeee;
+  margin: 1.2rem 0;
 `;
 export const H4 = styled.h4`
-  color: #e3b873;
+  color: #eeeeee;
 `;

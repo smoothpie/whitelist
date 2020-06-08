@@ -8,8 +8,11 @@ import {
   StyledImage,
   ArrowContainerPrev,
   ArrowContainerNext,
+  InnerBlock,
   SliderText
 } from "./styled";
+import { H1, H2, H3 } from "../Typography";
+import Button from "../Button";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -30,17 +33,16 @@ const MainSlider: React.FC = () => {
     query {
       mainSlider: markdownRemark(frontmatter: { type: { eq: "sliderText" } }) {
         frontmatter {
-          firstSlideHeading
+          firstSlideTitle
           firstSlideDesc1
           firstSlideDesc2
-          secondSlideHeading
+          secondSlideTitle
           secondSlideDesc1
           secondSlideDesc2
-          thirdSlideHeading
+          thirdSlideTitle
           thirdSlideDesc1
         }
       }
-
       slide1: file(relativePath: { eq: "slide1.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 4000) {
@@ -66,13 +68,13 @@ const MainSlider: React.FC = () => {
   `);
 
   const {
-    firstSlideHeading,
+    firstSlideTitle,
     firstSlideDesc1,
     firstSlideDesc2,
-    secondSlideHeading,
+    secondSlideTitle,
     secondSlideDesc1,
     secondSlideDesc2,
-    thirdSlideHeading,
+    thirdSlideTitle,
     thirdSlideDesc1
   } = frontmatter;
 
@@ -102,26 +104,35 @@ const MainSlider: React.FC = () => {
       <Slider {...settings}>
         <SliderItem>
           <StyledImage fluid={slide1} />
-          <SliderText>
-            <h1>{firstSlideHeading}</h1>
-            <p>{firstSlideDesc1}</p>
-            <p>{firstSlideDesc2}</p>
-          </SliderText>
+          <InnerBlock>
+            <SliderText>
+              <H1>{firstSlideTitle}</H1>
+              <H3>{firstSlideDesc1}</H3>
+              <H3>{firstSlideDesc2}</H3>
+              <Button />
+            </SliderText>
+          </InnerBlock>
         </SliderItem>
         <SliderItem>
           <StyledImage fluid={slide2} />
-          <SliderText>
-            <h2>{secondSlideHeading}</h2>
-            <p>{secondSlideDesc1}</p>
-            <p>{secondSlideDesc2}</p>
-          </SliderText>
+          <InnerBlock>
+            <SliderText>
+              <H2>{secondSlideTitle}</H2>
+              <H3>{secondSlideDesc1}</H3>
+              <H3>{secondSlideDesc2}</H3>
+              <Button />
+            </SliderText>
+          </InnerBlock>
         </SliderItem>
         <SliderItem>
           <StyledImage fluid={slide3} />
-          <SliderText>
-            <h2>{thirdSlideHeading}</h2>
-            <p>{thirdSlideDesc1}</p>
-          </SliderText>
+          <InnerBlock>
+            <SliderText>
+              <H2>{thirdSlideTitle}</H2>
+              <H3>{thirdSlideDesc1}</H3>
+              <Button />
+            </SliderText>
+          </InnerBlock>
         </SliderItem>
       </Slider>
     </MainSliderSection>

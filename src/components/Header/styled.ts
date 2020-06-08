@@ -11,7 +11,7 @@ export const HeaderStyle = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 10;
   width: 100%;
   color: #e3b873;
   background-color: ${({ view }: IView) => (view ? "transparent" : "#1b1b1b")};
@@ -40,11 +40,12 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Block = styled.div`
-  width: 200px;
+  width: 210px;
+  text-align: center;
 `;
 
 export const Tel = styled(StyledLinkA)`
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding: 0 0 0.3rem 0.5rem;
 `;
 
@@ -60,7 +61,8 @@ export const LogoWrapper = styled.div`
 `;
 
 export const StyledLogo = styled(Logo)`
-  width: 195px;
+  width: 190px;
+  margin: 0 auto;
 `;
 
 export const StyledTelegram = styled(Telegram)`
@@ -81,5 +83,5 @@ export const StyledInstagram = styled(Instagram)`
 `;
 
 export const StyledPhone = styled(Phone)`
-  width: 15px;
+  width: 17px;
 `;

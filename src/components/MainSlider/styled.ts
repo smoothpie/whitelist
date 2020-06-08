@@ -10,12 +10,21 @@ export const SliderItem = styled.div`
   position: relative;
 `;
 
-export const SliderText = styled.div``;
+export const InnerBlock = styled.div``;
+
+export const SliderText = styled.div`
+  position: absolute;
+  top: calc(50% - 120px);
+  right: 15%;
+  left: 15%;
+  text-align: center;
+  z-index: 4;
+`;
 
 export const StyledImage = styled(BackgroundImage)`
   width: 100%;
   height: 100vh;
-  filter: brightness(85%);
+  filter: brightness(70%);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
