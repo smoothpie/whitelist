@@ -40,7 +40,6 @@ export const StyledButton = styled.a`
     transform: translateY(-50%) rotateX(90deg);
     opacity: 0;
     transition: 0.5s;
-    border: 2.5px solid #eeeeee;
     border-radius: 3px;
   }
 
@@ -57,7 +56,7 @@ export const StyledButton = styled.a`
     transform: translateY(0) rotateX(0);
     opacity: 1;
     transition: 0.5s;
-    border: 2.5px solid #e3b873;
+    border: 3px solid #e3b873;
     border-radius: 3px;
   }
 `;
