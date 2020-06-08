@@ -17,9 +17,15 @@ import "slick-carousel/slick/slick-theme.css";
 const MainSlider: React.FC = () => {
   const {
     mainSlider: { frontmatter },
-    slide1: { publicURL: slide1 },
-    slide2: { publicURL: slide2 },
-    slide3: { publicURL: slide3 }
+    slide1: {
+      childImageSharp: { fluid: slide1 }
+    },
+    slide2: {
+      childImageSharp: { fluid: slide2 }
+    },
+    slide3: {
+      childImageSharp: { fluid: slide3 }
+    }
   } = useStaticQuery(graphql`
     query {
       mainSlider: markdownRemark(frontmatter: { type: { eq: "sliderText" } }) {
@@ -34,14 +40,27 @@ const MainSlider: React.FC = () => {
           thirdSlideDesc1
         }
       }
+
       slide1: file(relativePath: { eq: "slide1.jpg" }) {
-        publicURL
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 4000) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
       }
       slide2: file(relativePath: { eq: "slide2.jpg" }) {
-        publicURL
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 4000) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
       }
       slide3: file(relativePath: { eq: "slide3.jpg" }) {
-        publicURL
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 4000) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
       }
     }
   `);
@@ -82,7 +101,7 @@ const MainSlider: React.FC = () => {
     <MainSliderSection>
       <Slider {...settings}>
         <SliderItem>
-          <StyledImage publicURL={slide1} />
+          <StyledImage fluid={slide1} />
           <SliderText>
             <h1>{firstSlideHeading}</h1>
             <p>{firstSlideDesc1}</p>
@@ -90,7 +109,7 @@ const MainSlider: React.FC = () => {
           </SliderText>
         </SliderItem>
         <SliderItem>
-          <StyledImage publicURL={slide2} />
+          <StyledImage fluid={slide2} />
           <SliderText>
             <h2>{secondSlideHeading}</h2>
             <p>{secondSlideDesc1}</p>
@@ -98,7 +117,7 @@ const MainSlider: React.FC = () => {
           </SliderText>
         </SliderItem>
         <SliderItem>
-          <StyledImage publicURL={slide3} />
+          <StyledImage fluid={slide3} />
           <SliderText>
             <h2>{thirdSlideHeading}</h2>
             <p>{thirdSlideDesc1}</p>

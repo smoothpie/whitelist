@@ -1,9 +1,6 @@
 import styled from "styled-components";
+import BackgroundImage from "gatsby-background-image";
 import { Hover, BeforeNone } from "../Typography";
-
-export interface IPublicURL {
-  publicURL: string;
-}
 
 export const MainSliderSection = styled.section`
   width: 100%;
@@ -15,11 +12,10 @@ export const SliderItem = styled.div`
 
 export const SliderText = styled.div``;
 
-export const StyledImage = styled.div`
+export const StyledImage = styled(BackgroundImage)`
   width: 100%;
   height: 100vh;
   filter: brightness(85%);
-  background-image: url(${({ publicURL }: IPublicURL) => publicURL});
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
