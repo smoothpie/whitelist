@@ -31,8 +31,11 @@ export const HeaderContainer = styled.div`
   @media (max-width: 1600px) {
     padding: ${({ view }: IView) => (view ? "15px 120px" : "10px 120px")};
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: ${({ view }: IView) => (view ? "15px 60px" : "10px 60px")};
+  }
+  @media (max-width: 960px) {
+    padding: ${({ view }: IView) => (view ? "15px 35px" : "10px 35px")};
   }
   @media (max-width: 460px) {
     padding: ${({ view }: IView) => (view ? "15px 25px" : "10px 25px")};
@@ -42,11 +45,17 @@ export const HeaderContainer = styled.div`
 export const Block = styled.div`
   width: 210px;
   text-align: center;
+  @media (max-width: 1024px) {
+    width: 170px;
+  }
 `;
 
 export const Tel = styled(StyledLinkA)`
   font-size: 1.5rem;
   padding: 0 0 0.3rem 0.5rem;
+  @media (max-width: 1024px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const ContactsP = styled.p`
@@ -63,16 +72,30 @@ export const LogoWrapper = styled.div`
 export const StyledLogo = styled(Logo)`
   width: 190px;
   margin: 0 auto;
+  @media (max-width: 1024px) {
+    width: 130px;
+  }
+  @media (max-width: 768px) {
+    width: 100px;
+  }
 `;
 
 export const StyledTelegram = styled(Telegram)`
   width: 20px;
   margin: 0.5rem 0.9rem;
+  @media (max-width: 1024px) {
+    width: 17px;
+    margin: 0.3rem 0.6rem;
+  }
 `;
 
 export const StyledYclients = styled(Yclients)`
   width: 20px;
   margin: 0.5rem 0.9rem;
+  @media (max-width: 1024px) {
+    width: 17px;
+    margin: 0.3rem 0.6rem;
+  }
 `;
 
 export const StyledInstagram = styled(Instagram)`
@@ -80,8 +103,18 @@ export const StyledInstagram = styled(Instagram)`
   margin: 0.5rem 0.9rem;
   color: ${props => props.clr || "#e3b873"};
   ${Hover}
+  @media (max-width: 1024px) {
+    width: 17px;
+    margin: 0.3rem 0.6rem;
+  }
 `;
 
 export const StyledPhone = styled(Phone)`
   width: 17px;
+  @media (max-width: 1024px) {
+    width: 14px;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

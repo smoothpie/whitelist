@@ -28,6 +28,12 @@ export const StyledImage = styled(BackgroundImage)`
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
+  @media (max-width: 1024px) {
+    height: 60vh;
+  }
+  @media (max-width: 460px) {
+    height: 100vh;
+  }
 `;
 
 export const ArrowContainer = styled.div`
