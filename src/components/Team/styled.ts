@@ -13,6 +13,13 @@ export const TeamDescription = styled.p`
   font-size: 1.1rem;
   margin: 1rem 0 4rem;
   color: gray;
+  text-align: center;
+  width: 90%;
+  @media (max-width: 460px) {
+    width: 80%;
+    font-size: 0.95rem;
+    margin: 1rem 0 2rem;
+  }
 `;
 
 export const TeamContainer = styled.div`
