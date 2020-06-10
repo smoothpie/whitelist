@@ -10,7 +10,6 @@ import {
   StyledYclients,
   Tel,
   StyledPhone,
-  ContactsP,
   Block,
   MobileBlock
 } from "./styled";
@@ -32,17 +31,15 @@ const Header: React.FC<any> = () => {
   }, [isScroll]);
 
   const {
-    header: { frontmatter },
+    contacts: { frontmatter },
     logo: {
       childImageSharp: { fluid: logo }
     }
   } = useStaticQuery(graphql`
     query {
-      header: markdownRemark(frontmatter: { type: { eq: "header" } }) {
+      contacts: markdownRemark(frontmatter: { type: { eq: "contacts" } }) {
         frontmatter {
           tel
-          address
-          place
         }
       }
       logo: file(relativePath: { eq: "logo.png" }) {
@@ -55,7 +52,7 @@ const Header: React.FC<any> = () => {
     }
   `);
 
-  const { tel, address, place } = frontmatter;
+  const { tel } = frontmatter;
 
   return (
     <HeaderStyle view={!isScroll}>
@@ -63,8 +60,6 @@ const Header: React.FC<any> = () => {
         <Block>
           <StyledPhone />
           <Tel href="tel:+375 336 619 911">{tel}</Tel>
-          {/* <ContactsP>{address}</ContactsP>
-          <ContactsP>{place}</ContactsP> */}
         </Block>
         <Block>
           <StyledLink to="/">

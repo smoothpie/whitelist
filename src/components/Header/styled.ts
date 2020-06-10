@@ -71,12 +71,6 @@ export const Tel = styled(StyledLinkA)`
   }
 `;
 
-export const ContactsP = styled.p`
-  margin: 0;
-  padding-bottom: 0.3rem;
-  font-size: 0.9rem;
-`;
-
 export const LogoWrapper = styled.div`
   color: #e3b873;
   text-decoration: none;

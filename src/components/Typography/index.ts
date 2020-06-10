@@ -59,5 +59,6 @@ export const H3 = styled.h3`
   }
 `;
 export const H4 = styled.h4`
-  color: #eeeeee;
+  color: #e3b873;
+  font-size: 1.5rem;
 `;

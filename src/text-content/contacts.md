@@ -1,6 +1,7 @@
 ---
-type: header
+type: contacts
 tel: "+375 336 619 911"
 address: "г. Минск, пр-т. Победителей, 1"
 place: '"Белорусский Центр Моды"'
+workingHours: "10.00 — 22.00"
 ---
