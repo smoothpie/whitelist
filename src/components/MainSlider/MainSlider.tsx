@@ -12,7 +12,7 @@ import {
   InnerBlock,
   SliderText
 } from "./styled";
-import { H1, H2, H3 } from "../Typography";
+import { H1, H2, H4 } from "../Typography";
 import Button from "../Button";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -127,8 +127,8 @@ const MainSlider: React.FC = () => {
             <InnerBlock>
               <SliderText>
                 <H1>{firstSlideTitle}</H1>
-                <H3>{firstSlideDesc1}</H3>
-                <H3>{firstSlideDesc2}</H3>
+                <H4>{firstSlideDesc1}</H4>
+                <H4>{firstSlideDesc2}</H4>
                 <Button />
               </SliderText>
             </InnerBlock>
@@ -138,8 +138,8 @@ const MainSlider: React.FC = () => {
             <InnerBlock>
               <SliderText>
                 <H2>{secondSlideTitle}</H2>
-                <H3>{secondSlideDesc1}</H3>
-                <H3>{secondSlideDesc2}</H3>
+                <H4>{secondSlideDesc1}</H4>
+                <H4>{secondSlideDesc2}</H4>
                 <Button />
               </SliderText>
             </InnerBlock>
@@ -149,7 +149,7 @@ const MainSlider: React.FC = () => {
             <InnerBlock>
               <SliderText>
                 <H2>{thirdSlideTitle}</H2>
-                <H3>{thirdSlideDesc1}</H3>
+                <H4>{thirdSlideDesc1}</H4>
                 <Button />
               </SliderText>
             </InnerBlock>
@@ -161,9 +161,9 @@ const MainSlider: React.FC = () => {
         <InnerBlock>
           <SliderText>
             <H1>{mobileTitle}</H1>
-            <H3>{mobileDesc1}</H3>
-            <H3>{mobileDesc2}</H3>
-            <H3>{mobileDesc3}</H3>
+            <H4>{mobileDesc1}</H4>
+            <H4>{mobileDesc2}</H4>
+            <H4>{mobileDesc3}</H4>
             <Button />
           </SliderText>
         </InnerBlock>

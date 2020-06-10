@@ -19,12 +19,12 @@ export const ContactsSection = styled.section`
   justify-content: space-between;
   align-items: center;
   color: #e3b873;
-  margin: 30px auto;
+  margin: 60px auto;
   @media (max-width: 1024px) {
-    margin: 30px 60px;
+    margin: 50px 60px;
   }
   @media (max-width: 960px) {
-    margin: 30px 35px;
+    margin: 40px 35px;
   }
   @media (max-width: 460px) {
     flex-direction: column;

@@ -25,7 +25,7 @@ export const StyledLink = styled(Link)`
   ${Hover}
 `;
 
-//**************** HEADINGS ********************
+//**************** HEADINGS ******************
 export const H1 = styled.h1`
   font-family: "Manrope-Regular", sans-serif;
   font-size: 3.5rem;
@@ -39,6 +39,7 @@ export const H1 = styled.h1`
     color: #e3b873;
   }
 `;
+
 export const H2 = styled.h2`
   font-size: 2.5rem;
   color: #eeeeee;
@@ -46,7 +47,20 @@ export const H2 = styled.h2`
     font-size: 2.1rem;
   }
 `;
+
 export const H3 = styled.h3`
+  font-size: 2rem;
+  color: #eeeeee;
+  margin: 1.2rem 0;
+  @media (max-width: 1024px) {
+    font-size: 1.7rem;
+  }
+  @media (max-width: 460px) {
+    font-size: 1.4rem;
+  }
+`;
+
+export const H4 = styled.h4`
   font-weight: 400;
   font-size: 1.7rem;
   color: #eeeeee;
@@ -57,8 +71,4 @@ export const H3 = styled.h3`
   @media (max-width: 460px) {
     font-size: 1rem;
   }
-`;
-export const H4 = styled.h4`
-  color: #e3b873;
-  font-size: 1.5rem;
 `;
