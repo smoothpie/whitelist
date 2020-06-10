@@ -59,4 +59,10 @@ export const StyledButton = styled.a`
     border: 3px solid #e3b873;
     border-radius: 3px;
   }
+  @media (max-width: 1024px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 460px) {
+    font-size: 1rem;
+  }
 `;

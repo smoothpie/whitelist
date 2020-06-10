@@ -4,6 +4,17 @@ import { Hover, BeforeNone } from "../Typography";
 
 export const MainSliderSection = styled.section`
   width: 100%;
+  @media (max-width: 460px) {
+    display: none;
+  }
+`;
+
+export const MainSliderSectionMobile = styled.section`
+  display: none;
+  @media (max-width: 460px) {
+    display: block;
+    position: relative;
+  }
 `;
 
 export const SliderItem = styled.div`

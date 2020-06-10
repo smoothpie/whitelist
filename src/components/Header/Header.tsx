@@ -11,7 +11,8 @@ import {
   Tel,
   StyledPhone,
   ContactsP,
-  Block
+  Block,
+  MobileBlock
 } from "./styled";
 
 const Header: React.FC<any> = () => {
@@ -93,6 +94,34 @@ const Header: React.FC<any> = () => {
             <StyledInstagram wdth="20px" clr="#F783AC" />
           </StyledLinkA>
         </Block>
+        <MobileBlock>
+          <StyledLink to="/">
+            <StyledLogo fluid={logo} />
+          </StyledLink>
+        </MobileBlock>
+        <MobileBlock>
+          <StyledLinkA href="https://www.t.me/minsk911/" target="blank_">
+            <StyledTelegram />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://n247635.yclients.com/company:242564?o=m704631"
+            target="blank_"
+          >
+            <StyledYclients />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://www.instagram.com/911barber.by/"
+            target="blank_"
+          >
+            <StyledInstagram wdth="20px" />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://www.instagram.com/911barbieshop/"
+            target="blank_"
+          >
+            <StyledInstagram wdth="20px" clr="#F783AC" />
+          </StyledLinkA>
+        </MobileBlock>
       </HeaderContainer>
     </HeaderStyle>
   );

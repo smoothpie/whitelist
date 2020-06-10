@@ -33,6 +33,11 @@ export const H1 = styled.h1`
   @media (max-width: 1024px) {
     font-size: 3.1rem;
   }
+  @media (max-width: 460px) {
+    font-family: "Manrope-Light", sans-serif;
+    font-size: 2rem;
+    color: #e3b873;
+  }
 `;
 export const H2 = styled.h2`
   font-size: 2.5rem;
@@ -48,6 +53,9 @@ export const H3 = styled.h3`
   margin: 1.2rem 0;
   @media (max-width: 1024px) {
     font-size: 1.3rem;
+  }
+  @media (max-width: 460px) {
+    font-size: 1rem;
   }
 `;
 export const H4 = styled.h4`

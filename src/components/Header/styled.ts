@@ -48,6 +48,16 @@ export const Block = styled.div`
   @media (max-width: 1024px) {
     width: 170px;
   }
+  @media (max-width: 460px) {
+    display: none;
+  }
+`;
+
+export const MobileBlock = styled.div`
+  display: none;
+  @media (max-width: 460px) {
+    display: block;
+  }
 `;
 
 export const Tel = styled(StyledLinkA)`
@@ -55,6 +65,9 @@ export const Tel = styled(StyledLinkA)`
   padding: 0 0 0.3rem 0.5rem;
   @media (max-width: 1024px) {
     font-size: 1.2rem;
+  }
+  @media (max-width: 460px) {
+    display: none;
   }
 `;
 
@@ -77,6 +90,9 @@ export const StyledLogo = styled(Logo)`
   }
   @media (max-width: 768px) {
     width: 100px;
+  }
+  @media (max-width: 460px) {
+    width: 80px;
   }
 `;
 

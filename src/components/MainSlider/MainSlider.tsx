@@ -4,6 +4,7 @@ import ArrowPrev from "../../assets/images/svg/arrow-left.svg";
 import ArrowNext from "../../assets/images/svg/arrow-right.svg";
 import {
   MainSliderSection,
+  MainSliderSectionMobile,
   SliderItem,
   StyledImage,
   ArrowContainerPrev,
@@ -28,6 +29,9 @@ const MainSlider: React.FC = () => {
     },
     slide3: {
       childImageSharp: { fluid: slide3 }
+    },
+    mobileBg: {
+      childImageSharp: { fluid: mobileBg }
     }
   } = useStaticQuery(graphql`
     query {
@@ -41,6 +45,10 @@ const MainSlider: React.FC = () => {
           secondSlideDesc2
           thirdSlideTitle
           thirdSlideDesc1
+          mobileTitle
+          mobileDesc1
+          mobileDesc2
+          mobileDesc3
         }
       }
       slide1: file(relativePath: { eq: "slide1.jpg" }) {
@@ -64,6 +72,13 @@ const MainSlider: React.FC = () => {
           }
         }
       }
+      mobileBg: file(relativePath: { eq: "mobileBg.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 2000) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
@@ -75,7 +90,11 @@ const MainSlider: React.FC = () => {
     secondSlideDesc1,
     secondSlideDesc2,
     thirdSlideTitle,
-    thirdSlideDesc1
+    thirdSlideDesc1,
+    mobileTitle,
+    mobileDesc1,
+    mobileDesc2,
+    mobileDesc3
   } = frontmatter;
 
   const settings = {
@@ -100,42 +119,56 @@ const MainSlider: React.FC = () => {
   };
 
   return (
-    <MainSliderSection>
-      <Slider {...settings}>
-        <SliderItem>
-          <StyledImage fluid={slide1} />
-          <InnerBlock>
-            <SliderText>
-              <H1>{firstSlideTitle}</H1>
-              <H3>{firstSlideDesc1}</H3>
-              <H3>{firstSlideDesc2}</H3>
-              <Button />
-            </SliderText>
-          </InnerBlock>
-        </SliderItem>
-        <SliderItem>
-          <StyledImage fluid={slide2} />
-          <InnerBlock>
-            <SliderText>
-              <H2>{secondSlideTitle}</H2>
-              <H3>{secondSlideDesc1}</H3>
-              <H3>{secondSlideDesc2}</H3>
-              <Button />
-            </SliderText>
-          </InnerBlock>
-        </SliderItem>
-        <SliderItem>
-          <StyledImage fluid={slide3} />
-          <InnerBlock>
-            <SliderText>
-              <H2>{thirdSlideTitle}</H2>
-              <H3>{thirdSlideDesc1}</H3>
-              <Button />
-            </SliderText>
-          </InnerBlock>
-        </SliderItem>
-      </Slider>
-    </MainSliderSection>
+    <>
+      <MainSliderSection>
+        <Slider {...settings}>
+          <SliderItem>
+            <StyledImage fluid={slide1} />
+            <InnerBlock>
+              <SliderText>
+                <H1>{firstSlideTitle}</H1>
+                <H3>{firstSlideDesc1}</H3>
+                <H3>{firstSlideDesc2}</H3>
+                <Button />
+              </SliderText>
+            </InnerBlock>
+          </SliderItem>
+          <SliderItem>
+            <StyledImage fluid={slide2} />
+            <InnerBlock>
+              <SliderText>
+                <H2>{secondSlideTitle}</H2>
+                <H3>{secondSlideDesc1}</H3>
+                <H3>{secondSlideDesc2}</H3>
+                <Button />
+              </SliderText>
+            </InnerBlock>
+          </SliderItem>
+          <SliderItem>
+            <StyledImage fluid={slide3} />
+            <InnerBlock>
+              <SliderText>
+                <H2>{thirdSlideTitle}</H2>
+                <H3>{thirdSlideDesc1}</H3>
+                <Button />
+              </SliderText>
+            </InnerBlock>
+          </SliderItem>
+        </Slider>
+      </MainSliderSection>
+      <MainSliderSectionMobile>
+        <StyledImage fluid={mobileBg} />
+        <InnerBlock>
+          <SliderText>
+            <H1>{mobileTitle}</H1>
+            <H3>{mobileDesc1}</H3>
+            <H3>{mobileDesc2}</H3>
+            <H3>{mobileDesc3}</H3>
+            <Button />
+          </SliderText>
+        </InnerBlock>
+      </MainSliderSectionMobile>
+    </>
   );
 };
 
