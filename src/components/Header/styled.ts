@@ -38,7 +38,7 @@ export const HeaderContainer = styled.div`
     padding: ${({ view }: IView) => (view ? "15px 35px" : "10px 35px")};
   }
   @media (max-width: 460px) {
-    padding: ${({ view }: IView) => (view ? "15px 25px" : "10px 25px")};
+    padding: ${({ view }: IView) => (view ? "15px 22px" : "10px 22px")};
   }
 `;
 
@@ -85,16 +85,12 @@ export const StyledLogo = styled(Logo)`
   @media (max-width: 768px) {
     width: 100px;
   }
-  @media (max-width: 460px) {
-    width: 80px;
-  }
 `;
 
 export const StyledTelegram = styled(Telegram)`
   width: 20px;
   margin: 0.5rem 0.9rem;
   @media (max-width: 1024px) {
-    width: 17px;
     margin: 0.3rem 0.6rem;
   }
 `;
@@ -103,7 +99,6 @@ export const StyledYclients = styled(Yclients)`
   width: 20px;
   margin: 0.5rem 0.9rem;
   @media (max-width: 1024px) {
-    width: 17px;
     margin: 0.3rem 0.6rem;
   }
 `;
@@ -114,7 +109,6 @@ export const StyledInstagram = styled(Instagram)`
   color: ${props => props.clr || "#e3b873"};
   ${Hover}
   @media (max-width: 1024px) {
-    width: 17px;
     margin: 0.3rem 0.6rem;
   }
 `;
