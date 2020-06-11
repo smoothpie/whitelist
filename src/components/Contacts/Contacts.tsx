@@ -43,7 +43,10 @@ const Contacts: React.FC = () => {
         </ContactsIcon>
         <ContactsP>{workingHours}</ContactsP>
       </ContactsBlock>
-      <ContactsBlock href="/">
+      <ContactsBlock
+        href="https://goo.gl/maps/Kir9FpC2XcY3kKd49"
+        target="blank_"
+      >
         <ContactsIcon>
           <StyledMapMarker />
         </ContactsIcon>
