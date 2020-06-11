@@ -59,7 +59,7 @@ const Header: React.FC<any> = () => {
       <HeaderContainer view={!isScroll}>
         <Block>
           <StyledPhone />
-          <Tel href="tel:+375 336 619 911">{tel}</Tel>
+          <Tel href="tel:+375 447 666 911">{tel}</Tel>
         </Block>
         <Block>
           <StyledLink to="/">

@@ -31,7 +31,7 @@ const Contacts: React.FC = () => {
 
   return (
     <ContactsSection>
-      <ContactsBlock href="tel:+375 336 619 911">
+      <ContactsBlock href="tel:+375 447 666 911">
         <ContactsIcon>
           <StyledMobilePhone />
         </ContactsIcon>

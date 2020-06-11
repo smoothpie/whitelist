@@ -7,6 +7,7 @@ export const TeamSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 80px;
 `;
 
 export const TeamDescription = styled.p`

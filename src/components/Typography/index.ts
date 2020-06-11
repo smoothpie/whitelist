@@ -46,6 +46,9 @@ export const H2 = styled.h2`
   @media (max-width: 1024px) {
     font-size: 2.1rem;
   }
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const H3 = styled.h3`
