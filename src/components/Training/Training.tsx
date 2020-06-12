@@ -1,5 +1,12 @@
 import React from "react";
-import { TrainingSection, TrainingTel, Title, TrainingInfo } from "./styled";
+import {
+  TrainingSection,
+  TrainingBg,
+  InnerBlock,
+  TrainingTel,
+  Title,
+  TrainingInfo
+} from "./styled";
 import { useStaticQuery, graphql } from "gatsby";
 
 const Training: React.FC = () => {
@@ -41,14 +48,17 @@ const Training: React.FC = () => {
     tel
   } = frontmatter;
   return (
-    <TrainingSection fluid={trainingBg}>
-      <Title>{title}</Title>
-      <TrainingInfo>{string1}</TrainingInfo>
-      <TrainingInfo>{string2}</TrainingInfo>
-      <TrainingInfo>{string3}</TrainingInfo>
-      <TrainingInfo>{string4}</TrainingInfo>
-      <TrainingInfo>{string5}</TrainingInfo>
-      <TrainingTel href="tel:+375 447 666 911">{tel}</TrainingTel>
+    <TrainingSection>
+      <TrainingBg fluid={trainingBg} />
+      <InnerBlock>
+        <Title>{title}</Title>
+        <TrainingInfo>{string1}</TrainingInfo>
+        <TrainingInfo>{string2}</TrainingInfo>
+        <TrainingInfo>{string3}</TrainingInfo>
+        <TrainingInfo>{string4}</TrainingInfo>
+        <TrainingInfo>{string5}</TrainingInfo>
+        <TrainingTel href="tel:+375 447 666 911">{tel}</TrainingTel>
+      </InnerBlock>
     </TrainingSection>
   );
 };
