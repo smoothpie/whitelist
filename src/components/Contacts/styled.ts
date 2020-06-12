@@ -26,7 +26,7 @@ export const ContactsSection = styled.section`
   @media (max-width: 960px) {
     margin: 40px 35px;
   }
-  @media (max-width: 460px) {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 `;

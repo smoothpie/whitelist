@@ -7,6 +7,15 @@ import Phone from "../../assets/images/svg/phone.svg";
 import { IView } from "../../interfaces";
 import { Hover, StyledLinkA } from "../Typography";
 
+const IconSize = `
+  width: 20px;
+  margin: 0.5rem 0.9rem;
+  @media (max-width: 360px) {
+    width: 18px;
+    margin: 0.5rem 0.7rem;
+  }
+`;
+
 export const HeaderStyle = styled.header`
   position: fixed;
   top: 0;
@@ -38,24 +47,21 @@ export const HeaderContainer = styled.div`
     padding: ${({ view }: IView) => (view ? "15px 35px" : "10px 35px")};
   }
   @media (max-width: 460px) {
-    padding: ${({ view }: IView) => (view ? "15px 22px" : "10px 22px")};
+    padding: ${({ view }: IView) => (view ? "15px 20px" : "10px 20px")};
   }
 `;
 
 export const Block = styled.div`
   width: 210px;
   text-align: center;
-  @media (max-width: 1024px) {
-    width: 170px;
-  }
-  @media (max-width: 460px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
 
 export const MobileBlock = styled.div`
   display: none;
-  @media (max-width: 460px) {
+  @media (max-width: 768px) {
     display: block;
   }
 `;
@@ -66,7 +72,7 @@ export const Tel = styled(StyledLinkA)`
   @media (max-width: 1024px) {
     font-size: 1.2rem;
   }
-  @media (max-width: 460px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -88,29 +94,17 @@ export const StyledLogo = styled(Logo)`
 `;
 
 export const StyledTelegram = styled(Telegram)`
-  width: 20px;
-  margin: 0.5rem 0.9rem;
-  @media (max-width: 1024px) {
-    margin: 0.3rem 0.6rem;
-  }
+  ${IconSize}
 `;
 
 export const StyledYclients = styled(Yclients)`
-  width: 20px;
-  margin: 0.5rem 0.9rem;
-  @media (max-width: 1024px) {
-    margin: 0.3rem 0.6rem;
-  }
+  ${IconSize}
 `;
 
 export const StyledInstagram = styled(Instagram)`
-  width: ${props => props.wdth || "15px"};
-  margin: 0.5rem 0.9rem;
+  ${IconSize}
   color: ${props => props.clr || "#e3b873"};
   ${Hover}
-  @media (max-width: 1024px) {
-    margin: 0.3rem 0.6rem;
-  }
 `;
 
 export const StyledPhone = styled(Phone)`

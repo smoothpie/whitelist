@@ -4,14 +4,14 @@ import { Hover, BeforeNone } from "../Typography";
 
 export const MainSliderSection = styled.section`
   width: 100%;
-  @media (max-width: 460px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
 
 export const MainSliderSectionMobile = styled.section`
   display: none;
-  @media (max-width: 460px) {
+  @media (max-width: 768px) {
     display: block;
     position: relative;
   }
@@ -42,7 +42,7 @@ export const StyledImage = styled(BackgroundImage)`
   @media (max-width: 1024px) {
     height: 60vh;
   }
-  @media (max-width: 460px) {
+  @media (max-width: 768px) {
     height: 100vh;
   }
 `;

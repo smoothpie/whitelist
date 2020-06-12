@@ -80,13 +80,13 @@ const Header: React.FC<any> = () => {
             href="https://www.instagram.com/911barber.by/"
             target="blank_"
           >
-            <StyledInstagram wdth="20px" />
+            <StyledInstagram />
           </StyledLinkA>
           <StyledLinkA
             href="https://www.instagram.com/911barbieshop/"
             target="blank_"
           >
-            <StyledInstagram wdth="20px" clr="#F783AC" />
+            <StyledInstagram clr="#F783AC" />
           </StyledLinkA>
         </Block>
         <MobileBlock>
