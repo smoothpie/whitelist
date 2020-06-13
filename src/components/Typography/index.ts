@@ -51,7 +51,8 @@ export const H2 = styled.h2`
   }
 `;
 
-export const H3 = styled.h3`
+//****** SECTION TITLE ******
+export const SectionTitle = styled.h3`
   font-size: 2rem;
   color: #eeeeee;
   margin: 1.2rem 0;
@@ -74,4 +75,51 @@ export const H4 = styled.h4`
   @media (max-width: 460px) {
     font-size: 1rem;
   }
+`;
+
+export const SectionDescription = styled.p`
+  text-align: center;
+  width: 60%;
+  margin: 1rem 0 4rem;
+  font-size: 1.1rem;
+  color: gray;
+  line-height: 1.5rem;
+  @media (max-width: 460px) {
+    width: 80%;
+    font-size: 0.95rem;
+    margin: 1rem 0 2rem;
+  }
+`;
+
+//************** CARDS ***************/
+export const CardContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+`;
+
+export const Card = styled.div`
+  width: 360px;
+  min-height: 488px;
+  padding: 25px;
+  outline: 1px solid #444444;
+  text-align: center;
+  margin: 0 15px;
+  @media (max-width: 1200px) {
+    width: 300px;
+  }
+  @media (max-width: 1024px) {
+    width: 80%;
+    min-height: 360px;
+    margin: 15px 0;
+  }
+`;
+
+export const CardInfo = styled.p`
+  color: gray;
+  font-size: 0.95rem;
+  line-height: 1.5rem;
 `;

@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { InstagramGallerySection } from "./styled";
+import { SectionTitle, SectionDescription } from "../Typography";
 
 const InstagramGallery: React.FC = () => {
   const {
@@ -19,8 +20,8 @@ const InstagramGallery: React.FC = () => {
   const { title, description } = frontmatter;
   return (
     <InstagramGallerySection>
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <SectionTitle>{title}</SectionTitle>
+      <SectionDescription>{description}</SectionDescription>
     </InstagramGallerySection>
   );
 };
