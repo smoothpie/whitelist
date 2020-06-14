@@ -17,6 +17,7 @@ export const EmployeePhoto = styled(Img)`
   border-radius: 50%;
   &:hover {
     filter: grayscale(50%);
+    transition: all 0.3s ease;
   }
 `;
 

@@ -44,7 +44,7 @@ const Contacts: React.FC = () => {
         <ContactsP>{workingHours}</ContactsP>
       </ContactsBlock>
       <ContactsBlock
-        href="https://goo.gl/maps/Kir9FpC2XcY3kKd49"
+        href="https://goo.gl/maps/hAs2ADcNdgLbnGmR9"
         target="blank_"
       >
         <ContactsIcon>

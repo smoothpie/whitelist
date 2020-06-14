@@ -1,13 +1,19 @@
 import React from "react";
 import { StyledButton } from "./styled";
 
-const Button: React.FC = () => {
+type Props = {
+  link: string;
+  dataBack: string;
+  dataFront: string;
+};
+
+const Button: React.FC<Props> = ({ link, dataBack, dataFront }) => {
   return (
     <StyledButton
-      href="https://n247635.yclients.com/company:242564?o=m704631"
+      href={link}
       target="blank_"
-      data-back="Online запись"
-      data-front="Online запись"
+      data-back={dataBack}
+      data-front={dataFront}
     />
   );
 };

@@ -6,11 +6,13 @@ export const CosmeticsSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 80px;
 `;
 
 export const CosmeticsImg = styled(Img)`
   &:hover {
     filter: grayscale(50%);
+    transition: all 0.3s ease;
   }
 `;
 

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
 
 export const Hover = `&:hover {
   color: #eeeeee;
@@ -12,7 +13,7 @@ export const BeforeNone = `&:before {
   display: none;
 }`;
 
-//**************** LINKS ********************
+//************* LINKS ****************/
 export const StyledLinkA = styled.a`
   color: #e3b873;
   text-decoration: none;
@@ -24,6 +25,7 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   ${Hover}
 `;
+//************************************/
 
 //**************** HEADINGS ******************
 export const H1 = styled.h1`
@@ -50,8 +52,9 @@ export const H2 = styled.h2`
     font-size: 1.8rem;
   }
 `;
+//************************************/
 
-//****** SECTION TITLE ******
+//********* SECTION TITLE **********/
 export const SectionTitle = styled.h3`
   font-size: 2rem;
   color: #eeeeee;
@@ -90,6 +93,7 @@ export const SectionDescription = styled.p`
     margin: 1rem 0 2rem;
   }
 `;
+//************************************/
 
 //************** CARDS ***************/
 export const CardContainer = styled.div`
@@ -122,4 +126,54 @@ export const CardInfo = styled.p`
   color: gray;
   font-size: 0.95rem;
   line-height: 1.5rem;
+`;
+//************************************/
+
+//************** SLIDER ***************/
+export const SliderSection = styled.section`
+  width: 100%;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const SliderItem = styled.div`
+  position: relative;
+`;
+
+export const InnerBlock = styled.div``;
+
+export const SliderText = styled.div`
+  position: absolute;
+  top: calc(50% - 120px);
+  right: 15%;
+  left: 15%;
+  text-align: center;
+  z-index: 4;
+`;
+
+export const StyledSlideImage = styled(BackgroundImage)`
+  width: 100%;
+  filter: brightness(70%);
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
+export const ArrowContainer = styled.div`
+  position: absolute;
+  top: calc(50% - 20px);
+  z-index: 3;
+  opacity: 0.5;
+  width: 20px;
+  color: #ffffff;
+  ${Hover};
+  ${BeforeNone};
+`;
+
+export const ArrowContainerPrev = styled(ArrowContainer)`
+  left: 50px;
+`;
+
+export const ArrowContainerNext = styled(ArrowContainer)`
+  right: 50px;
 `;

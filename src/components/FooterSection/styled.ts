@@ -13,11 +13,12 @@ export const Map = styled.div`
   margin-top: 30px;
   &:hover {
     filter: none;
+    transition: all 0.3s ease;
   }
 `;
 
 export const StyledIframe = styled.iframe`
-  width: 925px;
-  height: 465px;
+  width: 1000px;
+  height: 400px;
   border: none;
 `;
