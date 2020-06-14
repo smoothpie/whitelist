@@ -26,7 +26,7 @@ export const CosmeticsName = styled.p`
 
 export const CosmeticsCard = styled.div`
   width: 550px;
-  min-height: 645px;
+  min-height: 700px;
   padding: 25px;
   outline: 1px solid #444444;
   text-align: center;

@@ -80,7 +80,7 @@ export const H4 = styled.h4`
   }
 `;
 
-export const SectionDescription = styled.p`
+export const SectionDescription = styled.div`
   text-align: center;
   width: 60%;
   margin: 1rem 0 4rem;
@@ -132,6 +132,7 @@ export const CardInfo = styled.p`
 //************** SLIDER ***************/
 export const SliderSection = styled.section`
   width: 100%;
+  margin-bottom: 80px;
   @media (max-width: 768px) {
     display: none;
   }

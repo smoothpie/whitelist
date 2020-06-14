@@ -63,12 +63,14 @@ const Cosmetics: React.FC = () => {
           <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
           <CosmeticsName>{item1}</CosmeticsName>
           <CardInfo>{info1}</CardInfo>
+          <button>Уточнить наличие и цену</button>
         </CosmeticsCard>
         <CosmeticsCard>
           <CosmeticsImg fluid={stuff2} />
           <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
           <CosmeticsName>{item2}</CosmeticsName>
           <CardInfo>{info2}</CardInfo>
+          <button>Уточнить наличие и цену</button>
         </CosmeticsCard>
       </CardContainer>
     </CosmeticsSection>

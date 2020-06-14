@@ -12,7 +12,6 @@ export const Main = styled.main`
 `;
 
 export const Footer = styled.footer`
-  border-top: 1px solid grey;
   background-color: #1b1b1b;
   display: flex;
   align-items: center;

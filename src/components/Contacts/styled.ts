@@ -4,7 +4,7 @@ import Сlock from "../../assets/images/svg/clock.svg";
 import MapMarker from "../../assets/images/svg/map-marker.svg";
 import MobilePhone from "../../assets/images/svg/mobile-phone.svg";
 
-const iconSize = `
+const IconSize = `
   width: 35px;
   height: 35px;
 
@@ -19,7 +19,7 @@ export const ContactsSection = styled.section`
   justify-content: space-between;
   align-items: center;
   color: #e3b873;
-  margin: 60px auto;
+  margin-bottom: 80px;
   @media (max-width: 1024px) {
     margin: 50px 60px;
   }
@@ -47,15 +47,15 @@ export const ContactsIcon = styled.div`
 `;
 
 export const StyledСlock = styled(Сlock)`
-  ${iconSize}
+  ${IconSize}
 `;
 
 export const StyledMapMarker = styled(MapMarker)`
-  ${iconSize}
+  ${IconSize}
 `;
 
 export const StyledMobilePhone = styled(MobilePhone)`
-  ${iconSize}
+  ${IconSize}
 `;
 
 export const ContactsPlace = styled.p`

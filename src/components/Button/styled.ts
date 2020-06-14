@@ -40,7 +40,6 @@ export const StyledButton = styled.a`
     transform: translateY(-50%) rotateX(90deg);
     opacity: 0;
     transition: 0.5s;
-    border-radius: 3px;
   }
 
   &:before {
@@ -57,7 +56,6 @@ export const StyledButton = styled.a`
     opacity: 1;
     transition: 0.5s;
     border: 3px solid #e3b873;
-    border-radius: 3px;
   }
   @media (max-width: 1024px) {
     font-size: 1.3rem;

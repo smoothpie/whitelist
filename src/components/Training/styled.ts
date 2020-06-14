@@ -4,7 +4,7 @@ import { H2, StyledLinkA } from "../Typography";
 
 export const TrainingBg = styled(BackgroundImage)`
   width: 100%;
-  height: 90vh;
+  height: calc(100vh - 83px);
   filter: brightness(70%);
   background-repeat: no-repeat;
   background-position: center center;
