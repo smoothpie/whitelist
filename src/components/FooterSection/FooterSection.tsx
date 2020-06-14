@@ -14,11 +14,13 @@ import { SectionTitle, SectionDescription } from "../Typography";
 
 const FooterSection: React.FC = () => {
   const {
-    footer: { frontmatter: footer },
+    footerSection: { frontmatter: footerSection },
     contacts: { frontmatter: contacts }
   } = useStaticQuery(graphql`
     query {
-      footer: markdownRemark(frontmatter: { type: { eq: "footer" } }) {
+      footerSection: markdownRemark(
+        frontmatter: { type: { eq: "footerSection" } }
+      ) {
         frontmatter {
           title
         }
@@ -34,7 +36,7 @@ const FooterSection: React.FC = () => {
     }
   `);
 
-  const { title } = footer;
+  const { title } = footerSection;
 
   const { telFull, addressFull, place, workingHoursFull } = contacts;
 

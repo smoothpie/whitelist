@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { PriceListSection } from "./styled";
+import { SectionTitle, SectionDescription } from "../Typography";
 
 const PriceList: React.FC = () => {
   const {
@@ -74,8 +75,8 @@ const PriceList: React.FC = () => {
   } = frontmatter;
   return (
     <PriceListSection>
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <SectionTitle>{title}</SectionTitle>
+      <SectionDescription>{description}</SectionDescription>
       <div>
         <div>
           <span>{item1}</span>
