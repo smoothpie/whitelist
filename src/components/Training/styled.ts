@@ -9,10 +9,10 @@ export const TrainingBg = styled(BackgroundImage)`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     height: 70vh;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     height: 100vh;
   }
 `;
@@ -34,10 +34,10 @@ export const TrainingTel = styled(StyledLinkA)`
   font-weight: 700;
   font-size: 2.3rem;
   line-height: 3.5rem;
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 2rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     font-size: 1.7rem;
   }
 `;
@@ -48,7 +48,8 @@ export const Title = styled(H2)`
   color: #e3b873;
   margin-bottom: 2rem;
   line-height: 3.5rem;
-  @media (max-width: 768px) {
+  word-spacing: 0.4rem;
+  @media (max-width: 767px) {
     font-size: 2rem;
   }
   @media (max-width: 460px) {
@@ -61,7 +62,7 @@ export const TrainingInfo = styled.p`
   font-size: 1.5rem;
   line-height: 3rem;
   color: #eeeeee;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     font-size: 1.2rem;
     line-height: 2.4rem;
   }

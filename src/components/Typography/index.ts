@@ -32,7 +32,7 @@ export const H1 = styled.h1`
   font-family: "Manrope-Regular", sans-serif;
   font-size: 3.5rem;
   color: #eeeeee;
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 3.1rem;
   }
   @media (max-width: 460px) {
@@ -45,10 +45,10 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-size: 2.5rem;
   color: #eeeeee;
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 2.1rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     font-size: 1.8rem;
   }
 `;
@@ -59,7 +59,7 @@ export const SectionTitle = styled.h3`
   font-size: 2rem;
   color: #eeeeee;
   margin: 1.2rem 0;
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 1.7rem;
   }
   @media (max-width: 460px) {
@@ -72,7 +72,7 @@ export const H4 = styled.h4`
   font-size: 1.7rem;
   color: #eeeeee;
   margin: 1.2rem 0;
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 1.3rem;
   }
   @media (max-width: 460px) {
@@ -100,7 +100,7 @@ export const CardContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     flex-direction: column;
   }
 `;
@@ -115,7 +115,7 @@ export const Card = styled.div`
   @media (max-width: 1200px) {
     width: 300px;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     width: 80%;
     min-height: 360px;
     margin: 15px 0;
@@ -133,7 +133,7 @@ export const CardInfo = styled.p`
 export const SliderSection = styled.section`
   width: 100%;
   margin-bottom: 80px;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;

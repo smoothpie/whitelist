@@ -5,7 +5,7 @@ export const SlideImage = styled(StyledSlideImage)`
   height: 600px;
   background-position: center;
   filter: brightness(40%);
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;

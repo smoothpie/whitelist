@@ -170,6 +170,7 @@ const MainSlider: React.FC = () => {
           </SliderItem>
         </Slider>
       </SliderSection>
+
       <SliderSectionMobile>
         <SlideImage fluid={mobileBg} />
         <InnerBlock>

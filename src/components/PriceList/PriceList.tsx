@@ -5,86 +5,55 @@ import { SectionTitle, SectionDescription } from "../Typography";
 
 const PriceList: React.FC = () => {
   const {
-    priceList: { frontmatter }
+    priceList: { frontmatter: priceList },
+    price: { edges: price }
   } = useStaticQuery(graphql`
     query {
       priceList: markdownRemark(frontmatter: { type: { eq: "priceList" } }) {
         frontmatter {
           title
           description
-          item1
-          price1
-          info1
-          item2
-          price2
-          info2
-          item3
-          price3
-          info3
-          item4
-          price4
-          info4
-          item5
-          price5
-          item6
-          price6
-          info6
-          item7
-          price7
-          info7
-          item8
-          price8
-          info8
-          item9
-          price9
-          info9
+        }
+      }
+      price: allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "price" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              id
+              item
+              info
+              price
+            }
+          }
         }
       }
     }
   `);
 
-  const {
-    title,
-    description,
-    item1,
-    price1,
-    info1
-    // item2,
-    // price2,
-    // info2,
-    // item3,
-    // price3,
-    // info3,
-    // item4,
-    // price4,
-    // info4,
-    // item5,
-    // price5,
-    // item6,
-    // price6,
-    // info6,
-    // item7,
-    // price7,
-    // info7,
-    // item8,
-    // price8,
-    // info8,
-    // item9,
-    // price9,
-    // info9
-  } = frontmatter;
+  const { title, description } = priceList;
+
   return (
     <PriceListSection>
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
       <div>
-        <div>
-          <span>{item1}</span>
-          <span>{price1}</span>
-        </div>
-        <div>
-          <p>{info1}</p>
-        </div>
+        {price.map(({ node: { frontmatter } }: any) => {
+          console.log(frontmatter);
+          const { id, info, item, price } = frontmatter;
+          return (
+            <div key={id}>
+              <div>
+                <span>{item}</span>
+                <span>{price}</span>
+              </div>
+              <div>
+                <p>{info}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
       <div></div>
     </PriceListSection>

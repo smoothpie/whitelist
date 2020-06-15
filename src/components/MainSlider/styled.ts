@@ -3,7 +3,7 @@ import { StyledSlideImage } from "../Typography";
 
 export const SliderSectionMobile = styled.section`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: block;
     position: relative;
   }
@@ -12,10 +12,10 @@ export const SliderSectionMobile = styled.section`
 export const SlideImage = styled(StyledSlideImage)`
   height: 100vh;
   background-position: top;
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     height: 60vh;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     height: 100vh;
   }
 `;

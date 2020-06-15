@@ -34,12 +34,28 @@ export const CosmeticsCard = styled.div`
   @media (max-width: 1200px) {
     width: 460px;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     width: 60%;
     margin: 15px 0;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     width: 80%;
     min-height: 360px;
   }
+`;
+
+export const CosmeticsButton = styled.a`
+  display: inline-block;
+  margin-top: 15px;
+  font-family: "Manrope-Regular", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #e3b873;
+  color: #eeeeee;
+  padding: 0 30px;
 `;

@@ -7,7 +7,7 @@ export const FooterContainer = styled.footer`
   margin: 0 auto;
   width: 85%;
   height: 80px;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     justify-content: center;
   }
 `;
@@ -22,7 +22,7 @@ export const Navigation = styled.nav`
   @media (max-width: 1200px) {
     width: 70%;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;

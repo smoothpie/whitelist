@@ -5,7 +5,8 @@ import {
   CosmeticsImg,
   CosmeticsName,
   CosmeticsCard,
-  Stars
+  Stars,
+  CosmeticsButton
 } from "./styled";
 import {
   SectionTitle,
@@ -33,6 +34,7 @@ const Cosmetics: React.FC = () => {
           info1
           item2
           info2
+          button
         }
       }
       stuff1: file(relativePath: { eq: "stuff1.jpg" }) {
@@ -52,7 +54,15 @@ const Cosmetics: React.FC = () => {
     }
   `);
 
-  const { title, description, item1, info1, item2, info2 } = frontmatter;
+  const {
+    title,
+    description,
+    item1,
+    info1,
+    item2,
+    info2
+    // button
+  } = frontmatter;
   return (
     <CosmeticsSection>
       <SectionTitle>{title}</SectionTitle>
@@ -63,14 +73,26 @@ const Cosmetics: React.FC = () => {
           <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
           <CosmeticsName>{item1}</CosmeticsName>
           <CardInfo>{info1}</CardInfo>
-          <button>Уточнить наличие и цену</button>
+          <CosmeticsButton
+            href="https://www.t.me/juliavoytahova/"
+            // dataBack={button}
+            // dataFront={button}
+          >
+            Уточнить наличие и цену
+          </CosmeticsButton>
         </CosmeticsCard>
         <CosmeticsCard>
           <CosmeticsImg fluid={stuff2} />
           <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
           <CosmeticsName>{item2}</CosmeticsName>
           <CardInfo>{info2}</CardInfo>
-          <button>Уточнить наличие и цену</button>
+          <CosmeticsButton
+            href="https://www.t.me/juliavoytahova/"
+            // dataBack={button}
+            // dataFront={button}
+          >
+            Уточнить наличие и цену
+          </CosmeticsButton>
         </CosmeticsCard>
       </CardContainer>
     </CosmeticsSection>

@@ -57,7 +57,7 @@ export const StyledButton = styled.a`
     transition: 0.5s;
     border: 3px solid #e3b873;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 1.3rem;
   }
   @media (max-width: 460px) {
