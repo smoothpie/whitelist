@@ -58,7 +58,7 @@ export const H2 = styled.h2`
 export const SectionTitle = styled.h3`
   font-size: 2rem;
   color: #eeeeee;
-  margin: 1.2rem 0;
+  margin: 1rem 0;
   @media (max-width: 1023px) {
     font-size: 1.7rem;
   }
@@ -83,7 +83,7 @@ export const H4 = styled.h4`
 export const SectionDescription = styled.div`
   text-align: center;
   width: 60%;
-  margin: 1rem 0 4rem;
+  margin: 0.5rem 0 3rem;
   font-size: 1.1rem;
   color: gray;
   line-height: 1.5rem;

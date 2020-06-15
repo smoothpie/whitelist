@@ -17,7 +17,7 @@ export const CosmeticsImg = styled(Img)`
 `;
 
 export const Stars = styled.p`
-  margin-top: 2rem;
+  margin-top: 1.6rem;
 `;
 
 export const CosmeticsName = styled.p`
@@ -26,7 +26,7 @@ export const CosmeticsName = styled.p`
 
 export const CosmeticsCard = styled.div`
   width: 550px;
-  min-height: 700px;
+  min-height: 680px;
   padding: 25px;
   outline: 1px solid #444444;
   text-align: center;
@@ -45,17 +45,36 @@ export const CosmeticsCard = styled.div`
 `;
 
 export const CosmeticsButton = styled.a`
-  display: inline-block;
-  margin-top: 15px;
-  font-family: "Manrope-Regular", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 40px;
-  letter-spacing: 1.5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 45px;
+  margin: 15px auto 0;
   text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  font-size: 0.8rem;
+  z-index: 5;
+  color: #e3b873;
+  border: 1px solid #e3b873;
   text-decoration: none;
-  text-align: center;
-  border: 2px solid #e3b873;
-  color: #eeeeee;
-  padding: 0 30px;
+  transition: 0.4s all ease;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 45px;
+    transition: 0.4s all ease;
+    background-color: #e3b873;
+    left: 0;
+    z-index: -1;
+  }
+  &:hover {
+    color: white;
+    &:before {
+      width: 100%;
+      transition: 0.4s all ease;
+    }
+  }
 `;

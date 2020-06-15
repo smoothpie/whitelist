@@ -60,8 +60,8 @@ const Cosmetics: React.FC = () => {
     item1,
     info1,
     item2,
-    info2
-    // button
+    info2,
+    button
   } = frontmatter;
   return (
     <CosmeticsSection>
@@ -75,10 +75,9 @@ const Cosmetics: React.FC = () => {
           <CardInfo>{info1}</CardInfo>
           <CosmeticsButton
             href="https://www.t.me/juliavoytahova/"
-            // dataBack={button}
-            // dataFront={button}
+            target="blank_"
           >
-            Уточнить наличие и цену
+            {button}
           </CosmeticsButton>
         </CosmeticsCard>
         <CosmeticsCard>
@@ -88,10 +87,9 @@ const Cosmetics: React.FC = () => {
           <CardInfo>{info2}</CardInfo>
           <CosmeticsButton
             href="https://www.t.me/juliavoytahova/"
-            // dataBack={button}
-            // dataFront={button}
+            target="blank_"
           >
-            Уточнить наличие и цену
+            {button}
           </CosmeticsButton>
         </CosmeticsCard>
       </CardContainer>
