@@ -46,19 +46,19 @@ export const CosmeticsCard = styled.div`
 
 export const CosmeticsButton = styled.a`
   position: relative;
+  z-index: 5;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 230px;
   height: 45px;
   margin: 15px auto 0;
-  text-transform: uppercase;
-  letter-spacing: 0.06rem;
   font-size: 0.8rem;
-  z-index: 5;
+  letter-spacing: 0.06rem;
+  text-decoration: none;
+  text-transform: uppercase;
   color: #e3b873;
   border: 1px solid #e3b873;
-  text-decoration: none;
   transition: 0.4s all ease;
   &:before {
     position: absolute;
@@ -76,5 +76,9 @@ export const CosmeticsButton = styled.a`
       width: 100%;
       transition: 0.4s all ease;
     }
+  }
+  @media (max-width: 767px) {
+    width: 200px;
+    font-size: 0.7rem;
   }
 `;

@@ -40,7 +40,6 @@ const PriceList: React.FC = () => {
       <SectionDescription>{description}</SectionDescription>
       <div>
         {price.map(({ node: { frontmatter } }: any) => {
-          console.log(frontmatter);
           const { id, info, item, price } = frontmatter;
           return (
             <div key={id}>
