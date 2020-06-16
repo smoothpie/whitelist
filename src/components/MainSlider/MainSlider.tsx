@@ -1,22 +1,24 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import ArrowPrev from "../../assets/images/svg/arrow-left.svg";
 import ArrowNext from "../../assets/images/svg/arrow-right.svg";
+import Button from "../Button";
+import { SliderSectionMobile, SlideImage } from "./styled";
 import {
-  MainSliderSection,
-  MainSliderSectionMobile,
+  H1,
+  H2,
+  H4,
+  SliderSection,
   SliderItem,
-  StyledImage,
   ArrowContainerPrev,
   ArrowContainerNext,
   InnerBlock,
   SliderText
-} from "./styled";
-import { H1, H2, H4 } from "../Typography";
-import Button from "../Button";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+} from "../Typography";
 
 const MainSlider: React.FC = () => {
   const {
@@ -120,54 +122,71 @@ const MainSlider: React.FC = () => {
 
   return (
     <>
-      <MainSliderSection>
+      <SliderSection>
         <Slider {...settings}>
           <SliderItem>
-            <StyledImage fluid={slide1} />
+            <SlideImage fluid={slide1} />
             <InnerBlock>
               <SliderText>
                 <H1>{firstSlideTitle}</H1>
                 <H4>{firstSlideDesc1}</H4>
                 <H4>{firstSlideDesc2}</H4>
-                <Button />
+                <Button
+                  link="https://n247635.yclients.com/company:242564?o=m704631"
+                  dataBack="Online запись"
+                  dataFront="Online запись"
+                />
               </SliderText>
             </InnerBlock>
           </SliderItem>
           <SliderItem>
-            <StyledImage fluid={slide2} />
+            <SlideImage fluid={slide2} />
             <InnerBlock>
               <SliderText>
                 <H2>{secondSlideTitle}</H2>
                 <H4>{secondSlideDesc1}</H4>
                 <H4>{secondSlideDesc2}</H4>
-                <Button />
+                <Button
+                  link="https://n247635.yclients.com/company:242564?o=m704631"
+                  dataBack="Online запись"
+                  dataFront="Online запись"
+                />
               </SliderText>
             </InnerBlock>
           </SliderItem>
           <SliderItem>
-            <StyledImage fluid={slide3} />
+            <SlideImage fluid={slide3} />
             <InnerBlock>
               <SliderText>
                 <H2>{thirdSlideTitle}</H2>
                 <H4>{thirdSlideDesc1}</H4>
-                <Button />
+                <Button
+                  link="https://n247635.yclients.com/company:242564?o=m704631"
+                  dataBack="Online запись"
+                  dataFront="Online запись"
+                />
               </SliderText>
             </InnerBlock>
           </SliderItem>
         </Slider>
-      </MainSliderSection>
-      <MainSliderSectionMobile>
-        <StyledImage fluid={mobileBg} />
+      </SliderSection>
+
+      <SliderSectionMobile>
+        <SlideImage fluid={mobileBg} />
         <InnerBlock>
           <SliderText>
             <H1>{mobileTitle}</H1>
             <H4>{mobileDesc1}</H4>
             <H4>{mobileDesc2}</H4>
             <H4>{mobileDesc3}</H4>
-            <Button />
+            <Button
+              link="https://n247635.yclients.com/company:242564?o=m704631"
+              dataBack="Online запись"
+              dataFront="Online запись"
+            />
           </SliderText>
         </InnerBlock>
-      </MainSliderSectionMobile>
+      </SliderSectionMobile>
     </>
   );
 };

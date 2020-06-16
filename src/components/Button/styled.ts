@@ -9,7 +9,7 @@ export const StyledButton = styled.a`
   color: #eeeeee;
   font-family: "Manrope-Regular", sans-serif;
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
@@ -35,12 +35,12 @@ export const StyledButton = styled.a`
     left: 0;
     display: block;
     width: 100%;
-    color: #1b1b1b;
-    background-color: #eeeeee;
+    color: #eeeeee;
+    background-color: #e3b873;
+
     transform: translateY(-50%) rotateX(90deg);
     opacity: 0;
     transition: 0.5s;
-    border-radius: 3px;
   }
 
   &:before {
@@ -56,11 +56,10 @@ export const StyledButton = styled.a`
     transform: translateY(0) rotateX(0);
     opacity: 1;
     transition: 0.5s;
-    border: 3px solid #e3b873;
-    border-radius: 3px;
+    border: 2px solid #e3b873;
   }
-  @media (max-width: 1024px) {
-    font-size: 1.3rem;
+  @media (max-width: 1023px) {
+    font-size: 1.2rem;
   }
   @media (max-width: 460px) {
     font-size: 1rem;

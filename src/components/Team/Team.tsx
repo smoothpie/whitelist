@@ -1,16 +1,18 @@
 import React from "react";
 import {
   TeamSection,
-  TeamDescription,
-  TeamContainer,
-  TeamItem,
   EmployeePhoto,
   EmployeeName,
-  EmployeePosition,
-  EmployeeInfo
+  EmployeePosition
 } from "./styled";
 import { useStaticQuery, graphql } from "gatsby";
-import { H3 } from "../Typography";
+import {
+  SectionTitle,
+  SectionDescription,
+  CardContainer,
+  Card,
+  CardInfo
+} from "../Typography";
 
 const Team: React.FC = () => {
   const {
@@ -81,10 +83,10 @@ const Team: React.FC = () => {
 
   return (
     <TeamSection>
-      <H3>{title}</H3>
-      <TeamDescription>{description}</TeamDescription>
-      <TeamContainer>
-        <TeamItem>
+      <SectionTitle>{title}</SectionTitle>
+      <SectionDescription>{description}</SectionDescription>
+      <CardContainer>
+        <Card>
           <EmployeePhoto fluid={emloyeePhoto1} />
           <EmployeeName
             href="https://n247635.yclients.com/company:242564/master-info:704631?o=m704631&companyId=242564#reviews"
@@ -93,9 +95,9 @@ const Team: React.FC = () => {
             {employee1}
           </EmployeeName>
           <EmployeePosition>{position1}</EmployeePosition>
-          <EmployeeInfo>{info1}</EmployeeInfo>
-        </TeamItem>
-        <TeamItem>
+          <CardInfo>{info1}</CardInfo>
+        </Card>
+        <Card>
           <EmployeePhoto fluid={emloyeePhoto2} />
           <EmployeeName
             href="https://n247635.yclients.com/company:242564/master-info:713378?o=m704631&companyId=242564#reviews"
@@ -104,9 +106,9 @@ const Team: React.FC = () => {
             {employee2}
           </EmployeeName>
           <EmployeePosition>{position2}</EmployeePosition>
-          <EmployeeInfo>{info2}</EmployeeInfo>
-        </TeamItem>
-        <TeamItem>
+          <CardInfo>{info2}</CardInfo>
+        </Card>
+        <Card>
           <EmployeePhoto fluid={emloyeePhoto3} />
           <EmployeeName
             href="https://n247635.yclients.com/company:242564/master-info:704629?o=m704631&companyId=242564#reviews"
@@ -115,9 +117,9 @@ const Team: React.FC = () => {
             {employee3}
           </EmployeeName>
           <EmployeePosition>{position3}</EmployeePosition>
-          <EmployeeInfo>{info3}</EmployeeInfo>
-        </TeamItem>
-      </TeamContainer>
+          <CardInfo>{info3}</CardInfo>
+        </Card>
+      </CardContainer>
     </TeamSection>
   );
 };
