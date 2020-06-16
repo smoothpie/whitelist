@@ -1,9 +1,10 @@
 import React from "react";
-import "normalize.css";
 import "./fonts.scss";
+import "../Typography/normalize.scss";
 import Header from "../Header";
-import { LayoutContainer, Main, Footer } from "./styled";
+import { LayoutContainer, Main } from "./styled";
 import FooterSection from "../FooterSection";
+import Footer from "../Footer";
 
 const Layout: React.FC = ({ children }: any) => {
   return (
@@ -11,7 +12,7 @@ const Layout: React.FC = ({ children }: any) => {
       <Header />
       <Main>{children}</Main>
       <FooterSection />
-      <Footer>© {new Date().getFullYear()}, 911barber.by</Footer>
+      <Footer />
     </LayoutContainer>
   );
 };

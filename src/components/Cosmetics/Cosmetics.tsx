@@ -1,10 +1,98 @@
 import React from "react";
-import { CosmeticsSection } from "./styled";
+import { useStaticQuery, graphql } from "gatsby";
+import {
+  CosmeticsSection,
+  CosmeticsImg,
+  CosmeticsName,
+  CosmeticsCard,
+  Stars,
+  CosmeticsButton
+} from "./styled";
+import {
+  SectionTitle,
+  SectionDescription,
+  CardContainer,
+  CardInfo
+} from "../Typography";
 
 const Cosmetics: React.FC = () => {
+  const {
+    cosmetics: { frontmatter },
+    stuff1: {
+      childImageSharp: { fluid: stuff1 }
+    },
+    stuff2: {
+      childImageSharp: { fluid: stuff2 }
+    }
+  } = useStaticQuery(graphql`
+    query {
+      cosmetics: markdownRemark(frontmatter: { type: { eq: "cosmetics" } }) {
+        frontmatter {
+          title
+          description
+          item1
+          info1
+          item2
+          info2
+          button
+        }
+      }
+      stuff1: file(relativePath: { eq: "stuff1.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 3000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      stuff2: file(relativePath: { eq: "stuff2.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 3000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
+  const {
+    title,
+    description,
+    item1,
+    info1,
+    item2,
+    info2,
+    button
+  } = frontmatter;
   return (
     <CosmeticsSection>
-      <h2>Cosmetics</h2>
+      <SectionTitle>{title}</SectionTitle>
+      <SectionDescription>{description}</SectionDescription>
+      <CardContainer>
+        <CosmeticsCard>
+          <CosmeticsImg fluid={stuff1} />
+          <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
+          <CosmeticsName>{item1}</CosmeticsName>
+          <CardInfo>{info1}</CardInfo>
+          <CosmeticsButton
+            href="https://www.t.me/juliavoytahova/"
+            target="blank_"
+          >
+            {button}
+          </CosmeticsButton>
+        </CosmeticsCard>
+        <CosmeticsCard>
+          <CosmeticsImg fluid={stuff2} />
+          <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
+          <CosmeticsName>{item2}</CosmeticsName>
+          <CardInfo>{info2}</CardInfo>
+          <CosmeticsButton
+            href="https://www.t.me/juliavoytahova/"
+            target="blank_"
+          >
+            {button}
+          </CosmeticsButton>
+        </CosmeticsCard>
+      </CardContainer>
     </CosmeticsSection>
   );
 };

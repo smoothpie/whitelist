@@ -3,14 +3,24 @@ import Logo from "gatsby-image";
 import Instagram from "../../assets/images/svg/instagram.svg";
 import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
+import Phone from "../../assets/images/svg/phone.svg";
 import { IView } from "../../interfaces";
-import { Hover } from "../Typography";
+import { Hover, StyledLinkA } from "../Typography";
+
+const IconSize = `
+  width: 20px;
+  margin: 0.5rem 0.9rem;
+  @media (max-width: 360px) {
+    width: 18px;
+    margin: 0.5rem 0.7rem;
+  }
+`;
 
 export const HeaderStyle = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 10;
   width: 100%;
   color: #e3b873;
   background-color: ${({ view }: IView) => (view ? "transparent" : "#1b1b1b")};
@@ -30,19 +40,41 @@ export const HeaderContainer = styled.div`
   @media (max-width: 1600px) {
     padding: ${({ view }: IView) => (view ? "15px 120px" : "10px 120px")};
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     padding: ${({ view }: IView) => (view ? "15px 60px" : "10px 60px")};
   }
+  @media (max-width: 960px) {
+    padding: ${({ view }: IView) => (view ? "15px 35px" : "10px 35px")};
+  }
   @media (max-width: 460px) {
-    padding: ${({ view }: IView) => (view ? "15px 25px" : "10px 25px")};
+    padding: ${({ view }: IView) => (view ? "15px 20px" : "10px 20px")};
   }
 `;
 
-export const Block = styled.div``;
+export const Block = styled.div`
+  width: 210px;
+  text-align: center;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
 
-export const ContactsP = styled.p`
-  margin: 0;
-  padding-bottom: 0.3rem;
+export const MobileBlock = styled.div`
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+  }
+`;
+
+export const Tel = styled(StyledLinkA)`
+  font-size: 1.5rem;
+  padding: 0 0 0.3rem 0.5rem;
+  @media (max-width: 1023px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const LogoWrapper = styled.div`
@@ -51,25 +83,36 @@ export const LogoWrapper = styled.div`
 `;
 
 export const StyledLogo = styled(Logo)`
-  width: 195px;
-  margin-right: 63px; // todo: maybe refactoring contacts
+  width: 190px;
+  margin: 0 auto;
+  @media (max-width: 1023px) {
+    width: 130px;
+  }
+  @media (max-width: 767px) {
+    width: 100px;
+  }
 `;
 
 export const StyledTelegram = styled(Telegram)`
-  width: 20px;
-  padding: 0.5rem 1rem;
-  ${Hover}
+  ${IconSize}
 `;
 
 export const StyledYclients = styled(Yclients)`
-  width: 20px;
-  padding: 0.5rem 1rem;
-  ${Hover}
+  ${IconSize}
 `;
 
 export const StyledInstagram = styled(Instagram)`
-  width: ${props => props.wdth || "15px"};
-  padding: 0.5rem 1rem;
+  ${IconSize}
   color: ${props => props.clr || "#e3b873"};
   ${Hover}
+`;
+
+export const StyledPhone = styled(Phone)`
+  width: 17px;
+  @media (max-width: 1023px) {
+    width: 14px;
+  }
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;

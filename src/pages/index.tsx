@@ -15,13 +15,13 @@ const IndexPage: React.FC = () => (
   <Layout>
     <SEO title="911barber" />
     <MainSlider />
+    <Contacts />
     <Team />
     <Training />
     <PriceList />
     <InstagramGallery />
     <Cosmetics />
     <Reviews />
-    <Contacts />
   </Layout>
 );
 

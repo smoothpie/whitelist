@@ -1,26 +1,21 @@
 import styled from "styled-components";
-import Image from "gatsby-image";
+import { StyledSlideImage } from "../Typography";
 
-export const MainSliderSection = styled.section`
-  width: 100%;
+export const SliderSectionMobile = styled.section`
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+    position: relative;
+  }
 `;
 
-export const SliderItem = styled.div`
-  width: 100%;
-`;
-
-export const StyledImage = styled(Image)`
-  width: 100%;
-  height: 950px;
-`;
-
-export const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  background-color: #000000;
-  opacity: 0.2;
+export const SlideImage = styled(StyledSlideImage)`
+  height: 100vh;
+  background-position: top;
+  @media (max-width: 1023px) {
+    height: 60vh;
+  }
+  @media (max-width: 767px) {
+    height: 100vh;
+  }
 `;

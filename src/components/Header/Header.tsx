@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { StyledLink } from "../Typography";
+import { StyledLink, StyledLinkA } from "../Typography";
 import {
   HeaderStyle,
   HeaderContainer,
@@ -8,8 +8,10 @@ import {
   StyledInstagram,
   StyledTelegram,
   StyledYclients,
-  ContactsP,
-  Block
+  Tel,
+  StyledPhone,
+  Block,
+  MobileBlock
 } from "./styled";
 
 const Header: React.FC<any> = () => {
@@ -29,19 +31,15 @@ const Header: React.FC<any> = () => {
   }, [isScroll]);
 
   const {
-    header: { frontmatter },
+    contacts: { frontmatter },
     logo: {
       childImageSharp: { fluid: logo }
     }
   } = useStaticQuery(graphql`
     query {
-      header: markdownRemark(frontmatter: { type: { eq: "header" } }) {
-        id
+      contacts: markdownRemark(frontmatter: { type: { eq: "contacts" } }) {
         frontmatter {
-          title
           tel
-          address
-          place
         }
       }
       logo: file(relativePath: { eq: "logo.png" }) {
@@ -54,16 +52,14 @@ const Header: React.FC<any> = () => {
     }
   `);
 
-  const { title, tel, address, place } = frontmatter;
+  const { tel } = frontmatter;
 
   return (
     <HeaderStyle view={!isScroll}>
       <HeaderContainer view={!isScroll}>
         <Block>
-          <ContactsP>{title}</ContactsP>
-          <ContactsP>{tel}</ContactsP>
-          <ContactsP>{address}</ContactsP>
-          <ContactsP>{place}</ContactsP>
+          <StyledPhone />
+          <Tel href="tel:+375 447 666 911">{tel}</Tel>
         </Block>
         <Block>
           <StyledLink to="/">
@@ -71,11 +67,56 @@ const Header: React.FC<any> = () => {
           </StyledLink>
         </Block>
         <Block>
-          <StyledTelegram />
-          <StyledYclients />
-          <StyledInstagram wdth="20px" />
-          <StyledInstagram wdth="20px" clr="#F783AC" />
+          <StyledLinkA href="https://www.t.me/minsk911/" target="blank_">
+            <StyledTelegram />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://n247635.yclients.com/company:242564?o=m704631"
+            target="blank_"
+          >
+            <StyledYclients />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://www.instagram.com/911barber.by/"
+            target="blank_"
+          >
+            <StyledInstagram />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://www.instagram.com/911barbieshop/"
+            target="blank_"
+          >
+            <StyledInstagram clr="#F783AC" />
+          </StyledLinkA>
         </Block>
+        <MobileBlock>
+          <StyledLink to="/">
+            <StyledLogo fluid={logo} />
+          </StyledLink>
+        </MobileBlock>
+        <MobileBlock>
+          <StyledLinkA href="https://www.t.me/minsk911/" target="blank_">
+            <StyledTelegram />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://n247635.yclients.com/company:242564?o=m704631"
+            target="blank_"
+          >
+            <StyledYclients />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://www.instagram.com/911barber.by/"
+            target="blank_"
+          >
+            <StyledInstagram wdth="20px" />
+          </StyledLinkA>
+          <StyledLinkA
+            href="https://www.instagram.com/911barbieshop/"
+            target="blank_"
+          >
+            <StyledInstagram wdth="20px" clr="#F783AC" />
+          </StyledLinkA>
+        </MobileBlock>
       </HeaderContainer>
     </HeaderStyle>
   );
