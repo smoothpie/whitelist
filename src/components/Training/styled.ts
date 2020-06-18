@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BackgroundImage from "gatsby-background-image";
-import { H2, StyledLinkA } from "../Typography";
+import { H2, StyledLinkA, SectionMarginBottom } from "../Typography";
 
 export const TrainingBg = styled(BackgroundImage)`
   width: 100%;
@@ -9,6 +9,7 @@ export const TrainingBg = styled(BackgroundImage)`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  ${SectionMarginBottom}
   @media (max-width: 1023px) {
     height: 70vh;
   }

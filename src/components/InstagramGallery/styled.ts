@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SectionMarginBottom } from "../Typography";
 
 export const InstagramGallerySection = styled.section`
   display: flex;
@@ -6,4 +7,5 @@ export const InstagramGallerySection = styled.section`
   justify-content: center;
   align-items: center;
   height: 700px;
+  ${SectionMarginBottom}
 `;

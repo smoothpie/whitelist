@@ -13,6 +13,12 @@ export const BeforeNone = `&:before {
   display: none;
 }`;
 
+export const SectionMarginBottom = `
+  margin-bottom: 100px;
+  @media (max-width: 767px) {
+    margin-bottom: 70px;
+}`;
+
 //************* LINKS ****************/
 export const StyledLinkA = styled.a`
   color: #e3b873;
@@ -132,7 +138,7 @@ export const CardInfo = styled.p`
 //************** SLIDER ***************/
 export const SliderSection = styled.section`
   width: 100%;
-  margin-bottom: 80px;
+  ${SectionMarginBottom}
   @media (max-width: 767px) {
     display: none;
   }

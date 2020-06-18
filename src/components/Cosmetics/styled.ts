@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import Img from "gatsby-image";
+import { SectionMarginBottom } from "../Typography";
 
 export const CosmeticsSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
+  ${SectionMarginBottom}
 `;
 
 export const CosmeticsImg = styled(Img)`

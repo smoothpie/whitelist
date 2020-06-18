@@ -1,6 +1,15 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { PriceListSection } from "./styled";
+import {
+  PriceListSection,
+  PriceListWrapper,
+  PriceItem,
+  PriceItemText,
+  PriceItemHeading,
+  PriceItemHeadingSpan,
+  PriceItemCost,
+  PriceItemDescription
+} from "./styled";
 import { SectionTitle, SectionDescription } from "../Typography";
 
 const PriceList: React.FC = () => {
@@ -38,23 +47,24 @@ const PriceList: React.FC = () => {
     <PriceListSection>
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
-      <div>
+      <PriceListWrapper>
         {price.map(({ node: { frontmatter } }: any) => {
           const { id, info, item, price } = frontmatter;
           return (
-            <div key={id}>
+            <PriceItem key={id}>
+              <PriceItemText>
+                <PriceItemHeading>
+                  <PriceItemHeadingSpan>{item}</PriceItemHeadingSpan>
+                </PriceItemHeading>
+                <PriceItemCost>{price}</PriceItemCost>
+              </PriceItemText>
               <div>
-                <span>{item}</span>
-                <span>{price}</span>
+                <PriceItemDescription>{info}</PriceItemDescription>
               </div>
-              <div>
-                <p>{info}</p>
-              </div>
-            </div>
+            </PriceItem>
           );
         })}
-      </div>
-      <div></div>
+      </PriceListWrapper>
     </PriceListSection>
   );
 };

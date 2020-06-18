@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledLinkA } from "../Typography";
+import { StyledLinkA, SectionMarginBottom } from "../Typography";
 import Сlock from "../../assets/images/svg/clock.svg";
 import MapMarker from "../../assets/images/svg/map-marker.svg";
 import MobilePhone from "../../assets/images/svg/mobile-phone.svg";
@@ -19,7 +19,7 @@ export const ContactsSection = styled.section`
   justify-content: space-between;
   align-items: center;
   color: #e3b873;
-  margin-bottom: 80px;
+  ${SectionMarginBottom}
   @media (max-width: 1023px) {
     margin: 50px 60px;
   }
