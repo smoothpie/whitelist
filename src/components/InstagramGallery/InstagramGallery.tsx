@@ -1,17 +1,61 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { InstagramGallerySection } from "./styled";
+import {
+  InstagramGallerySection,
+  InstagramGalleryWrapper,
+  InstagramItem
+} from "./styled";
 import { SectionTitle, SectionDescription } from "../Typography";
 
 const InstagramGallery: React.FC = () => {
   const {
-    instagram: { frontmatter }
+    instagram: { frontmatter },
+    insta1: {
+      childImageSharp: { fluid: insta1 }
+    },
+    insta2: {
+      childImageSharp: { fluid: insta2 }
+    },
+    insta3: {
+      childImageSharp: { fluid: insta3 }
+    },
+    insta4: {
+      childImageSharp: { fluid: insta4 }
+    }
   } = useStaticQuery(graphql`
     query {
       instagram: markdownRemark(frontmatter: { type: { eq: "instagram" } }) {
         frontmatter {
           title
           description
+        }
+      }
+      insta1: file(relativePath: { eq: "insta1.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 600) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      insta2: file(relativePath: { eq: "insta2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 600) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      insta3: file(relativePath: { eq: "insta3.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 600) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      insta4: file(relativePath: { eq: "insta4.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 600) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
         }
       }
     }
@@ -22,6 +66,12 @@ const InstagramGallery: React.FC = () => {
     <InstagramGallerySection>
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
+      <InstagramGalleryWrapper>
+        <InstagramItem fluid={insta1} />
+        <InstagramItem fluid={insta2} />
+        <InstagramItem fluid={insta3} />
+        <InstagramItem fluid={insta4} />
+      </InstagramGalleryWrapper>
     </InstagramGallerySection>
   );
 };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledLinkA, SectionMarginBottom } from "../Typography";
+import { StyledLinkA } from "../Typography";
 import Сlock from "../../assets/images/svg/clock.svg";
 import MapMarker from "../../assets/images/svg/map-marker.svg";
 import MobilePhone from "../../assets/images/svg/mobile-phone.svg";
