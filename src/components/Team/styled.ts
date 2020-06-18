@@ -15,10 +15,7 @@ export const EmployeePhoto = styled(Img)`
   height: 110px;
   margin: 1.2rem auto;
   border-radius: 50%;
-  &:hover {
-    filter: grayscale(50%);
-    transition: all 0.3s ease;
-  }
+  filter: brightness(90%);
 `;
 
 export const EmployeeName = styled(StyledLinkA)``;

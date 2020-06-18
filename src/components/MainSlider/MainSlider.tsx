@@ -55,28 +55,28 @@ const MainSlider: React.FC = () => {
       }
       slide1: file(relativePath: { eq: "slide1.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4000) {
+          fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       slide2: file(relativePath: { eq: "slide2.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4000) {
+          fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       slide3: file(relativePath: { eq: "slide3.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4000) {
+          fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       mobileBg: file(relativePath: { eq: "mobileBg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
+          fluid(quality: 90, maxWidth: 1000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

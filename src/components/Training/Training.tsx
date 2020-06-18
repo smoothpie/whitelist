@@ -30,7 +30,7 @@ const Training: React.FC = () => {
       }
       trainingBg: file(relativePath: { eq: "trainingBg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4000) {
+          fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

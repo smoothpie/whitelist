@@ -39,14 +39,14 @@ const Cosmetics: React.FC = () => {
       }
       stuff1: file(relativePath: { eq: "stuff1.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 3000) {
+          fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       stuff2: file(relativePath: { eq: "stuff2.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 3000) {
+          fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }

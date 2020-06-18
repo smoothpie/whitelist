@@ -126,6 +126,9 @@ export const Card = styled.div`
     min-height: 360px;
     margin: 15px 0;
   }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const CardInfo = styled.p`

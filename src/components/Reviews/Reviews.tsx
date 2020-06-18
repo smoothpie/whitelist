@@ -41,7 +41,7 @@ const Reviews: React.FC = () => {
       }
       slideBg: file(relativePath: { eq: "reviewsBg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4000) {
+          fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
