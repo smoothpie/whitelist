@@ -19,15 +19,14 @@ export const ContactsSection = styled.section`
   justify-content: space-between;
   align-items: center;
   color: #e3b873;
-  ${SectionMarginBottom}
-  @media (max-width: 1023px) {
-    margin: 50px 60px;
-  }
-  @media (max-width: 960px) {
-    margin: 40px 35px;
+  max-width: 80%;
+  margin: 100px auto;
+  @media (max-width: 1800px) {
+    max-width: 100%;
   }
   @media (max-width: 767px) {
     flex-direction: column;
+    margin: 80px auto 20px;
   }
 `;
 
@@ -38,7 +37,7 @@ export const ContactsBlock = styled(StyledLinkA)`
   justify-content: center;
   flex: 1;
   @media (max-width: 767px) {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
   }
 `;
 

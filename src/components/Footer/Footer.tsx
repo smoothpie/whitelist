@@ -20,21 +20,13 @@ const Footer: React.FC = () => {
           navItem2
           navItem3
           navItem4
-          navItem5
           navItem6
         }
       }
     }
   `);
 
-  const {
-    navItem1,
-    navItem2,
-    navItem3,
-    navItem4,
-    navItem5,
-    navItem6
-  } = frontmatter;
+  const { navItem1, navItem2, navItem3, navItem4, navItem6 } = frontmatter;
 
   return (
     <FooterContainer>
@@ -52,9 +44,6 @@ const Footer: React.FC = () => {
           </NavItem>
           <NavItem>
             <StyledLinkA href="/">{navItem4}</StyledLinkA>
-          </NavItem>
-          <NavItem>
-            <StyledLinkA href="/">{navItem5}</StyledLinkA>
           </NavItem>
           <NavItem>
             <StyledLinkA href="/">{navItem6}</StyledLinkA>

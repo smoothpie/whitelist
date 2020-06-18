@@ -19,6 +19,9 @@ export const FooterSectionStyle = styled.section`
 export const Map = styled.div`
   width: 90vw;
   filter: grayscale(100%);
+  @media (max-width: 767px) {
+    display: none;
+  }
   &:hover {
     filter: none;
     transition: all 0.3s ease;
