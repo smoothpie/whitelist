@@ -76,6 +76,7 @@ const Cosmetics: React.FC = () => {
           <CosmeticsButton
             href="https://www.t.me/juliavoytahova/"
             target="blank_"
+            rel="noopener"
           >
             {button}
           </CosmeticsButton>
@@ -88,6 +89,7 @@ const Cosmetics: React.FC = () => {
           <CosmeticsButton
             href="https://www.t.me/juliavoytahova/"
             target="blank_"
+            rel="noopener"
           >
             {button}
           </CosmeticsButton>

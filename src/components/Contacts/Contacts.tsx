@@ -46,6 +46,7 @@ const Contacts: React.FC = () => {
       <ContactsBlock
         href="https://goo.gl/maps/hAs2ADcNdgLbnGmR9"
         target="blank_"
+        rel="noopener"
       >
         <ContactsIcon>
           <StyledMapMarker />

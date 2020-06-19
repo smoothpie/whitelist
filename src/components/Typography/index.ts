@@ -111,13 +111,14 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled.a`
   width: 360px;
   min-height: 488px;
   padding: 25px;
   outline: 1px solid #444444;
   text-align: center;
   margin: 0 15px;
+  text-decoration: none;
   @media (max-width: 1200px) {
     width: 300px;
   }

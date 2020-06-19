@@ -59,18 +59,21 @@ const FooterSection: React.FC = () => {
         <FooterIcon
           href="https://n247635.yclients.com/company:242564?o=m704631"
           target="blank_"
+          rel="noopener"
         >
           <StyledYclients />
         </FooterIcon>
         <FooterIcon
           href="https://www.instagram.com/911barber.by/"
           target="blank_"
+          rel="noopener"
         >
           <StyledInstagram />
         </FooterIcon>
         <FooterIcon
           href="https://www.instagram.com/911barbieshop/"
           target="blank_"
+          rel="noopener"
         >
           <StyledInstagram clr="#F783AC" />
         </FooterIcon>

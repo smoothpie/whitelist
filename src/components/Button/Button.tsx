@@ -12,6 +12,7 @@ const Button: React.FC<Props> = ({ link, dataBack, dataFront }) => {
     <StyledButton
       href={link}
       target="blank_"
+      rel="noopener"
       data-back={dataBack}
       data-front={dataFront}
     />

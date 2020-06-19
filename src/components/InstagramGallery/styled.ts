@@ -10,7 +10,7 @@ export const InstagramGallerySection = styled.section`
   ${SectionMarginBottom}
 `;
 
-export const InstagramGalleryWrapper = styled.div`
+export const InstagramGalleryWrapper = styled.a`
   position: relative;
   display: flex;
   flex: 0 0 25%;
