@@ -82,7 +82,7 @@ const Team: React.FC = () => {
   } = frontmatter;
 
   return (
-    <TeamSection id="team">
+    <TeamSection>
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
       <CardContainer>

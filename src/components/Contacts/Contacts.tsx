@@ -30,7 +30,7 @@ const Contacts: React.FC = () => {
   const { tel, address, place, workingHours } = frontmatter;
 
   return (
-    <ContactsSection>
+    <ContactsSection id="team">
       <ContactsBlock href="tel:+375 447 666 911">
         <ContactsIcon>
           <StyledMobilePhone />
