@@ -48,7 +48,7 @@ const Training: React.FC = () => {
     tel
   } = frontmatter;
   return (
-    <TrainingSection>
+    <TrainingSection id="training">
       <TrainingBg fluid={trainingBg} />
       <InnerBlock>
         <Title>{title}</Title>

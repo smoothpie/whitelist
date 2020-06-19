@@ -82,14 +82,14 @@ const Team: React.FC = () => {
   } = frontmatter;
 
   return (
-    <TeamSection>
+    <TeamSection id="team">
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
       <CardContainer>
         <Card
           href="https://n247635.yclients.com/company:242564/master-info:704631?o=m704631&companyId=242564#reviews"
           target="blank_"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <EmployeePhoto fluid={emloyeePhoto1} />
           <EmployeeName>{employee1}</EmployeeName>
@@ -99,7 +99,7 @@ const Team: React.FC = () => {
         <Card
           href="https://n247635.yclients.com/company:242564/master-info:713378?o=m704631&companyId=242564#reviews"
           target="blank_"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <EmployeePhoto fluid={emloyeePhoto2} />
           <EmployeeName>{employee2}</EmployeeName>
@@ -109,7 +109,7 @@ const Team: React.FC = () => {
         <Card
           href="https://n247635.yclients.com/company:242564/master-info:704629?o=m704631&companyId=242564#reviews"
           target="blank_"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <EmployeePhoto fluid={emloyeePhoto3} />
           <EmployeeName>{employee3}</EmployeeName>

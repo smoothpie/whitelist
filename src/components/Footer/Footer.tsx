@@ -7,7 +7,7 @@ import {
   NavList,
   NavItem
 } from "./styled";
-import { StyledLinkA } from "../Typography";
+import { StyledLink } from "../Typography";
 
 const Footer: React.FC = () => {
   const {
@@ -34,19 +34,19 @@ const Footer: React.FC = () => {
       <Navigation>
         <NavList>
           <NavItem>
-            <StyledLinkA href="/">{navItem1}</StyledLinkA>
+            <StyledLink to="/#main">{navItem1}</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLinkA href="/">{navItem2}</StyledLinkA>
+            <StyledLink to="/#team">{navItem2}</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLinkA href="/">{navItem3}</StyledLinkA>
+            <StyledLink to="/#training">{navItem3}</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLinkA href="/">{navItem4}</StyledLinkA>
+            <StyledLink to="/#prices">{navItem4}</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLinkA href="/">{navItem6}</StyledLinkA>
+            <StyledLink to="/#contacts">{navItem6}</StyledLink>
           </NavItem>
         </NavList>
       </Navigation>

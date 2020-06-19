@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Img from "gatsby-image";
-import { StyledLinkA, SectionMarginBottom } from "../Typography";
+import { SectionMarginBottom } from "../Typography";
 
 export const TeamSection = styled.section`
   display: flex;
@@ -18,7 +18,9 @@ export const EmployeePhoto = styled(Img)`
   filter: brightness(90%);
 `;
 
-export const EmployeeName = styled(StyledLinkA)``;
+export const EmployeeName = styled.p`
+  color: #e3b873;
+`;
 
 export const EmployeePosition = styled.p`
   margin: 1rem 0;

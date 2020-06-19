@@ -70,28 +70,28 @@ const Header: React.FC<any> = () => {
           <StyledLinkA
             href="https://www.t.me/minsk911/"
             target="blank_"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <StyledTelegram />
           </StyledLinkA>
           <StyledLinkA
             href="https://n247635.yclients.com/company:242564?o=m704631"
             target="blank_"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <StyledYclients />
           </StyledLinkA>
           <StyledLinkA
             href="https://www.instagram.com/911barber.by/"
             target="blank_"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <StyledInstagram />
           </StyledLinkA>
           <StyledLinkA
             href="https://www.instagram.com/911barbieshop/"
             target="blank_"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <StyledInstagram clr="#F783AC" />
           </StyledLinkA>
@@ -105,28 +105,28 @@ const Header: React.FC<any> = () => {
           <StyledLinkA
             href="https://www.t.me/minsk911/"
             target="blank_"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <StyledTelegram />
           </StyledLinkA>
           <StyledLinkA
             href="https://n247635.yclients.com/company:242564?o=m704631"
             target="blank_"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <StyledYclients />
           </StyledLinkA>
           <StyledLinkA
             href="https://www.instagram.com/911barber.by/"
             target="blank_"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <StyledInstagram wdth="20px" />
           </StyledLinkA>
           <StyledLinkA
             href="https://www.instagram.com/911barbieshop/"
             target="blank_"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <StyledInstagram wdth="20px" clr="#F783AC" />
           </StyledLinkA>

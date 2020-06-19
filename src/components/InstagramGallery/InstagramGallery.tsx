@@ -69,7 +69,7 @@ const InstagramGallery: React.FC = () => {
       <InstagramGalleryWrapper
         href="https://www.instagram.com/911barber.by/"
         target="blank_"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         <InstagramItem fluid={insta1} />
         <InstagramItem fluid={insta2} />

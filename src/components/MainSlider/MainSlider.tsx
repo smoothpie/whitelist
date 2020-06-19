@@ -122,7 +122,7 @@ const MainSlider: React.FC = () => {
 
   return (
     <>
-      <SliderSection>
+      <SliderSection id="main">
         <Slider {...settings}>
           <SliderItem>
             <SlideImage fluid={slide1} />
@@ -171,7 +171,7 @@ const MainSlider: React.FC = () => {
         </Slider>
       </SliderSection>
 
-      <SliderSectionMobile>
+      <SliderSectionMobile id="main">
         <SlideImage fluid={mobileBg} />
         <InnerBlock>
           <SliderText>
