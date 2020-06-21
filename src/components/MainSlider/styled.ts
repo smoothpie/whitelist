@@ -24,5 +24,4 @@ export const StyledAmpersand = styled.span`
   color: #eeeeee;
   font-size: 1.5rem;
   line-height: 2.5rem;
-  font-weight: 700;
 `;

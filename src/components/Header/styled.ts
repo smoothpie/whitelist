@@ -52,7 +52,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Block = styled.div`
-  width: 210px;
+  width: 222px;
   text-align: center;
   @media (max-width: 767px) {
     display: none;

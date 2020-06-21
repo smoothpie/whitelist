@@ -7,8 +7,8 @@ export const StyledButton = styled.a`
   line-height: 55px;
   text-align: center;
   color: #eeeeee;
-  font-family: "Manrope-Regular", sans-serif;
-  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
   font-size: 1.4rem;
   text-transform: uppercase;
   text-decoration: none;

@@ -6,6 +6,7 @@ export const PriceListSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 160px;
   ${SectionMarginBottom}
 `;
 
@@ -66,6 +67,9 @@ export const PriceItemCost = styled.span`
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #785028;
+    @media (max-width: 460px) {
+      border-bottom: 1px dashed transparent;
+    }
   }
 `;
 
