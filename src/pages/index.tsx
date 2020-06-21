@@ -8,6 +8,7 @@ import PriceList from "../components/PriceList";
 import InstagramGallery from "../components/InstagramGallery";
 import Reviews from "../components/Reviews";
 import Contacts from "../components/Contacts";
+import YouTube from "../components/YouTube";
 
 const IndexPage: React.FC = () => (
   <Layout>
@@ -17,6 +18,7 @@ const IndexPage: React.FC = () => (
     <PriceList />
     <Training />
     <InstagramGallery />
+    <YouTube />
     <Reviews />
   </Layout>
 );
