@@ -34,7 +34,7 @@ export const InnerBlock = styled.div`
 export const TrainingTel = styled(StyledLinkA)`
   font-weight: 700;
   font-size: 2.3rem;
-  line-height: 3.5rem;
+  line-height: 7.5rem;
   @media (max-width: 1023px) {
     font-size: 2rem;
   }

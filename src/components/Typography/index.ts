@@ -156,7 +156,7 @@ export const InnerBlock = styled.div``;
 
 export const SliderText = styled.div`
   position: absolute;
-  top: calc(50% - 120px);
+  top: calc(50% - 150px);
   right: 15%;
   left: 15%;
   text-align: center;

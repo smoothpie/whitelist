@@ -37,7 +37,11 @@ const Contacts: React.FC = () => {
         </ContactsIcon>
         <ContactsP>{tel}</ContactsP>
       </ContactsBlock>
-      <ContactsBlock href="/">
+      <ContactsBlock
+        href="https://goo.gl/maps/hAs2ADcNdgLbnGmR9"
+        target="blank_"
+        rel="noopener noreferrer"
+      >
         <ContactsIcon>
           <StyledСlock />
         </ContactsIcon>

@@ -15,7 +15,7 @@ export const StyledButton = styled.a`
   letter-spacing: 2px;
   outline: 0;
   opacity: 1;
-
+  pointer-events: auto;
   &:hover {
     &:after {
       transform: translateY(0) rotateX(0);
