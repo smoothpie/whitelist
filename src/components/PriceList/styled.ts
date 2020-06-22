@@ -26,7 +26,7 @@ export const PriceListContainer = styled.div`
   }
 `;
 
-export const PriceListBlock = styled.div`
+export const PriceListBlockStyle = styled.div`
   flex: 0 0 50%;
   padding: 0 20px;
 `;
