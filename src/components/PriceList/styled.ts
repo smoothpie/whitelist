@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { SectionMarginBottom } from "../Typography";
+import { ISecond } from "../../interfaces";
 
 export const PriceListSection = styled.section`
   display: flex;
@@ -26,9 +27,21 @@ export const PriceListContainer = styled.div`
   }
 `;
 
+export const PriceListBlockWrapper = styled.div`
+  @media (max-width: 1023px) {
+    width: 80%;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`;
+
 export const PriceListBlockStyle = styled.div`
   flex: 0 0 50%;
   padding: 0 20px;
+  @media (max-width: 767px) {
+    display: ${({ second }: ISecond) => second && "none"};
+  }
 `;
 
 export const PriceItem = styled.div`
@@ -52,6 +65,7 @@ export const PriceItemText = styled.div`
 export const PriceItemHeading = styled.h5`
   width: calc(100% - 80px);
   font-size: 1.2rem;
+  line-height: 1.2rem;
   @media (max-width: 1023px) {
     font-size: 1rem;
   }

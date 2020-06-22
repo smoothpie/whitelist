@@ -5,3 +5,7 @@ export interface IView {
 export interface IMobileBlock {
   padding?: string;
 }
+
+export interface ISecond {
+  second?: boolean;
+}

@@ -10,11 +10,12 @@ import {
 
 type Props = {
   array: any;
+  second?: boolean;
 };
 
-const PriceListBlock: React.FC<Props> = ({ array }) => {
+const PriceListBlock: React.FC<Props> = ({ array, second }) => {
   return (
-    <PriceListBlockStyle>
+    <PriceListBlockStyle second={second}>
       {array.map(({ node: { frontmatter } }: any) => {
         const { id, item, price } = frontmatter;
         return (
