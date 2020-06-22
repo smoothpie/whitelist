@@ -12,7 +12,7 @@ export const StyledButton = styled.a`
   font-size: 1.4rem;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   outline: 0;
   opacity: 1;
   pointer-events: auto;

@@ -17,7 +17,6 @@ const Footer: React.FC = () => {
       navigation: markdownRemark(frontmatter: { type: { eq: "navigation" } }) {
         frontmatter {
           navItem1
-          navItem2
           navItem3
           navItem4
           navItem6
@@ -26,7 +25,7 @@ const Footer: React.FC = () => {
     }
   `);
 
-  const { navItem1, navItem2, navItem3, navItem4, navItem6 } = frontmatter;
+  const { navItem1, navItem3, navItem4, navItem6 } = frontmatter;
 
   return (
     <FooterContainer>
@@ -37,13 +36,10 @@ const Footer: React.FC = () => {
             <StyledLink to="/#main">{navItem1}</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to="/#team">{navItem2}</StyledLink>
+            <StyledLink to="/#prices">{navItem4}</StyledLink>
           </NavItem>
           <NavItem>
             <StyledLink to="/#training">{navItem3}</StyledLink>
-          </NavItem>
-          <NavItem>
-            <StyledLink to="/#prices">{navItem4}</StyledLink>
           </NavItem>
           <NavItem>
             <StyledLink to="/#contacts">{navItem6}</StyledLink>

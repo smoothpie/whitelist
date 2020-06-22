@@ -44,7 +44,7 @@ const PriceList: React.FC = () => {
   const { title, description } = priceList;
 
   return (
-    <PriceListSection id="prices">
+    <PriceListSection>
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
       <PriceListWrapper>

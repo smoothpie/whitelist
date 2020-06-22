@@ -20,10 +20,10 @@ export const Copyright = styled.div`
 `;
 
 export const Navigation = styled.nav`
-  width: 60%;
+  width: 50%;
   font-size: 0.85rem;
   @media (max-width: 1200px) {
-    width: 70%;
+    width: 60%;
   }
   @media (max-width: 767px) {
     display: none;

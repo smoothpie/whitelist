@@ -35,15 +35,16 @@ export const StyledLink = styled(Link)`
 
 //**************** HEADINGS ******************
 export const H1 = styled.h1`
-  font-family: "Manrope", sans-serif;
   font-size: 3.5rem;
   color: #eeeeee;
   font-weight: 400;
   @media (max-width: 1023px) {
     font-size: 3.1rem;
   }
+  @media (max-width: 767px) {
+    font-size: 2.5rem;
+  }
   @media (max-width: 460px) {
-    font-family: "Manrope", sans-serif;
     font-weight: 300;
     font-size: 2rem;
     color: #e3b873;

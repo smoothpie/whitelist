@@ -69,8 +69,8 @@ const Reviews: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: false,
+    autoplaySpeed: 8000,
+    pauseOnHover: true,
     nextArrow: (
       <ArrowContainerNext>
         <ArrowNext />
