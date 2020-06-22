@@ -39,5 +39,5 @@ export const NavList = styled.ul`
 `;
 
 export const NavItem = styled.li`
-  word-spacing: 0.3rem;
+  word-spacing: 0.2rem;
 `;

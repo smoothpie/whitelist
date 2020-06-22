@@ -4,7 +4,7 @@ import Instagram from "../../assets/images/svg/instagram.svg";
 import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
 import Phone from "../../assets/images/svg/phone.svg";
-import { IView } from "../../interfaces";
+import { IView, IMobileBlock } from "../../interfaces";
 import { Hover, StyledLinkA } from "../Typography";
 
 const IconSize = `
@@ -63,6 +63,7 @@ export const MobileBlock = styled.div`
   display: none;
   @media (max-width: 767px) {
     display: block;
+    padding-right: ${({ padding }: IMobileBlock) => (padding ? padding : "0")};
   }
 `;
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { slide as Menu } from "react-burger-menu";
 import { useStaticQuery, graphql } from "gatsby";
 import { StyledLink, StyledLinkA } from "../Typography";
 import {
@@ -13,8 +14,10 @@ import {
   Block,
   MobileBlock
 } from "./styled";
+import "./header.scss";
 
 const Header: React.FC<any> = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [isScroll, setScroll] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +34,8 @@ const Header: React.FC<any> = () => {
   }, [isScroll]);
 
   const {
-    contacts: { frontmatter },
+    contacts: { frontmatter: contacts },
+    navigation: { frontmatter: navigation },
     logo: {
       childImageSharp: { fluid: logo }
     }
@@ -49,10 +53,19 @@ const Header: React.FC<any> = () => {
           }
         }
       }
+      navigation: markdownRemark(frontmatter: { type: { eq: "navigation" } }) {
+        frontmatter {
+          navItem1
+          navItem3
+          navItem4
+          navItem6
+        }
+      }
     }
   `);
 
-  const { tel } = frontmatter;
+  const { tel } = contacts;
+  const { navItem1, navItem3, navItem4, navItem6 } = navigation;
 
   return (
     <HeaderStyle view={!isScroll}>
@@ -96,25 +109,18 @@ const Header: React.FC<any> = () => {
             <StyledInstagram clr="#F783AC" />
           </StyledLinkA>
         </Block>
-        <MobileBlock>
+        <MobileBlock padding="0">
           <StyledLink to="/">
             <StyledLogo fluid={logo} />
           </StyledLink>
         </MobileBlock>
-        <MobileBlock>
+        <MobileBlock padding="30px">
           <StyledLinkA
             href="https://www.t.me/minsk911/"
             target="blank_"
             rel="noopener noreferrer"
           >
             <StyledTelegram />
-          </StyledLinkA>
-          <StyledLinkA
-            href="https://n247635.yclients.com/company:242564?o=m704631"
-            target="blank_"
-            rel="noopener noreferrer"
-          >
-            <StyledYclients />
           </StyledLinkA>
           <StyledLinkA
             href="https://www.instagram.com/911barber.by/"
@@ -130,6 +136,31 @@ const Header: React.FC<any> = () => {
           >
             <StyledInstagram wdth="20px" clr="#F783AC" />
           </StyledLinkA>
+          <Menu
+            right
+            noOverlay
+            width={"100%"}
+            isOpen={menuOpen}
+            onStateChange={state => setMenuOpen(state.isOpen)}
+            pageWrapId={"page-wrap"}
+            outerContainerId={"outer-container"}
+            burgerButtonClassName={
+              isScroll ? "bm-burger-button" : "sticky-burger"
+            }
+          >
+            <StyledLink onClick={() => setMenuOpen(false)} to="/#">
+              {navItem1}
+            </StyledLink>
+            <StyledLink onClick={() => setMenuOpen(false)} to="/#prices">
+              {navItem4}
+            </StyledLink>
+            <StyledLink onClick={() => setMenuOpen(false)} to="/#training">
+              {navItem3}
+            </StyledLink>
+            <StyledLink onClick={() => setMenuOpen(false)} to="/#contacts">
+              {navItem6}
+            </StyledLink>
+          </Menu>
         </MobileBlock>
       </HeaderContainer>
     </HeaderStyle>
