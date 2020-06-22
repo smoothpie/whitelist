@@ -6,22 +6,38 @@ export const PriceListSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 160px;
   ${SectionMarginBottom}
 `;
-
-export const PriceListWrapper = styled.div`
-  flex: 0 0 50%;
-  max-width: 60%;
-  @media (max-width: 767px) {
-    max-width: 80%;
+export const PriceListContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 65%;
+  @media (max-width: 1500px) {
+    width: 80%;
   }
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    width: 85%;
+  }
+`;
+
+export const PriceListBlock = styled.div`
+  flex: 0 0 50%;
+  padding: 0 20px;
 `;
 
 export const PriceItem = styled.div`
   display: block;
   width: 100%;
   margin-bottom: 1.5rem;
+  @media (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const PriceItemText = styled.div`
@@ -36,8 +52,11 @@ export const PriceItemText = styled.div`
 export const PriceItemHeading = styled.h5`
   width: calc(100% - 80px);
   font-size: 1.2rem;
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     font-size: 1rem;
+  }
+  @media (max-width: 460px) {
+    font-size: 0.9rem;
   }
 `;
 
@@ -52,10 +71,12 @@ export const PriceItemCost = styled.span`
   text-align: right;
   color: #e3b873;
   background-color: #1b1b1b;
-  word-spacing: 0.03rem;
   font-size: 1.2rem;
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     font-size: 1rem;
+  }
+  @media (max-width: 460px) {
+    font-size: 0.9rem;
   }
   &:after {
     content: "";

@@ -1,5 +1,5 @@
 ---
-type: price
+type: pricesM
 id: "4"
 item: "Укладка"
 price: "20 р."

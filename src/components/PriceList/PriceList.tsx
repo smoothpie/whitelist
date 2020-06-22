@@ -2,37 +2,52 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import {
   PriceListSection,
-  PriceListWrapper,
+  PriceListContainer,
+  PriceListBlock,
   PriceItem,
   PriceItemText,
   PriceItemHeading,
   PriceItemHeadingSpan,
-  PriceItemCost,
-  PriceItemDescription
+  PriceItemCost
 } from "./styled";
 import { SectionTitle, SectionDescription } from "../Typography";
+import Button from "../Button";
 
 const PriceList: React.FC = () => {
   const {
     priceList: { frontmatter: priceList },
-    price: { edges: price }
+    pricesM: { edges: pricesM },
+    pricesW: { edges: pricesW }
   } = useStaticQuery(graphql`
     query {
       priceList: markdownRemark(frontmatter: { type: { eq: "priceList" } }) {
         frontmatter {
           title
           description
+          button
         }
       }
-      price: allMarkdownRemark(
-        filter: { frontmatter: { type: { eq: "price" } } }
+      pricesM: allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "pricesM" } } }
       ) {
         edges {
           node {
             frontmatter {
               id
               item
-              info
+              price
+            }
+          }
+        }
+      }
+      pricesW: allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "pricesW" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              id
+              item
               price
             }
           }
@@ -41,30 +56,49 @@ const PriceList: React.FC = () => {
     }
   `);
 
-  const { title, description } = priceList;
+  const { title, description, button } = priceList;
 
   return (
     <PriceListSection>
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
-      <PriceListWrapper>
-        {price.map(({ node: { frontmatter } }: any) => {
-          const { id, info, item, price } = frontmatter;
-          return (
-            <PriceItem key={id}>
-              <PriceItemText>
-                <PriceItemHeading>
-                  <PriceItemHeadingSpan>{item}</PriceItemHeadingSpan>
-                </PriceItemHeading>
-                <PriceItemCost>{price}</PriceItemCost>
-              </PriceItemText>
-              <div>
-                <PriceItemDescription>{info}</PriceItemDescription>
-              </div>
-            </PriceItem>
-          );
-        })}
-      </PriceListWrapper>
+      <PriceListContainer>
+        <PriceListBlock>
+          {pricesM.map(({ node: { frontmatter } }: any) => {
+            const { id, item, price } = frontmatter;
+            return (
+              <PriceItem key={id}>
+                <PriceItemText>
+                  <PriceItemHeading>
+                    <PriceItemHeadingSpan>{item}</PriceItemHeadingSpan>
+                  </PriceItemHeading>
+                  <PriceItemCost>{price}</PriceItemCost>
+                </PriceItemText>
+              </PriceItem>
+            );
+          })}
+        </PriceListBlock>
+        <PriceListBlock>
+          {pricesW.map(({ node: { frontmatter } }: any) => {
+            const { id, item, price } = frontmatter;
+            return (
+              <PriceItem key={id}>
+                <PriceItemText>
+                  <PriceItemHeading>
+                    <PriceItemHeadingSpan>{item}</PriceItemHeadingSpan>
+                  </PriceItemHeading>
+                  <PriceItemCost>{price}</PriceItemCost>
+                </PriceItemText>
+              </PriceItem>
+            );
+          })}
+        </PriceListBlock>
+      </PriceListContainer>
+      <Button
+        link="https://n247635.yclients.com/company:242564/idx:0/service"
+        dataBack={button}
+        dataFront={button}
+      />
     </PriceListSection>
   );
 };

@@ -1,5 +1,5 @@
 ---
-type: price
+type: pricesM
 id: "2"
 item: "Детская Стрижка (до 10 лет)"
 price: "20 р."

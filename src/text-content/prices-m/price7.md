@@ -1,5 +1,5 @@
 ---
-type: price
+type: pricesM
 id: "7"
 item: "Окрашивание (тонирование) волос"
 price: "от 30 р."

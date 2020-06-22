@@ -1,5 +1,5 @@
 ---
-type: price
+type: pricesM
 id: "3"
 item: "Стрижка Машинкой"
 price: "20 р."

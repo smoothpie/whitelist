@@ -1,5 +1,5 @@
 ---
-type: price
+type: pricesM
 id: "5"
 item: "Пробор/Окантовка"
 price: "10 р."

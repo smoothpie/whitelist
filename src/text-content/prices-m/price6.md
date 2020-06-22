@@ -1,5 +1,5 @@
 ---
-type: price
+type: pricesM
 id: "6"
 item: "Моделирование Бороды"
 price: "20 р."

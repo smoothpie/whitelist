@@ -1,5 +1,5 @@
 ---
-type: price
+type: pricesM
 id: "8"
 item: "Королевское Бритьё"
 price: "40 р."

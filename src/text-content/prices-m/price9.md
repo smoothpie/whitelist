@@ -1,5 +1,5 @@
 ---
-type: price
+type: pricesM
 id: "9"
 item: "Тонировка Бороды"
 price: "30 р."
