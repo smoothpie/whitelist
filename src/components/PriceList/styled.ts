@@ -1,18 +1,17 @@
 import styled from "styled-components";
-import { SectionMarginBottom } from "../Typography";
+import {
+  SectionMarginBottom,
+  FlexColumnCenterCenter,
+  FlexRowCenterCenter
+} from "../Typography";
 import { ISecond } from "../../interfaces";
 
 export const PriceListSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${FlexColumnCenterCenter}
   ${SectionMarginBottom}
 `;
 export const PriceListContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${FlexRowCenterCenter}
   margin-bottom: 20px;
   width: 65%;
   @media (max-width: 1500px) {

@@ -12,7 +12,7 @@ import YouTube from "../components/YouTube";
 
 const IndexPage: React.FC = () => (
   <Layout>
-    <SEO title="911barber" />
+    <SEO title="Home" />
     <MainSlider />
     <Contacts />
     <PriceList />

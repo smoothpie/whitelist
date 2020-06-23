@@ -2,7 +2,11 @@ import styled from "styled-components";
 import Instagram from "../../assets/images/svg/instagram.svg";
 import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
-import { Hover } from "../Typography";
+import {
+  Hover,
+  FlexColumnCenterCenter,
+  FlexRowCenterCenter
+} from "../Typography";
 
 const IconSize = `
   width: 28px;
@@ -10,10 +14,7 @@ const IconSize = `
 `;
 
 export const FooterSectionStyle = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${FlexColumnCenterCenter}
 `;
 
 export const Map = styled.div`
@@ -35,15 +36,11 @@ export const StyledIframe = styled.iframe`
 `;
 
 export const IconContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${FlexRowCenterCenter}
 `;
 
 export const FooterIcon = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${FlexRowCenterCenter}
   width: 50px;
   height: 50px;
   margin: 50px 10px;

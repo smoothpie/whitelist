@@ -2,6 +2,25 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
+export const FlexColumnCenterCenter = `
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const FlexRowCenterCenter = `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const FlexSpaceBetweenCenter = `
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const Hover = `&:hover {
   color: #eeeeee;
   cursor: pointer;
@@ -85,11 +104,14 @@ export const H4 = styled.h4`
   font-size: 1.7rem;
   color: #eeeeee;
   margin: 1.2rem 0;
+  line-height: 2.3rem;
   @media (max-width: 1023px) {
     font-size: 1.3rem;
+    line-height: 1.9rem;
   }
   @media (max-width: 460px) {
     font-size: 1rem;
+    line-height: 1.5rem;
   }
 `;
 
@@ -110,9 +132,7 @@ export const SectionDescription = styled.div`
 
 //************** CARDS ***************/
 export const CardContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${FlexSpaceBetweenCenter}
   @media (max-width: 1023px) {
     flex-direction: column;
   }
@@ -201,9 +221,7 @@ export const ArrowContainerNext = styled(ArrowContainer)`
 export const SecondButton = styled.a`
   position: relative;
   z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${FlexRowCenterCenter}
   width: 230px;
   height: 45px;
   margin: 15px auto 0;

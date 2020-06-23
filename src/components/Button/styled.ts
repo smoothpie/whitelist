@@ -37,7 +37,6 @@ export const StyledButton = styled.a`
     width: 100%;
     color: #eeeeee;
     background-color: #e3b873;
-
     transform: translateY(-50%) rotateX(90deg);
     opacity: 0;
     transition: 0.5s;

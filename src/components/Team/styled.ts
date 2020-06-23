@@ -1,12 +1,9 @@
 import styled from "styled-components";
 import Img from "gatsby-image";
-import { SectionMarginBottom } from "../Typography";
+import { SectionMarginBottom, FlexColumnCenterCenter } from "../Typography";
 
 export const TeamSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${FlexColumnCenterCenter}
   ${SectionMarginBottom}
 `;
 

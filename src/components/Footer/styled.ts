@@ -1,9 +1,8 @@
 import styled from "styled-components";
+import { FlexSpaceBetweenCenter } from "../Typography";
 
 export const FooterContainer = styled.footer`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${FlexSpaceBetweenCenter}
   margin: 0 auto;
   width: 60%;
   height: 80px;
@@ -31,8 +30,7 @@ export const Navigation = styled.nav`
 `;
 
 export const NavList = styled.ul`
-  display: flex;
-  justify-content: space-between;
+  ${FlexSpaceBetweenCenter}
   list-style: none;
   text-transform: uppercase;
   color: #e3b873;

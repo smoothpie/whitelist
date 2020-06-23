@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import SEO from "../components/Seo";
-import { H1, SecondButton } from "../components/Typography";
+import {
+  H1,
+  SecondButton,
+  FlexColumnCenterCenter
+} from "../components/Typography";
 
 const Main = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${FlexColumnCenterCenter}
   margin: 0 auto;
   width: 80%;
   height: 75vh;

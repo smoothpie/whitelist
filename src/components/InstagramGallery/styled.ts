@@ -1,12 +1,9 @@
 import styled from "styled-components";
-import { SectionMarginBottom } from "../Typography";
+import { SectionMarginBottom, FlexColumnCenterCenter } from "../Typography";
 import BackgroundImage from "gatsby-background-image";
 
 export const InstagramGallerySection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${FlexColumnCenterCenter}
   ${SectionMarginBottom}
 `;
 
