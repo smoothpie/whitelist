@@ -37,21 +37,21 @@ const InstagramGallery: React.FC = () => {
           }
         }
       }
-      insta2: file(relativePath: { eq: "insta2.jpg" }) {
+      insta2: file(relativePath: { eq: "insta6.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      insta3: file(relativePath: { eq: "insta3.jpg" }) {
+      insta3: file(relativePath: { eq: "insta9.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      insta4: file(relativePath: { eq: "insta4.jpg" }) {
+      insta4: file(relativePath: { eq: "insta10.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
