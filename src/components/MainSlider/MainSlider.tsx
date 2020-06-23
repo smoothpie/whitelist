@@ -77,7 +77,7 @@ const MainSlider: React.FC = () => {
       }
       mobileBg: file(relativePath: { eq: "mobileBg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 1000) {
+          fluid(quality: 90, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -108,7 +108,7 @@ const MainSlider: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 8000,
+    autoplaySpeed: 9000,
     pauseOnHover: false,
     nextArrow: (
       <ArrowContainerNext>

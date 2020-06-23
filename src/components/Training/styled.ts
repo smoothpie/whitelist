@@ -69,5 +69,6 @@ export const TrainingInfo = styled.p`
   }
   @media (max-width: 460px) {
     font-size: 1.1rem;
+    line-height: 2rem;
   }
 `;

@@ -49,6 +49,9 @@ export const H1 = styled.h1`
     font-size: 2rem;
     color: #e3b873;
   }
+  @media (max-width: 360px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const H2 = styled.h2`
@@ -191,4 +194,46 @@ export const ArrowContainerPrev = styled(ArrowContainer)`
 
 export const ArrowContainerNext = styled(ArrowContainer)`
   right: 50px;
+`;
+//************************************/
+
+//************** BUTTON ***************/
+export const SecondButton = styled.a`
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 45px;
+  margin: 15px auto 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #e3b873;
+  border: 1px solid #e3b873;
+  transition: 0.4s all ease;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 45px;
+    transition: 0.4s all ease;
+    background-color: #e3b873;
+    left: 0;
+    z-index: -1;
+  }
+  &:hover {
+    color: white;
+    &:before {
+      width: 100%;
+      transition: 0.4s all ease;
+    }
+  }
+  @media (max-width: 767px) {
+    width: 200px;
+    font-size: 0.7rem;
+  }
 `;
