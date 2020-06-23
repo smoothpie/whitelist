@@ -41,7 +41,7 @@ const FooterSection: React.FC = () => {
   const { telFull, addressFull, place, workingHoursFull } = contacts;
 
   return (
-    <FooterSectionStyle>
+    <FooterSectionStyle id="contacts">
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>
         <p>{addressFull}</p>
@@ -59,18 +59,21 @@ const FooterSection: React.FC = () => {
         <FooterIcon
           href="https://n247635.yclients.com/company:242564?o=m704631"
           target="blank_"
+          rel="noopener noreferrer"
         >
           <StyledYclients />
         </FooterIcon>
         <FooterIcon
           href="https://www.instagram.com/911barber.by/"
           target="blank_"
+          rel="noopener noreferrer"
         >
           <StyledInstagram />
         </FooterIcon>
         <FooterIcon
           href="https://www.instagram.com/911barbieshop/"
           target="blank_"
+          rel="noopener noreferrer"
         >
           <StyledInstagram clr="#F783AC" />
         </FooterIcon>

@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import Img from "gatsby-image";
-import { StyledLinkA } from "../Typography";
+import { SectionMarginBottom, FlexColumnCenterCenter } from "../Typography";
 
 export const TeamSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 80px;
+  ${FlexColumnCenterCenter}
+  ${SectionMarginBottom}
 `;
 
 export const EmployeePhoto = styled(Img)`
@@ -15,13 +12,12 @@ export const EmployeePhoto = styled(Img)`
   height: 110px;
   margin: 1.2rem auto;
   border-radius: 50%;
-  &:hover {
-    filter: grayscale(50%);
-    transition: all 0.3s ease;
-  }
+  filter: brightness(90%);
 `;
 
-export const EmployeeName = styled(StyledLinkA)``;
+export const EmployeeName = styled.p`
+  color: #e3b873;
+`;
 
 export const EmployeePosition = styled.p`
   margin: 1rem 0;

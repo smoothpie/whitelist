@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ArrowPrev from "../../assets/images/svg/arrow-left.svg";
 import ArrowNext from "../../assets/images/svg/arrow-right.svg";
 import Button from "../Button";
-import { SliderSectionMobile, SlideImage } from "./styled";
+import { SliderSectionMobile, SlideImage, StyledAmpersand } from "./styled";
 import {
   H1,
   H2,
@@ -48,6 +48,7 @@ const MainSlider: React.FC = () => {
           thirdSlideTitle
           thirdSlideDesc1
           mobileTitle
+          mobileTitle2
           mobileDesc1
           mobileDesc2
           mobileDesc3
@@ -55,28 +56,28 @@ const MainSlider: React.FC = () => {
       }
       slide1: file(relativePath: { eq: "slide1.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4000) {
+          fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       slide2: file(relativePath: { eq: "slide2.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4000) {
+          fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       slide3: file(relativePath: { eq: "slide3.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4000) {
+          fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       mobileBg: file(relativePath: { eq: "mobileBg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
+          fluid(quality: 90, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -94,6 +95,7 @@ const MainSlider: React.FC = () => {
     thirdSlideTitle,
     thirdSlideDesc1,
     mobileTitle,
+    mobileTitle2,
     mobileDesc1,
     mobileDesc2,
     mobileDesc3
@@ -106,7 +108,7 @@ const MainSlider: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 9000,
     pauseOnHover: false,
     nextArrow: (
       <ArrowContainerNext>
@@ -122,7 +124,7 @@ const MainSlider: React.FC = () => {
 
   return (
     <>
-      <SliderSection>
+      <SliderSection id="main">
         <Slider {...settings}>
           <SliderItem>
             <SlideImage fluid={slide1} />
@@ -143,7 +145,7 @@ const MainSlider: React.FC = () => {
             <SlideImage fluid={slide2} />
             <InnerBlock>
               <SliderText>
-                <H2>{secondSlideTitle}</H2>
+                <H1 as="h2">{secondSlideTitle}</H1>
                 <H4>{secondSlideDesc1}</H4>
                 <H4>{secondSlideDesc2}</H4>
                 <Button
@@ -171,11 +173,13 @@ const MainSlider: React.FC = () => {
         </Slider>
       </SliderSection>
 
-      <SliderSectionMobile>
+      <SliderSectionMobile id="main">
         <SlideImage fluid={mobileBg} />
         <InnerBlock>
           <SliderText>
             <H1>{mobileTitle}</H1>
+            <StyledAmpersand>&amp;</StyledAmpersand>
+            <H1 as="h2">{mobileTitle2}</H1>
             <H4>{mobileDesc1}</H4>
             <H4>{mobileDesc2}</H4>
             <H4>{mobileDesc3}</H4>

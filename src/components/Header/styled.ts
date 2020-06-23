@@ -4,8 +4,8 @@ import Instagram from "../../assets/images/svg/instagram.svg";
 import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
 import Phone from "../../assets/images/svg/phone.svg";
-import { IView } from "../../interfaces";
-import { Hover, StyledLinkA } from "../Typography";
+import { IView, IMobileBlock } from "../../interfaces";
+import { Hover, StyledLinkA, FlexSpaceBetweenCenter } from "../Typography";
 
 const IconSize = `
   width: 20px;
@@ -30,9 +30,7 @@ export const HeaderStyle = styled.header`
 `;
 
 export const HeaderContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${FlexSpaceBetweenCenter}
   max-width: 1440px;
   margin: 0 auto;
   padding: ${({ view }: IView) => (view ? "15px 20px" : "10px 20px")};
@@ -52,7 +50,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Block = styled.div`
-  width: 210px;
+  width: 222px;
   text-align: center;
   @media (max-width: 767px) {
     display: none;
@@ -63,6 +61,7 @@ export const MobileBlock = styled.div`
   display: none;
   @media (max-width: 767px) {
     display: block;
+    padding-right: ${({ padding }: IMobileBlock) => (padding ? padding : "0")};
   }
 `;
 

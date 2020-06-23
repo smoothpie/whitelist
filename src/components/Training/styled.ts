@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BackgroundImage from "gatsby-background-image";
-import { H2, StyledLinkA } from "../Typography";
+import { H2, StyledLinkA, SectionMarginBottom } from "../Typography";
 
 export const TrainingBg = styled(BackgroundImage)`
   width: 100%;
@@ -9,6 +9,7 @@ export const TrainingBg = styled(BackgroundImage)`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  ${SectionMarginBottom}
   @media (max-width: 1023px) {
     height: 70vh;
   }
@@ -33,7 +34,7 @@ export const InnerBlock = styled.div`
 export const TrainingTel = styled(StyledLinkA)`
   font-weight: 700;
   font-size: 2.3rem;
-  line-height: 3.5rem;
+  line-height: 7.5rem;
   @media (max-width: 1023px) {
     font-size: 2rem;
   }
@@ -68,5 +69,6 @@ export const TrainingInfo = styled.p`
   }
   @media (max-width: 460px) {
     font-size: 1.1rem;
+    line-height: 2rem;
   }
 `;

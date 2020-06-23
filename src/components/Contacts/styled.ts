@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import { StyledLinkA } from "../Typography";
+import {
+  StyledLinkA,
+  FlexColumnCenterCenter,
+  FlexSpaceBetweenCenter
+} from "../Typography";
 import Сlock from "../../assets/images/svg/clock.svg";
 import MapMarker from "../../assets/images/svg/map-marker.svg";
 import MobilePhone from "../../assets/images/svg/mobile-phone.svg";
@@ -15,30 +19,24 @@ const IconSize = `
 `;
 
 export const ContactsSection = styled.section`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${FlexSpaceBetweenCenter}
   color: #e3b873;
-  margin-bottom: 80px;
-  @media (max-width: 1023px) {
-    margin: 50px 60px;
-  }
-  @media (max-width: 960px) {
-    margin: 40px 35px;
+  max-width: 80%;
+  margin: 100px auto;
+  @media (max-width: 1800px) {
+    max-width: 100%;
   }
   @media (max-width: 767px) {
     flex-direction: column;
+    margin: 80px auto 20px;
   }
 `;
 
 export const ContactsBlock = styled(StyledLinkA)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${FlexColumnCenterCenter}
   flex: 1;
   @media (max-width: 767px) {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
   }
 `;
 

@@ -2,6 +2,25 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
+export const FlexColumnCenterCenter = `
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const FlexRowCenterCenter = `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const FlexSpaceBetweenCenter = `
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const Hover = `&:hover {
   color: #eeeeee;
   cursor: pointer;
@@ -11,6 +30,12 @@ export const Hover = `&:hover {
 
 export const BeforeNone = `&:before {
   display: none;
+}`;
+
+export const SectionMarginBottom = `
+  margin-bottom: 100px;
+  @media (max-width: 767px) {
+    margin-bottom: 70px;
 }`;
 
 //************* LINKS ****************/
@@ -29,16 +54,22 @@ export const StyledLink = styled(Link)`
 
 //**************** HEADINGS ******************
 export const H1 = styled.h1`
-  font-family: "Manrope-Regular", sans-serif;
   font-size: 3.5rem;
   color: #eeeeee;
+  font-weight: 400;
   @media (max-width: 1023px) {
     font-size: 3.1rem;
   }
+  @media (max-width: 767px) {
+    font-size: 2.5rem;
+  }
   @media (max-width: 460px) {
-    font-family: "Manrope-Light", sans-serif;
+    font-weight: 300;
     font-size: 2rem;
     color: #e3b873;
+  }
+  @media (max-width: 360px) {
+    font-size: 1.8rem;
   }
 `;
 
@@ -56,9 +87,10 @@ export const H2 = styled.h2`
 
 //********* SECTION TITLE **********/
 export const SectionTitle = styled.h3`
-  font-size: 2rem;
-  color: #eeeeee;
   margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #eeeeee;
   @media (max-width: 1023px) {
     font-size: 1.7rem;
   }
@@ -72,11 +104,14 @@ export const H4 = styled.h4`
   font-size: 1.7rem;
   color: #eeeeee;
   margin: 1.2rem 0;
+  line-height: 2.3rem;
   @media (max-width: 1023px) {
     font-size: 1.3rem;
+    line-height: 1.9rem;
   }
   @media (max-width: 460px) {
     font-size: 1rem;
+    line-height: 1.5rem;
   }
 `;
 
@@ -97,21 +132,20 @@ export const SectionDescription = styled.div`
 
 //************** CARDS ***************/
 export const CardContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${FlexSpaceBetweenCenter}
   @media (max-width: 1023px) {
     flex-direction: column;
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled.a`
   width: 360px;
   min-height: 488px;
   padding: 25px;
   outline: 1px solid #444444;
   text-align: center;
   margin: 0 15px;
+  text-decoration: none;
   @media (max-width: 1200px) {
     width: 300px;
   }
@@ -119,6 +153,9 @@ export const Card = styled.div`
     width: 80%;
     min-height: 360px;
     margin: 15px 0;
+  }
+  &:hover {
+    cursor: pointer;
   }
 `;
 
@@ -132,7 +169,7 @@ export const CardInfo = styled.p`
 //************** SLIDER ***************/
 export const SliderSection = styled.section`
   width: 100%;
-  margin-bottom: 80px;
+  ${SectionMarginBottom}
   @media (max-width: 767px) {
     display: none;
   }
@@ -146,7 +183,7 @@ export const InnerBlock = styled.div``;
 
 export const SliderText = styled.div`
   position: absolute;
-  top: calc(50% - 120px);
+  top: calc(50% - 150px);
   right: 15%;
   left: 15%;
   text-align: center;
@@ -177,4 +214,44 @@ export const ArrowContainerPrev = styled(ArrowContainer)`
 
 export const ArrowContainerNext = styled(ArrowContainer)`
   right: 50px;
+`;
+//************************************/
+
+//************** BUTTON ***************/
+export const SecondButton = styled.a`
+  position: relative;
+  z-index: 5;
+  ${FlexRowCenterCenter}
+  width: 230px;
+  height: 45px;
+  margin: 15px auto 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #e3b873;
+  border: 1px solid #e3b873;
+  transition: 0.4s all ease;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 45px;
+    transition: 0.4s all ease;
+    background-color: #e3b873;
+    left: 0;
+    z-index: -1;
+  }
+  &:hover {
+    color: white;
+    &:before {
+      width: 100%;
+      transition: 0.4s all ease;
+    }
+  }
+  @media (max-width: 767px) {
+    width: 200px;
+    font-size: 0.7rem;
+  }
 `;

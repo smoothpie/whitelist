@@ -5,14 +5,14 @@ import {
   CosmeticsImg,
   CosmeticsName,
   CosmeticsCard,
-  Stars,
-  CosmeticsButton
+  Stars
 } from "./styled";
 import {
   SectionTitle,
   SectionDescription,
   CardContainer,
-  CardInfo
+  CardInfo,
+  SecondButton
 } from "../Typography";
 
 const Cosmetics: React.FC = () => {
@@ -39,14 +39,14 @@ const Cosmetics: React.FC = () => {
       }
       stuff1: file(relativePath: { eq: "stuff1.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 3000) {
+          fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       stuff2: file(relativePath: { eq: "stuff2.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 3000) {
+          fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -73,24 +73,26 @@ const Cosmetics: React.FC = () => {
           <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
           <CosmeticsName>{item1}</CosmeticsName>
           <CardInfo>{info1}</CardInfo>
-          <CosmeticsButton
+          <SecondButton
             href="https://www.t.me/juliavoytahova/"
             target="blank_"
+            rel="noopener noreferrer"
           >
             {button}
-          </CosmeticsButton>
+          </SecondButton>
         </CosmeticsCard>
         <CosmeticsCard>
           <CosmeticsImg fluid={stuff2} />
           <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
           <CosmeticsName>{item2}</CosmeticsName>
           <CardInfo>{info2}</CardInfo>
-          <CosmeticsButton
+          <SecondButton
             href="https://www.t.me/juliavoytahova/"
             target="blank_"
+            rel="noopener noreferrer"
           >
             {button}
-          </CosmeticsButton>
+          </SecondButton>
         </CosmeticsCard>
       </CardContainer>
     </CosmeticsSection>

@@ -19,3 +19,13 @@ export const SlideImage = styled(StyledSlideImage)`
     height: 100vh;
   }
 `;
+
+export const StyledAmpersand = styled.span`
+  color: #eeeeee;
+  font-size: 2rem;
+  line-height: 3rem;
+  @media (max-width: 460px) {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+`;

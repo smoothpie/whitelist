@@ -7,15 +7,15 @@ export const StyledButton = styled.a`
   line-height: 55px;
   text-align: center;
   color: #eeeeee;
-  font-family: "Manrope-Regular", sans-serif;
-  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
   font-size: 1.4rem;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   outline: 0;
   opacity: 1;
-
+  pointer-events: auto;
   &:hover {
     &:after {
       transform: translateY(0) rotateX(0);
@@ -37,7 +37,6 @@ export const StyledButton = styled.a`
     width: 100%;
     color: #eeeeee;
     background-color: #e3b873;
-
     transform: translateY(-50%) rotateX(90deg);
     opacity: 0;
     transition: 0.5s;

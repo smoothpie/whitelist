@@ -30,14 +30,18 @@ const Contacts: React.FC = () => {
   const { tel, address, place, workingHours } = frontmatter;
 
   return (
-    <ContactsSection>
+    <ContactsSection id="prices">
       <ContactsBlock href="tel:+375 447 666 911">
         <ContactsIcon>
           <StyledMobilePhone />
         </ContactsIcon>
         <ContactsP>{tel}</ContactsP>
       </ContactsBlock>
-      <ContactsBlock href="/">
+      <ContactsBlock
+        href="https://goo.gl/maps/hAs2ADcNdgLbnGmR9"
+        target="blank_"
+        rel="noopener noreferrer"
+      >
         <ContactsIcon>
           <StyledСlock />
         </ContactsIcon>
@@ -46,6 +50,7 @@ const Contacts: React.FC = () => {
       <ContactsBlock
         href="https://goo.gl/maps/hAs2ADcNdgLbnGmR9"
         target="blank_"
+        rel="noopener noreferrer"
       >
         <ContactsIcon>
           <StyledMapMarker />

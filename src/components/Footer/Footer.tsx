@@ -7,7 +7,7 @@ import {
   NavList,
   NavItem
 } from "./styled";
-import { StyledLinkA } from "../Typography";
+import { StyledLink } from "../Typography";
 
 const Footer: React.FC = () => {
   const {
@@ -17,24 +17,15 @@ const Footer: React.FC = () => {
       navigation: markdownRemark(frontmatter: { type: { eq: "navigation" } }) {
         frontmatter {
           navItem1
-          navItem2
           navItem3
           navItem4
-          navItem5
           navItem6
         }
       }
     }
   `);
 
-  const {
-    navItem1,
-    navItem2,
-    navItem3,
-    navItem4,
-    navItem5,
-    navItem6
-  } = frontmatter;
+  const { navItem1, navItem3, navItem4, navItem6 } = frontmatter;
 
   return (
     <FooterContainer>
@@ -42,22 +33,16 @@ const Footer: React.FC = () => {
       <Navigation>
         <NavList>
           <NavItem>
-            <StyledLinkA href="/">{navItem1}</StyledLinkA>
+            <StyledLink to="/#main">{navItem1}</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLinkA href="/">{navItem2}</StyledLinkA>
+            <StyledLink to="/#prices">{navItem4}</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLinkA href="/">{navItem3}</StyledLinkA>
+            <StyledLink to="/#training">{navItem3}</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLinkA href="/">{navItem4}</StyledLinkA>
-          </NavItem>
-          <NavItem>
-            <StyledLinkA href="/">{navItem5}</StyledLinkA>
-          </NavItem>
-          <NavItem>
-            <StyledLinkA href="/">{navItem6}</StyledLinkA>
+            <StyledLink to="/#contacts">{navItem6}</StyledLink>
           </NavItem>
         </NavList>
       </Navigation>

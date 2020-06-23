@@ -86,36 +86,33 @@ const Team: React.FC = () => {
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
       <CardContainer>
-        <Card>
+        <Card
+          href="https://n247635.yclients.com/company:242564/master-info:704631?o=m704631&companyId=242564#reviews"
+          target="blank_"
+          rel="noopener noreferrer"
+        >
           <EmployeePhoto fluid={emloyeePhoto1} />
-          <EmployeeName
-            href="https://n247635.yclients.com/company:242564/master-info:704631?o=m704631&companyId=242564#reviews"
-            target="blank_"
-          >
-            {employee1}
-          </EmployeeName>
+          <EmployeeName>{employee1}</EmployeeName>
           <EmployeePosition>{position1}</EmployeePosition>
           <CardInfo>{info1}</CardInfo>
         </Card>
-        <Card>
+        <Card
+          href="https://n247635.yclients.com/company:242564/master-info:713378?o=m704631&companyId=242564#reviews"
+          target="blank_"
+          rel="noopener noreferrer"
+        >
           <EmployeePhoto fluid={emloyeePhoto2} />
-          <EmployeeName
-            href="https://n247635.yclients.com/company:242564/master-info:713378?o=m704631&companyId=242564#reviews"
-            target="blank_"
-          >
-            {employee2}
-          </EmployeeName>
+          <EmployeeName>{employee2}</EmployeeName>
           <EmployeePosition>{position2}</EmployeePosition>
           <CardInfo>{info2}</CardInfo>
         </Card>
-        <Card>
+        <Card
+          href="https://n247635.yclients.com/company:242564/master-info:704629?o=m704631&companyId=242564#reviews"
+          target="blank_"
+          rel="noopener noreferrer"
+        >
           <EmployeePhoto fluid={emloyeePhoto3} />
-          <EmployeeName
-            href="https://n247635.yclients.com/company:242564/master-info:704629?o=m704631&companyId=242564#reviews"
-            target="blank_"
-          >
-            {employee3}
-          </EmployeeName>
+          <EmployeeName>{employee3}</EmployeeName>
           <EmployeePosition>{position3}</EmployeePosition>
           <CardInfo>{info3}</CardInfo>
         </Card>
