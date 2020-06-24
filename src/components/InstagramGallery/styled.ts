@@ -17,6 +17,11 @@ export const InstagramGalleryWrapper = styled.a`
   }
 `;
 
+export const InstagramItemCard = styled.div`
+  width: 100%;
+  overflow: hidden;
+`;
+
 export const InstagramItem = styled(BackgroundImage)`
   display: flex;
   align-items: center;
@@ -26,6 +31,7 @@ export const InstagramItem = styled(BackgroundImage)`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
+  will-change: transform, opacity;
   @media (max-width: 1023px) {
     height: 300px;
   }
