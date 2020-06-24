@@ -2,11 +2,8 @@ import styled from "styled-components";
 import Instagram from "../../assets/images/svg/instagram.svg";
 import Telegram from "../../assets/images/svg/telegram.svg";
 import Yclients from "../../assets/images/svg/yclients.svg";
-import {
-  Hover,
-  FlexColumnCenterCenter,
-  FlexRowCenterCenter
-} from "../Typography";
+import { FlexColumnCenterCenter, FlexRowCenterCenter } from "../Typography";
+import { animated } from "react-spring";
 
 const IconSize = `
   width: 28px;
@@ -39,7 +36,7 @@ export const IconContainer = styled.div`
   ${FlexRowCenterCenter}
 `;
 
-export const FooterIcon = styled.a`
+export const FooterIcon = styled(animated.a)`
   ${FlexRowCenterCenter}
   width: 50px;
   height: 50px;
@@ -48,7 +45,6 @@ export const FooterIcon = styled.a`
   background-color: #272727;
   border-radius: 50%;
   text-decoration: none;
-  ${Hover}
 `;
 
 export const StyledTelegram = styled(Telegram)`
@@ -62,5 +58,4 @@ export const StyledYclients = styled(Yclients)`
 export const StyledInstagram = styled(Instagram)`
   ${IconSize}
   color: ${props => props.clr || "#e3b873"};
-  ${Hover}
 `;
