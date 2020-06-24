@@ -35,7 +35,7 @@ export const BeforeNone = `&:before {
 export const SectionMarginBottom = `
   margin-bottom: 100px;
   @media (max-width: 767px) {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
 }`;
 
 //************* LINKS ****************/

@@ -1,6 +1,7 @@
 import React from "react";
-import { useSpring, config } from "react-spring";
+import { useSpring } from "react-spring";
 import { FooterIcon } from "./styled";
+import { IsMobile } from "../../constants";
 
 type Props = {
   link: string;
@@ -8,20 +9,28 @@ type Props = {
 
 const FooterIconItem: React.FC<Props> = ({ link, children }) => {
   const [props, set] = useSpring(() => ({
-    transform: "scale(1) rotate(0deg)",
-    config: config.slow
+    transform: "scale(1) ",
+    config: { mass: 2, tension: 400, friction: 12 }
   }));
 
   return (
-    <FooterIcon
-      href={link}
-      target="blank_"
-      style={props}
-      onMouseEnter={() => set({ transform: "scale(1.2) rotate(360deg)" })}
-      onMouseLeave={() => set({ transform: "scale(1) rotate(0deg)" })}
-    >
-      {children}
-    </FooterIcon>
+    <>
+      {!IsMobile ? (
+        <FooterIcon
+          href={link}
+          target="blank_"
+          style={props}
+          onMouseEnter={() => set({ transform: "scale(1.3)" })}
+          onMouseLeave={() => set({ transform: "scale(1)" })}
+        >
+          {children}
+        </FooterIcon>
+      ) : (
+        <FooterIcon href={link} target="blank_">
+          {children}
+        </FooterIcon>
+      )}
+    </>
   );
 };
 

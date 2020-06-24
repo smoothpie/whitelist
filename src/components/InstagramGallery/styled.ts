@@ -25,13 +25,12 @@ export const InstagramItemCard = styled.div`
 export const InstagramItem = styled(BackgroundImage)`
   display: flex;
   align-items: center;
-  position: relative;
   height: 400px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  will-change: transform, opacity;
+  will-change: transform;
   @media (max-width: 1023px) {
     height: 300px;
   }
@@ -40,5 +39,8 @@ export const InstagramItem = styled(BackgroundImage)`
   }
   @media (max-width: 459px) {
     height: 400px;
+  }
+  &:last-child {
+    background-position: center center;
   }
 `;

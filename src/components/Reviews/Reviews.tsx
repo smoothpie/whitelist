@@ -16,6 +16,7 @@ import {
   InnerBlock,
   SliderText
 } from "../Typography";
+import { IsMobile } from "../../constants";
 
 const Reviews: React.FC = () => {
   const {
@@ -84,55 +85,59 @@ const Reviews: React.FC = () => {
   };
 
   return (
-    <SliderSection>
-      <Slider {...settings}>
-        <SliderItem>
-          <SlideImage fluid={slideBg} />
-          <InnerBlock>
-            <SliderText>
-              <Review>{review1}</Review>
-              <H4>{person1}</H4>
-              <Description>{desc1}</Description>
-              <Button
-                link="https://n247635.yclients.com/company:242564?o=m704631"
-                dataBack={button}
-                dataFront={button}
-              />
-            </SliderText>
-          </InnerBlock>
-        </SliderItem>
-        <SliderItem>
-          <SlideImage fluid={slideBg} />
-          <InnerBlock>
-            <SliderText>
-              <Review>{review2}</Review>
-              <H4>{person2}</H4>
-              <Description>{desc2}</Description>
-              <Button
-                link="https://n247635.yclients.com/company:242564?o=m704631"
-                dataBack={button}
-                dataFront={button}
-              />
-            </SliderText>
-          </InnerBlock>
-        </SliderItem>
-        <SliderItem>
-          <SlideImage fluid={slideBg} />
-          <InnerBlock>
-            <SliderText>
-              <Review>{review3}</Review>
-              <H4>{person3}</H4>
-              <Description>{desc3}</Description>
-              <Button
-                link="https://n247635.yclients.com/company:242564?o=m704631"
-                dataBack={button}
-                dataFront={button}
-              />
-            </SliderText>
-          </InnerBlock>
-        </SliderItem>
-      </Slider>
-    </SliderSection>
+    <>
+      {!IsMobile && (
+        <SliderSection>
+          <Slider {...settings}>
+            <SliderItem>
+              <SlideImage fluid={slideBg} />
+              <InnerBlock>
+                <SliderText>
+                  <Review>{review1}</Review>
+                  <H4>{person1}</H4>
+                  <Description>{desc1}</Description>
+                  <Button
+                    link="https://n247635.yclients.com/company:242564?o=m704631"
+                    dataBack={button}
+                    dataFront={button}
+                  />
+                </SliderText>
+              </InnerBlock>
+            </SliderItem>
+            <SliderItem>
+              <SlideImage fluid={slideBg} />
+              <InnerBlock>
+                <SliderText>
+                  <Review>{review2}</Review>
+                  <H4>{person2}</H4>
+                  <Description>{desc2}</Description>
+                  <Button
+                    link="https://n247635.yclients.com/company:242564?o=m704631"
+                    dataBack={button}
+                    dataFront={button}
+                  />
+                </SliderText>
+              </InnerBlock>
+            </SliderItem>
+            <SliderItem>
+              <SlideImage fluid={slideBg} />
+              <InnerBlock>
+                <SliderText>
+                  <Review>{review3}</Review>
+                  <H4>{person3}</H4>
+                  <Description>{desc3}</Description>
+                  <Button
+                    link="https://n247635.yclients.com/company:242564?o=m704631"
+                    dataBack={button}
+                    dataFront={button}
+                  />
+                </SliderText>
+              </InnerBlock>
+            </SliderItem>
+          </Slider>
+        </SliderSection>
+      )}
+    </>
   );
 };
 
