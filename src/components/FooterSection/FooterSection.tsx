@@ -13,15 +13,6 @@ import { SectionTitle, SectionDescription } from "../Typography";
 import FooterIconItem from "./FooterIconItem";
 
 const FooterSection: React.FC = () => {
-  // const [isHovered, setHovered] = useState(false);
-
-  // const props = useSpring({
-  //   transform: isHovered
-  //     ? "scale(1.2) rotate(360deg)"
-  //     : "scale(1) rotate(0deg)",
-  //   config: config.slow
-  // });
-
   const {
     footerSection: { frontmatter: footerSection },
     contacts: { frontmatter: contacts }
