@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { InstagramItemCard, InstagramItem } from "./styled";
 import { useSpring, animated, config } from "react-spring";
-import { IsMobile } from "../../constants";
+import { isTablet, isMobile } from "react-device-detect";
 
 type Props = {
   fluid: string;
@@ -17,16 +17,16 @@ const InstaCard: React.FC<Props> = ({ fluid }) => {
   const AnimatedInstagramItem = animated(InstagramItem);
   return (
     <>
-      {!IsMobile ? (
+      {isMobile || isTablet ? (
+        <InstagramItemCard>
+          <AnimatedInstagramItem fluid={fluid} />
+        </InstagramItemCard>
+      ) : (
         <InstagramItemCard
           onMouseEnter={() => set(!flipped)}
           onMouseLeave={() => set(!flipped)}
         >
           <AnimatedInstagramItem fluid={fluid} style={effect} />
-        </InstagramItemCard>
-      ) : (
-        <InstagramItemCard>
-          <AnimatedInstagramItem fluid={fluid} />
         </InstagramItemCard>
       )}
     </>

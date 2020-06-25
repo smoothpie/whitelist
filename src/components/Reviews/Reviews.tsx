@@ -16,7 +16,7 @@ import {
   InnerBlock,
   SliderText
 } from "../Typography";
-import { IsMobile } from "../../constants";
+import { isMobile } from "react-device-detect";
 
 const Reviews: React.FC = () => {
   const {
@@ -86,7 +86,7 @@ const Reviews: React.FC = () => {
 
   return (
     <>
-      {!IsMobile && (
+      {!isMobile && (
         <SliderSection>
           <Slider {...settings}>
             <SliderItem>

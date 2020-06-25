@@ -18,7 +18,7 @@ import {
   InnerBlock,
   SliderText
 } from "../Typography";
-import { IsMobile } from "../../constants";
+import { MobileView } from "react-device-detect";
 
 const MainSlider: React.FC = () => {
   const {
@@ -124,56 +124,55 @@ const MainSlider: React.FC = () => {
 
   return (
     <>
-      {!IsMobile ? (
-        <SliderSection id="main">
-          <Slider {...settings}>
-            <SliderItem>
-              <SlideImage fluid={slide1} />
-              <InnerBlock>
-                <SliderText>
-                  <H1>{firstSlideTitle}</H1>
-                  <H4>{firstSlideDesc1}</H4>
-                  <H4>{firstSlideDesc2}</H4>
-                  <Button
-                    link="https://n247635.yclients.com/company:242564?o=m704631"
-                    dataBack="Online запись"
-                    dataFront="Online запись"
-                  />
-                </SliderText>
-              </InnerBlock>
-            </SliderItem>
-            <SliderItem>
-              <SlideImage fluid={slide2} />
-              <InnerBlock>
-                <SliderText>
-                  <H1 as="h2">{secondSlideTitle}</H1>
-                  <H4>{secondSlideDesc1}</H4>
-                  <H4>{secondSlideDesc2}</H4>
-                  <Button
-                    link="https://n247635.yclients.com/company:242564?o=m704631"
-                    dataBack="Online запись"
-                    dataFront="Online запись"
-                  />
-                </SliderText>
-              </InnerBlock>
-            </SliderItem>
-            <SliderItem>
-              <SlideImage fluid={slide3} />
-              <InnerBlock>
-                <SliderText>
-                  <H2>{thirdSlideTitle}</H2>
-                  <H4>{thirdSlideDesc1}</H4>
-                  <Button
-                    link="https://n247635.yclients.com/company:242564?o=m704631"
-                    dataBack="Online запись"
-                    dataFront="Online запись"
-                  />
-                </SliderText>
-              </InnerBlock>
-            </SliderItem>
-          </Slider>
-        </SliderSection>
-      ) : (
+      <SliderSection id="main">
+        <Slider {...settings}>
+          <SliderItem>
+            <SlideImage fluid={slide1} />
+            <InnerBlock>
+              <SliderText>
+                <H1>{firstSlideTitle}</H1>
+                <H4>{firstSlideDesc1}</H4>
+                <H4>{firstSlideDesc2}</H4>
+                <Button
+                  link="https://n247635.yclients.com/company:242564?o=m704631"
+                  dataBack="Online запись"
+                  dataFront="Online запись"
+                />
+              </SliderText>
+            </InnerBlock>
+          </SliderItem>
+          <SliderItem>
+            <SlideImage fluid={slide2} />
+            <InnerBlock>
+              <SliderText>
+                <H1 as="h2">{secondSlideTitle}</H1>
+                <H4>{secondSlideDesc1}</H4>
+                <H4>{secondSlideDesc2}</H4>
+                <Button
+                  link="https://n247635.yclients.com/company:242564?o=m704631"
+                  dataBack="Online запись"
+                  dataFront="Online запись"
+                />
+              </SliderText>
+            </InnerBlock>
+          </SliderItem>
+          <SliderItem>
+            <SlideImage fluid={slide3} />
+            <InnerBlock>
+              <SliderText>
+                <H2>{thirdSlideTitle}</H2>
+                <H4>{thirdSlideDesc1}</H4>
+                <Button
+                  link="https://n247635.yclients.com/company:242564?o=m704631"
+                  dataBack="Online запись"
+                  dataFront="Online запись"
+                />
+              </SliderText>
+            </InnerBlock>
+          </SliderItem>
+        </Slider>
+      </SliderSection>
+      <MobileView>
         <SliderSectionMobile id="main">
           <SlideImage fluid={mobileBg} />
           <InnerBlock>
@@ -192,7 +191,7 @@ const MainSlider: React.FC = () => {
             </SliderText>
           </InnerBlock>
         </SliderSectionMobile>
-      )}
+      </MobileView>
     </>
   );
 };

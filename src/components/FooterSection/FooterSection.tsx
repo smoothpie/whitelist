@@ -11,7 +11,7 @@ import {
 } from "./styled";
 import { SectionTitle, SectionDescription } from "../Typography";
 import FooterIconItem from "./FooterIconItem";
-import { IsMobile } from "../../constants";
+import { BrowserView, TabletView } from "react-device-detect";
 
 const FooterSection: React.FC = () => {
   const {
@@ -50,11 +50,16 @@ const FooterSection: React.FC = () => {
         <p>{workingHoursFull}</p>
         <p>{telFull}</p>
       </SectionDescription>
-      {!IsMobile && (
+      <BrowserView>
         <Map>
           <StyledIframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.484137113019!2d27.549843215992567!3d53.90537234039118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf7c4c837b87%3A0x6ad3cca0a5495849!2zwqs5MTHCuyDQodCw0LvQvtC9INCa0YDQsNGB0L7RgtGLINCYINCR0LDRgNCx0LXRgNGI0L7Qvw!5e0!3m2!1sru!2sby!4v1592125771228!5m2!1sru!2sby" />
         </Map>
-      )}
+      </BrowserView>
+      <TabletView>
+        <Map>
+          <StyledIframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.484137113019!2d27.549843215992567!3d53.90537234039118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf7c4c837b87%3A0x6ad3cca0a5495849!2zwqs5MTHCuyDQodCw0LvQvtC9INCa0YDQsNGB0L7RgtGLINCYINCR0LDRgNCx0LXRgNGI0L7Qvw!5e0!3m2!1sru!2sby!4v1592125771228!5m2!1sru!2sby" />
+        </Map>
+      </TabletView>
       <IconContainer>
         <FooterIconItem link={"https://www.t.me/minsk911/"}>
           <StyledTelegram />
