@@ -68,10 +68,10 @@ const InstagramGallery: React.FC = () => {
         target="blank_"
         rel="noopener noreferrer"
       >
-        <InstaCard fluid={insta1}></InstaCard>
-        <InstaCard fluid={insta2}></InstaCard>
-        <InstaCard fluid={insta3}></InstaCard>
-        <InstaCard fluid={insta4}></InstaCard>
+        <InstaCard fluid={insta1} />
+        <InstaCard fluid={insta2} />
+        <InstaCard fluid={insta3} />
+        <InstaCard fluid={insta4} last />
       </InstagramGalleryWrapper>
     </InstagramGallerySection>
   );

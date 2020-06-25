@@ -4,10 +4,11 @@ import { useSpring, animated, config } from "react-spring";
 import { isTablet, isMobile } from "react-device-detect";
 
 type Props = {
-  fluid: string;
+  fluid: any;
+  last?: boolean;
 };
 
-const InstaCard: React.FC<Props> = ({ fluid }) => {
+const InstaCard: React.FC<Props> = ({ fluid, last }) => {
   const [flipped, set] = useState(false);
   const effect = useSpring({
     transform: `perspective(600px) rotateX(${flipped ? 360 : 0}deg)`,
@@ -19,14 +20,14 @@ const InstaCard: React.FC<Props> = ({ fluid }) => {
     <>
       {isMobile || isTablet ? (
         <InstagramItemCard>
-          <AnimatedInstagramItem fluid={fluid} />
+          <AnimatedInstagramItem fluid={fluid} last={last} />
         </InstagramItemCard>
       ) : (
         <InstagramItemCard
           onMouseEnter={() => set(!flipped)}
           onMouseLeave={() => set(!flipped)}
         >
-          <AnimatedInstagramItem fluid={fluid} style={effect} />
+          <AnimatedInstagramItem fluid={fluid} style={effect} last={last} />
         </InstagramItemCard>
       )}
     </>
