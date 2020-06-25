@@ -67,7 +67,7 @@ export const ContactsPlace = styled.p`
 
 export const ContactsP = styled.p`
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   @media (max-width: 1023px) {
     font-size: 1.2rem;
   }
