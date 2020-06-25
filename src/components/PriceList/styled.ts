@@ -65,8 +65,10 @@ export const PriceItemHeading = styled.h5`
   width: calc(100% - 80px);
   font-size: 1.2rem;
   line-height: 1.2rem;
+  font-weight: 400;
   @media (max-width: 1023px) {
     font-size: 1rem;
+    font-weight: 300;
   }
   @media (max-width: 460px) {
     font-size: 0.9rem;

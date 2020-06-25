@@ -16,6 +16,13 @@ export const StyledButton = styled.a`
   outline: 0;
   opacity: 1;
   pointer-events: auto;
+  white-space: nowrap;
+  @media (max-width: 1023px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 460px) {
+    font-size: 0.95rem;
+  }
   &:hover {
     &:after {
       transform: translateY(0) rotateX(0);
@@ -48,7 +55,7 @@ export const StyledButton = styled.a`
     top: 0;
     left: 0;
     display: block;
-    padding: 0 30px;
+    padding: 0 35px;
     line-height: 55px;
     color: #eeeeee;
     background-color: rgba(0, 0, 0, 0.2);
@@ -56,11 +63,5 @@ export const StyledButton = styled.a`
     opacity: 1;
     transition: 0.5s;
     border: 2px solid #e3b873;
-  }
-  @media (max-width: 1023px) {
-    font-size: 1.2rem;
-  }
-  @media (max-width: 460px) {
-    font-size: 1rem;
   }
 `;

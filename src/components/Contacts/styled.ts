@@ -57,7 +57,7 @@ export const StyledMobilePhone = styled(MobilePhone)`
 `;
 
 export const ContactsPlace = styled.p`
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.1rem;
   margin-bottom: 5px;
   @media (max-width: 1023px) {
@@ -67,7 +67,7 @@ export const ContactsPlace = styled.p`
 
 export const ContactsP = styled.p`
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   @media (max-width: 1023px) {
     font-size: 1.2rem;
   }

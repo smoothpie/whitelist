@@ -1,11 +1,8 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import {
-  InstagramGallerySection,
-  InstagramGalleryWrapper,
-  InstagramItem
-} from "./styled";
+import { InstagramGallerySection, InstagramGalleryWrapper } from "./styled";
 import { SectionTitle, SectionDescription } from "../Typography";
+import InstaCard from "./InstaCard";
 
 const InstagramGallery: React.FC = () => {
   const {
@@ -37,21 +34,21 @@ const InstagramGallery: React.FC = () => {
           }
         }
       }
-      insta2: file(relativePath: { eq: "insta2.jpg" }) {
+      insta2: file(relativePath: { eq: "insta6.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      insta3: file(relativePath: { eq: "insta3.jpg" }) {
+      insta3: file(relativePath: { eq: "insta9.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      insta4: file(relativePath: { eq: "insta4.jpg" }) {
+      insta4: file(relativePath: { eq: "insta10.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
@@ -71,10 +68,10 @@ const InstagramGallery: React.FC = () => {
         target="blank_"
         rel="noopener noreferrer"
       >
-        <InstagramItem fluid={insta1} />
-        <InstagramItem fluid={insta2} />
-        <InstagramItem fluid={insta3} />
-        <InstagramItem fluid={insta4} />
+        <InstaCard fluid={insta1} />
+        <InstaCard fluid={insta2} />
+        <InstaCard fluid={insta3} />
+        <InstaCard fluid={insta4} last />
       </InstagramGalleryWrapper>
     </InstagramGallerySection>
   );

@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { SectionMarginBottom, FlexColumnCenterCenter } from "../Typography";
 import BackgroundImage from "gatsby-background-image";
 
+export interface ILast {
+  last?: boolean;
+}
+
 export const InstagramGallerySection = styled.section`
   ${FlexColumnCenterCenter}
   ${SectionMarginBottom}
@@ -17,15 +21,20 @@ export const InstagramGalleryWrapper = styled.a`
   }
 `;
 
+export const InstagramItemCard = styled.div`
+  width: 100%;
+  overflow: hidden;
+`;
+
 export const InstagramItem = styled(BackgroundImage)`
   display: flex;
   align-items: center;
-  position: relative;
   height: 400px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: ${({ last }: ILast) => (last ? "center 25%" : "top")};
+  will-change: transform;
   @media (max-width: 1023px) {
     height: 300px;
   }
