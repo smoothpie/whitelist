@@ -11,7 +11,7 @@ export const InstagramGallerySection = styled.section`
   ${SectionMarginBottom}
 `;
 
-export const InstagramGalleryWrapper = styled.a`
+export const InstagramGalleryWrapper = styled.div`
   position: relative;
   display: flex;
   flex: 0 0 25%;
@@ -21,7 +21,7 @@ export const InstagramGalleryWrapper = styled.a`
   }
 `;
 
-export const InstagramItemCard = styled.div`
+export const InstagramItemCard = styled.a`
   width: 100%;
   overflow: hidden;
 `;
