@@ -22,15 +22,7 @@ import MainSliderItem from "./MainSliderItem";
 const MainSlider: React.FC = () => {
   const {
     mainSlider: { frontmatter },
-    slide1: {
-      childImageSharp: { fluid: slide1 }
-    },
-    slide2: {
-      childImageSharp: { fluid: slide2 }
-    },
-    slide3: {
-      childImageSharp: { fluid: slide3 }
-    },
+    slides: { edges },
     mobileBg: {
       childImageSharp: { fluid: mobileBg }
     }
@@ -38,14 +30,6 @@ const MainSlider: React.FC = () => {
     query {
       mainSlider: markdownRemark(frontmatter: { type: { eq: "sliderText" } }) {
         frontmatter {
-          firstSlideTitle
-          firstSlideDesc1
-          firstSlideDesc2
-          secondSlideTitle
-          secondSlideDesc1
-          secondSlideDesc2
-          thirdSlideTitle
-          thirdSlideDesc1
           mobileTitle
           mobileTitle2
           mobileDesc1
@@ -53,24 +37,25 @@ const MainSlider: React.FC = () => {
           mobileDesc3
         }
       }
-      slide1: file(relativePath: { eq: "slide1.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      slide2: file(relativePath: { eq: "slide2.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      slide3: file(relativePath: { eq: "slide3.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
-            ...GatsbyImageSharpFluid_withWebp
+      slides: allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "slide" } } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              slideTitle
+              slideDesc1
+              slideDesc2
+              img {
+                id
+                childImageSharp {
+                  fluid(quality: 90, maxWidth: 2000) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -85,14 +70,6 @@ const MainSlider: React.FC = () => {
   `);
 
   const {
-    firstSlideTitle,
-    firstSlideDesc1,
-    firstSlideDesc2,
-    secondSlideTitle,
-    secondSlideDesc1,
-    secondSlideDesc2,
-    thirdSlideTitle,
-    thirdSlideDesc1,
     mobileTitle,
     mobileTitle2,
     mobileDesc1,
@@ -125,7 +102,25 @@ const MainSlider: React.FC = () => {
     <>
       <SliderSection id="main">
         <Slider {...settings}>
-          <MainSliderItem
+          {edges.map((item: any) => {
+            const {
+              node: {
+                frontmatter: { slideTitle, slideDesc1, slideDesc2, img },
+                id
+              }
+            } = item;
+
+            return (
+              <MainSliderItem
+                key={id}
+                fluid={img.childImageSharp.fluid}
+                title={slideTitle}
+                desc1={slideDesc1}
+                desc2={slideDesc2}
+              />
+            );
+          })}
+          {/* <MainSliderItem
             fluid={slide1}
             title={firstSlideTitle}
             desc1={firstSlideDesc1}
@@ -143,7 +138,7 @@ const MainSlider: React.FC = () => {
             fluid={slide3}
             title={thirdSlideTitle}
             desc1={thirdSlideDesc1}
-          />
+          /> */}
         </Slider>
       </SliderSection>
       <MobileView>
