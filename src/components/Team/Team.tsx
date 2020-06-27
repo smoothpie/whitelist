@@ -91,7 +91,7 @@ const Team: React.FC = () => {
           target="blank_"
           rel="noopener noreferrer"
         >
-          <EmployeePhoto fluid={emloyeePhoto1} />
+          <EmployeePhoto fluid={emloyeePhoto1} alt="employee" />
           <EmployeeName>{employee1}</EmployeeName>
           <EmployeePosition>{position1}</EmployeePosition>
           <CardInfo>{info1}</CardInfo>
@@ -101,7 +101,7 @@ const Team: React.FC = () => {
           target="blank_"
           rel="noopener noreferrer"
         >
-          <EmployeePhoto fluid={emloyeePhoto2} />
+          <EmployeePhoto fluid={emloyeePhoto2} alt="employee" />
           <EmployeeName>{employee2}</EmployeeName>
           <EmployeePosition>{position2}</EmployeePosition>
           <CardInfo>{info2}</CardInfo>
@@ -111,7 +111,7 @@ const Team: React.FC = () => {
           target="blank_"
           rel="noopener noreferrer"
         >
-          <EmployeePhoto fluid={emloyeePhoto3} />
+          <EmployeePhoto fluid={emloyeePhoto3} alt="employee" />
           <EmployeeName>{employee3}</EmployeeName>
           <EmployeePosition>{position3}</EmployeePosition>
           <CardInfo>{info3}</CardInfo>

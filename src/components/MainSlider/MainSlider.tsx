@@ -61,7 +61,7 @@ const MainSlider: React.FC = () => {
       }
       mobileBg: file(relativePath: { eq: "mobileBg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 800) {
+          fluid(quality: 90, maxWidth: 450) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -120,30 +120,11 @@ const MainSlider: React.FC = () => {
               />
             );
           })}
-          {/* <MainSliderItem
-            fluid={slide1}
-            title={firstSlideTitle}
-            desc1={firstSlideDesc1}
-            desc2={firstSlideDesc2}
-          />
-
-          <MainSliderItem
-            fluid={slide2}
-            title={secondSlideTitle}
-            desc1={secondSlideDesc1}
-            desc2={secondSlideDesc2}
-          />
-
-          <MainSliderItem
-            fluid={slide3}
-            title={thirdSlideTitle}
-            desc1={thirdSlideDesc1}
-          /> */}
         </Slider>
       </SliderSection>
       <MobileView>
         <SliderSectionMobile id="main">
-          <SlideImage fluid={mobileBg} />
+          <SlideImage fluid={mobileBg} alt="background" />
           <InnerBlock>
             <SliderText>
               <H1>{mobileTitle}</H1>

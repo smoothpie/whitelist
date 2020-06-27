@@ -50,7 +50,7 @@ const InstagramGallery: React.FC = () => {
       }
       insta4: file(relativePath: { eq: "insta10.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 600) {
+          fluid(quality: 90, maxWidth: 500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

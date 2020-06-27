@@ -20,14 +20,19 @@ const InstaCard: React.FC<Props> = ({ fluid, last }) => {
     <>
       {isMobile || isTablet ? (
         <InstagramItemCard>
-          <AnimatedInstagramItem fluid={fluid} last={last} />
+          <AnimatedInstagramItem fluid={fluid} last={last} alt="photo" />
         </InstagramItemCard>
       ) : (
         <InstagramItemCard
           onMouseEnter={() => set(!flipped)}
           onMouseLeave={() => set(!flipped)}
         >
-          <AnimatedInstagramItem fluid={fluid} style={effect} last={last} />
+          <AnimatedInstagramItem
+            fluid={fluid}
+            style={effect}
+            last={last}
+            alt="photo"
+          />
         </InstagramItemCard>
       )}
     </>

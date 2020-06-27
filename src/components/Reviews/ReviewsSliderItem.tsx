@@ -21,7 +21,7 @@ const ReviewsSliderItem: React.FC<Props> = ({
 }) => {
   return (
     <SliderItem>
-      <SlideImage fluid={fluid} />
+      <SlideImage fluid={fluid} alt="slide" />
       <InnerBlock>
         <SliderText>
           <Review>{review}</Review>

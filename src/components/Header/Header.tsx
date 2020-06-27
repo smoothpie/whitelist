@@ -48,7 +48,7 @@ const Header: React.FC<any> = () => {
       }
       logo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 250) {
+          fluid(maxWidth: 190) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -76,7 +76,7 @@ const Header: React.FC<any> = () => {
         </Block>
         <Block>
           <StyledLink to="/">
-            <StyledLogo fluid={logo} />
+            <StyledLogo fluid={logo} alt="logo" />
           </StyledLink>
         </Block>
         <Block>
@@ -111,7 +111,7 @@ const Header: React.FC<any> = () => {
         </Block>
         <MobileBlock padding="0">
           <StyledLink to="/">
-            <StyledLogo fluid={logo} />
+            <StyledLogo fluid={logo} alt="logo" />
           </StyledLink>
         </MobileBlock>
         <MobileBlock padding="30px">

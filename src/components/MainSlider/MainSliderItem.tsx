@@ -13,7 +13,7 @@ type Props = {
 const MainSliderItem: React.FC<Props> = ({ fluid, title, desc1, desc2 }) => {
   return (
     <SliderItem>
-      <SlideImage fluid={fluid} />
+      <SlideImage fluid={fluid} alt="slide" />
       <InnerBlock>
         <SliderText>
           <H1>{title}</H1>
