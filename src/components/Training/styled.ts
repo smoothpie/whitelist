@@ -4,6 +4,7 @@ import { H2, StyledLinkA, SectionMarginBottom } from "../Typography";
 
 export const TrainingBg = styled(BackgroundImage)`
   width: 100%;
+  min-height: 600px;
   height: calc(100vh - 83px);
   filter: brightness(70%);
   background-repeat: no-repeat;
