@@ -4,10 +4,13 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: "911barber",
-    description: "Minsk, Belarus, Barbershop",
+    title: "Barbershop 9:11",
+    description:
+      "Барбершоп в центре Минска! Приятные цены. Индивидуальный подход. Лучшие мастера. Отличное качество. Ждём Вас! Телефон: +375 447 666 911 ",
     author: "@dariavv",
-    siteUrl: "https://911barber-dev.netlify.app/"
+    siteUrl: "https://911barber.by/",
+    telegramUsername: "@minsk911",
+    image: "./src/assets/images/logo.png"
   },
   plugins: [
     "gatsby-plugin-sass",

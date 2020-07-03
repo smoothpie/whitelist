@@ -1,13 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-const SEO: React.FC<any> = ({
-  description = ``,
-  lang = `en`,
-  meta = [],
-  title = ``
-}) => {
+type Props = {
+  description?: string;
+  lang?: string;
+  title?: string;
+};
+
+const SEO: FC<Props> = ({ description = ``, lang = `ru`, title = `` }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -15,7 +16,9 @@ const SEO: React.FC<any> = ({
           siteMetadata {
             title
             description
-            author
+            telegramUsername
+            image
+            siteUrl
           }
         }
       }
@@ -23,6 +26,17 @@ const SEO: React.FC<any> = ({
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const metaKeywords = [
+    "BarberShop",
+    "мужская парикмахерская",
+    "барбершоп минск",
+    "barbershop",
+    "барбершоп",
+    "стрижка бороды",
+    "Белорусский Центр Моды",
+    "индивидуальное обучение",
+    "barbieshop"
+  ];
 
   return (
     <Helmet
@@ -49,6 +63,18 @@ const SEO: React.FC<any> = ({
           content: "website"
         },
         {
+          property: "og:image",
+          content: site.siteMetadata.image
+        },
+        {
+          property: "og:locale",
+          content: "ru_BY"
+        },
+        {
+          property: "og:url",
+          content: site.siteMetadata.siteUrl
+        },
+        {
           name: "twitter:card",
           content: "summary"
         },
@@ -63,8 +89,12 @@ const SEO: React.FC<any> = ({
         {
           name: "twitter:description",
           content: metaDescription
+        },
+        {
+          name: "google-site-verification",
+          content: "A8j2LcIblv_czJ1CpYdSARppLQ3Bx9SgzBLLIA4GPjk"
         }
-      ].concat(meta)}
+      ].concat({ name: "keywords", content: metaKeywords.join(",") })}
     />
   );
 };
