@@ -98,7 +98,6 @@ const MainSlider: React.FC = () => {
       </ArrowContainerPrev>
     )
   };
-  console.log(edges);
 
   return (
     <>
