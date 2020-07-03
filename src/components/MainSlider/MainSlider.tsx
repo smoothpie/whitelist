@@ -44,6 +44,7 @@ const MainSlider: React.FC = () => {
           node {
             id
             frontmatter {
+              id
               slideTitle
               slideDesc1
               slideDesc2
@@ -97,29 +98,35 @@ const MainSlider: React.FC = () => {
       </ArrowContainerPrev>
     )
   };
+  console.log(edges);
 
   return (
     <>
       <SliderSection id="main">
         <Slider {...settings}>
-          {edges.map((item: any) => {
-            const {
-              node: {
-                frontmatter: { slideTitle, slideDesc1, slideDesc2, img },
-                id
-              }
-            } = item;
+          {edges
+            .sort(
+              (a: any, b: any) => a.node.frontmatter.id - b.node.frontmatter.id
+            )
+            .map((item: any, idx: number) => {
+              const {
+                node: {
+                  frontmatter: { slideTitle, slideDesc1, slideDesc2, img },
+                  id
+                }
+              } = item;
 
-            return (
-              <MainSliderItem
-                key={id}
-                fluid={img.childImageSharp.fluid}
-                title={slideTitle}
-                desc1={slideDesc1}
-                desc2={slideDesc2}
-              />
-            );
-          })}
+              return (
+                <MainSliderItem
+                  idx={idx}
+                  key={id}
+                  fluid={img.childImageSharp.fluid}
+                  title={slideTitle}
+                  desc1={slideDesc1}
+                  desc2={slideDesc2}
+                />
+              );
+            })}
         </Slider>
       </SliderSection>
       <MobileView>

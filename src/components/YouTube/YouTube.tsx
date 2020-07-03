@@ -43,7 +43,7 @@ const YouTube: React.FC = () => {
   };
 
   return (
-    <YouTubeSection>
+    <YouTubeSection visible={isVisible}>
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
       <StyledLinkA as="div">

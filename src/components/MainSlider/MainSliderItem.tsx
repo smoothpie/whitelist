@@ -8,15 +8,22 @@ type Props = {
   title: string;
   desc1?: string;
   desc2?: string;
+  idx: number;
 };
 
-const MainSliderItem: React.FC<Props> = ({ fluid, title, desc1, desc2 }) => {
+const MainSliderItem: React.FC<Props> = ({
+  fluid,
+  title,
+  desc1,
+  desc2,
+  idx
+}) => {
   return (
     <SliderItem>
       <SlideImage fluid={fluid} alt="slide" />
       <InnerBlock>
         <SliderText>
-          <H1>{title}</H1>
+          {idx === 0 ? <H1>{title}</H1> : <H1 as="h2">{title}</H1>}
           <H4>{desc1}</H4>
           {desc2 && <H4>{desc2}</H4>}
           <Button
