@@ -3,7 +3,8 @@
   font-weight: 300;
   font-family: "Manrope";
 
-  src: url("../../assets/fonts/Manrope-Light.ttf") format("truetype"),
+  src: local("Manrope-Light"),
+  url("../../assets/fonts/Manrope-Light.ttf") format("truetype"),
   /* Safari, Android, iOS */ url("../../assets/fonts/Manrope-Light.woff")
   format("woff"),
   /* Modern Browsers */ url("../../assets/fonts/Manrope-Light.woff2")
@@ -15,7 +16,8 @@
   font-weight: 400;
   font-family: "Manrope";
 
-  src: url("../../assets/fonts/Manrope-Regular.ttf") format("truetype"),
+  src: local("Manrope-Regular"),
+  url("../../assets/fonts/Manrope-Regular.ttf") format("truetype"),
   /* Safari, Android, iOS */ url("../../assets/fonts/Manrope-Regular.woff")
   format("woff"),
   /* Modern Browsers */ url("../../assets/fonts/Manrope-Regular.woff2")
