@@ -50,7 +50,7 @@ const InstagramGallery: React.FC = () => {
       }
       insta4: file(relativePath: { eq: "insta10.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 600) {
+          fluid(quality: 90, maxWidth: 500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -63,11 +63,7 @@ const InstagramGallery: React.FC = () => {
     <InstagramGallerySection>
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
-      <InstagramGalleryWrapper
-        href="https://www.instagram.com/911barber.by/"
-        target="blank_"
-        rel="noopener noreferrer"
-      >
+      <InstagramGalleryWrapper>
         <InstaCard fluid={insta1} />
         <InstaCard fluid={insta2} />
         <InstaCard fluid={insta3} />

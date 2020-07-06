@@ -5,39 +5,34 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ArrowPrev from "../../assets/images/svg/arrow-left.svg";
 import ArrowNext from "../../assets/images/svg/arrow-right.svg";
-import Button from "../Button";
-import { SlideImage, Review, Description } from "./styled";
+import ReviewsSliderItem from "./ReviewsSliderItem";
 import {
-  H4,
   SliderSection,
-  SliderItem,
   ArrowContainerPrev,
-  ArrowContainerNext,
-  InnerBlock,
-  SliderText
+  ArrowContainerNext
 } from "../Typography";
 import { isMobile } from "react-device-detect";
 
 const Reviews: React.FC = () => {
   const {
-    reviews: { frontmatter },
+    reviews: { edges },
     slideBg: {
       childImageSharp: { fluid: slideBg }
     }
   } = useStaticQuery(graphql`
     query {
-      reviews: markdownRemark(frontmatter: { type: { eq: "reviews" } }) {
-        frontmatter {
-          person1
-          desc1
-          review1
-          person2
-          desc2
-          review2
-          person3
-          desc3
-          review3
-          button
+      reviews: allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "review" } } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              person
+              desc
+              review
+            }
+          }
         }
       }
       slideBg: file(relativePath: { eq: "reviewsBg.jpg" }) {
@@ -49,19 +44,6 @@ const Reviews: React.FC = () => {
       }
     }
   `);
-
-  const {
-    person1,
-    desc1,
-    review1,
-    person2,
-    desc2,
-    review2,
-    person3,
-    desc3,
-    review3,
-    button
-  } = frontmatter;
 
   const settings = {
     dots: false,
@@ -89,51 +71,23 @@ const Reviews: React.FC = () => {
       {!isMobile && (
         <SliderSection>
           <Slider {...settings}>
-            <SliderItem>
-              <SlideImage fluid={slideBg} />
-              <InnerBlock>
-                <SliderText>
-                  <Review>{review1}</Review>
-                  <H4>{person1}</H4>
-                  <Description>{desc1}</Description>
-                  <Button
-                    link="https://n247635.yclients.com/company:242564?o=m704631"
-                    dataBack={button}
-                    dataFront={button}
-                  />
-                </SliderText>
-              </InnerBlock>
-            </SliderItem>
-            <SliderItem>
-              <SlideImage fluid={slideBg} />
-              <InnerBlock>
-                <SliderText>
-                  <Review>{review2}</Review>
-                  <H4>{person2}</H4>
-                  <Description>{desc2}</Description>
-                  <Button
-                    link="https://n247635.yclients.com/company:242564?o=m704631"
-                    dataBack={button}
-                    dataFront={button}
-                  />
-                </SliderText>
-              </InnerBlock>
-            </SliderItem>
-            <SliderItem>
-              <SlideImage fluid={slideBg} />
-              <InnerBlock>
-                <SliderText>
-                  <Review>{review3}</Review>
-                  <H4>{person3}</H4>
-                  <Description>{desc3}</Description>
-                  <Button
-                    link="https://n247635.yclients.com/company:242564?o=m704631"
-                    dataBack={button}
-                    dataFront={button}
-                  />
-                </SliderText>
-              </InnerBlock>
-            </SliderItem>
+            {edges.map((item: any) => {
+              const {
+                node: {
+                  frontmatter: { person, review, desc },
+                  id
+                }
+              } = item;
+              return (
+                <ReviewsSliderItem
+                  key={id}
+                  fluid={slideBg}
+                  review={review}
+                  person={person}
+                  desc={desc}
+                />
+              );
+            })}
           </Slider>
         </SliderSection>
       )}

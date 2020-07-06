@@ -1,10 +1,17 @@
 import styled from "styled-components";
-import { SectionMarginBottom, FlexColumnCenterCenter } from "../Typography";
+import { FlexColumnCenterCenter } from "../Typography";
 import YouTubeIcon from "../../assets/images/svg/youtube.svg";
+
+interface IYouTube {
+  visible?: boolean;
+}
 
 export const YouTubeSection = styled.section`
   ${FlexColumnCenterCenter}
-  ${SectionMarginBottom}
+  margin-bottom: ${({ visible }: IYouTube) => (visible ? "73px" : "100px")};
+  @media (max-width: 767px) {
+    margin-bottom: ${({ visible }: IYouTube) => (visible ? "53px" : "80px")};
+  }
 `;
 
 export const YouTubeButton = styled(YouTubeIcon)`

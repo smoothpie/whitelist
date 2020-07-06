@@ -30,7 +30,7 @@ const Training: React.FC = () => {
       }
       trainingBg: file(relativePath: { eq: "trainingBg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
+          fluid(quality: 90, maxWidth: 1500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -49,7 +49,7 @@ const Training: React.FC = () => {
   } = frontmatter;
   return (
     <TrainingSection id="training">
-      <TrainingBg fluid={trainingBg} />
+      <TrainingBg fluid={trainingBg} alt="background" />
       <InnerBlock>
         <Title>{title}</Title>
         <TrainingInfo>{string1}</TrainingInfo>

@@ -19,15 +19,27 @@ const InstaCard: React.FC<Props> = ({ fluid, last }) => {
   return (
     <>
       {isMobile || isTablet ? (
-        <InstagramItemCard>
-          <AnimatedInstagramItem fluid={fluid} last={last} />
+        <InstagramItemCard
+          href="https://www.instagram.com/911barber.by/"
+          target="blank_"
+          rel="noopener noreferrer"
+        >
+          <AnimatedInstagramItem fluid={fluid} last={last} alt="photo" />
         </InstagramItemCard>
       ) : (
         <InstagramItemCard
+          href="https://www.instagram.com/911barber.by/"
+          target="blank_"
+          rel="noopener noreferrer"
           onMouseEnter={() => set(!flipped)}
           onMouseLeave={() => set(!flipped)}
         >
-          <AnimatedInstagramItem fluid={fluid} style={effect} last={last} />
+          <AnimatedInstagramItem
+            fluid={fluid}
+            style={effect}
+            last={last}
+            alt="photo"
+          />
         </InstagramItemCard>
       )}
     </>

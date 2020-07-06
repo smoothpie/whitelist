@@ -22,15 +22,7 @@ import MainSliderItem from "./MainSliderItem";
 const MainSlider: React.FC = () => {
   const {
     mainSlider: { frontmatter },
-    slide1: {
-      childImageSharp: { fluid: slide1 }
-    },
-    slide2: {
-      childImageSharp: { fluid: slide2 }
-    },
-    slide3: {
-      childImageSharp: { fluid: slide3 }
-    },
+    slides: { edges },
     mobileBg: {
       childImageSharp: { fluid: mobileBg }
     }
@@ -38,14 +30,6 @@ const MainSlider: React.FC = () => {
     query {
       mainSlider: markdownRemark(frontmatter: { type: { eq: "sliderText" } }) {
         frontmatter {
-          firstSlideTitle
-          firstSlideDesc1
-          firstSlideDesc2
-          secondSlideTitle
-          secondSlideDesc1
-          secondSlideDesc2
-          thirdSlideTitle
-          thirdSlideDesc1
           mobileTitle
           mobileTitle2
           mobileDesc1
@@ -53,30 +37,32 @@ const MainSlider: React.FC = () => {
           mobileDesc3
         }
       }
-      slide1: file(relativePath: { eq: "slide1.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      slide2: file(relativePath: { eq: "slide2.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      slide3: file(relativePath: { eq: "slide3.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
-            ...GatsbyImageSharpFluid_withWebp
+      slides: allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "slide" } } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              id
+              slideTitle
+              slideDesc1
+              slideDesc2
+              img {
+                id
+                childImageSharp {
+                  fluid(quality: 90, maxWidth: 2000) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
           }
         }
       }
       mobileBg: file(relativePath: { eq: "mobileBg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 800) {
+          fluid(quality: 90, maxWidth: 450) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -85,14 +71,6 @@ const MainSlider: React.FC = () => {
   `);
 
   const {
-    firstSlideTitle,
-    firstSlideDesc1,
-    firstSlideDesc2,
-    secondSlideTitle,
-    secondSlideDesc1,
-    secondSlideDesc2,
-    thirdSlideTitle,
-    thirdSlideDesc1,
     mobileTitle,
     mobileTitle2,
     mobileDesc1,
@@ -125,30 +103,34 @@ const MainSlider: React.FC = () => {
     <>
       <SliderSection id="main">
         <Slider {...settings}>
-          <MainSliderItem
-            fluid={slide1}
-            title={firstSlideTitle}
-            desc1={firstSlideDesc1}
-            desc2={firstSlideDesc2}
-          />
+          {edges
+            .sort(
+              (a: any, b: any) => a.node.frontmatter.id - b.node.frontmatter.id
+            )
+            .map((item: any, idx: number) => {
+              const {
+                node: {
+                  frontmatter: { slideTitle, slideDesc1, slideDesc2, img },
+                  id
+                }
+              } = item;
 
-          <MainSliderItem
-            fluid={slide2}
-            title={secondSlideTitle}
-            desc1={secondSlideDesc1}
-            desc2={secondSlideDesc2}
-          />
-
-          <MainSliderItem
-            fluid={slide3}
-            title={thirdSlideTitle}
-            desc1={thirdSlideDesc1}
-          />
+              return (
+                <MainSliderItem
+                  idx={idx}
+                  key={id}
+                  fluid={img.childImageSharp.fluid}
+                  title={slideTitle}
+                  desc1={slideDesc1}
+                  desc2={slideDesc2}
+                />
+              );
+            })}
         </Slider>
       </SliderSection>
       <MobileView>
         <SliderSectionMobile id="main">
-          <SlideImage fluid={mobileBg} />
+          <SlideImage fluid={mobileBg} alt="background" />
           <InnerBlock>
             <SliderText>
               <H1>{mobileTitle}</H1>

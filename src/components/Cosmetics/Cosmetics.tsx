@@ -69,7 +69,7 @@ const Cosmetics: React.FC = () => {
       <SectionDescription>{description}</SectionDescription>
       <CardContainer>
         <CosmeticsCard>
-          <CosmeticsImg fluid={stuff1} />
+          <CosmeticsImg fluid={stuff1} alt="cosmetics" />
           <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
           <CosmeticsName>{item1}</CosmeticsName>
           <CardInfo>{info1}</CardInfo>
@@ -82,7 +82,7 @@ const Cosmetics: React.FC = () => {
           </SecondButton>
         </CosmeticsCard>
         <CosmeticsCard>
-          <CosmeticsImg fluid={stuff2} />
+          <CosmeticsImg fluid={stuff2} alt="cosmetics" />
           <Stars>&#9733;&#9733;&#9733;&#9733;&#9733;</Stars>
           <CosmeticsName>{item2}</CosmeticsName>
           <CardInfo>{info2}</CardInfo>

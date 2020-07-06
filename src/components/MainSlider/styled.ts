@@ -11,6 +11,7 @@ export const SliderSectionMobile = styled.section`
 
 export const SlideImage = styled(StyledSlideImage)`
   height: 100vh;
+  min-height: 600px;
   background-position: top;
   @media (max-width: 1023px) {
     height: 60vh;
