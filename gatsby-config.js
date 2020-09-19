@@ -4,12 +4,11 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: "Barbershop 9:11",
+    title: "Белый список",
     description:
-      "Барбершоп в центре Минска! Приятные цены. Индивидуальный подход. Лучшие мастера. Отличное качество. Ждём Вас! Телефон: +375 447 666 911 ",
-    author: "@dariavv",
-    siteUrl: "https://911barber.by/",
-    telegramUsername: "@minsk911",
+      "Поддержим хороших людей",
+    author: "@smoothpie",
+    siteUrl: "https://whitelist.by/",
     image: "./src/assets/images/logo.png"
   },
   plugins: [
@@ -75,8 +74,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "911barber",
-        short_name: "911barber",
+        name: "whitelist",
+        short_name: "whitelist",
         start_url: "/",
         display: `standalone`,
         background_color: "#ffffff",

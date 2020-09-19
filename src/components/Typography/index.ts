@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
-import BackgroundImage from "gatsby-background-image";
 
 export const FlexColumnCenterCenter = `
   display: flex;
@@ -40,13 +39,13 @@ export const SectionMarginBottom = `
 
 //************* LINKS ****************/
 export const StyledLinkA = styled.a`
-  color: #e3b873;
+  color: #cd0000;
   text-decoration: none;
   ${Hover}
 `;
 
 export const StyledLink = styled(Link)`
-  color: #e3b873;
+  color: #cd0000;
   text-decoration: none;
   ${Hover}
 `;
@@ -66,7 +65,7 @@ export const H1 = styled.h1`
   @media (max-width: 460px) {
     font-weight: 300;
     font-size: 2rem;
-    color: #e3b873;
+    color: #cd0000;
   }
   @media (max-width: 360px) {
     font-size: 1.8rem;
@@ -181,22 +180,6 @@ export const SliderItem = styled.div`
 
 export const InnerBlock = styled.div``;
 
-export const SliderText = styled.div`
-  position: absolute;
-  top: calc(50% - 150px);
-  right: 15%;
-  left: 15%;
-  text-align: center;
-  z-index: 4;
-`;
-
-export const StyledSlideImage = styled(BackgroundImage)`
-  width: 100%;
-  filter: brightness(70%);
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
-
 export const ArrowContainer = styled.div`
   position: absolute;
   top: calc(50% - 20px);
@@ -230,8 +213,8 @@ export const SecondButton = styled.a`
   letter-spacing: 0.06rem;
   text-decoration: none;
   text-transform: uppercase;
-  color: #e3b873;
-  border: 1px solid #e3b873;
+  color: #cd0000;
+  border: 1px solid #cd0000;
   transition: 0.4s all ease;
   &:before {
     position: absolute;
@@ -239,7 +222,7 @@ export const SecondButton = styled.a`
     width: 0;
     height: 45px;
     transition: 0.4s all ease;
-    background-color: #e3b873;
+    background-color: #cd0000;
     left: 0;
     z-index: -1;
   }

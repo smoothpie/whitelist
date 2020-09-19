@@ -16,7 +16,6 @@ const SEO: FC<Props> = ({ description = ``, lang = `ru`, title = `` }) => {
           siteMetadata {
             title
             description
-            telegramUsername
             image
             siteUrl
           }
@@ -26,17 +25,7 @@ const SEO: FC<Props> = ({ description = ``, lang = `ru`, title = `` }) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const metaKeywords = [
-    "BarberShop",
-    "мужская парикмахерская",
-    "барбершоп минск",
-    "barbershop",
-    "барбершоп",
-    "стрижка бороды",
-    "Белорусский Центр Моды",
-    "индивидуальное обучение",
-    "barbieshop"
-  ];
+  const metaKeywords = ["Белый список"];
 
   return (
     <Helmet

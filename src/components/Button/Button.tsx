@@ -2,21 +2,11 @@ import React from "react";
 import { StyledButton } from "./styled";
 
 type Props = {
-  link: string;
-  dataBack: string;
-  dataFront: string;
+  children: any;
 };
 
-const Button: React.FC<Props> = ({ link, dataBack, dataFront }) => {
-  return (
-    <StyledButton
-      href={link}
-      target="blank_"
-      rel="noopener noreferrer"
-      data-back={dataBack}
-      data-front={dataFront}
-    />
-  );
-};
+const Button: React.FC<Props> = props => (
+  <StyledButton>{props.children}</StyledButton>
+);
 
 export default Button;
