@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "../Button";
 import { HeaderStyle, HeaderContainer } from "./styled";
+import { Link } from "gatsby";
 
 const Header: React.FC<any> = () => {
   const [isScroll, setScroll] = useState(false);
@@ -21,7 +22,9 @@ const Header: React.FC<any> = () => {
   return (
     <HeaderStyle view={!isScroll}>
       <HeaderContainer view={!isScroll}>
-        <Button>Добавить компанию</Button>
+        <Link to="/feedback">
+          <Button>Добавить компанию</Button>
+        </Link>
       </HeaderContainer>
     </HeaderStyle>
   );
