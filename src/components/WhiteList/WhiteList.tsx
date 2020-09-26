@@ -6,14 +6,14 @@ import {
   TitlePart2,
   Description,
   Input,
-  CategoriesTitle
+  CategoriesTitle,
 } from "./styled";
 import { useStaticQuery, graphql } from "gatsby";
 import WhiteListCategory from "./WhiteListCategory";
 
 const WhiteList: React.FC = () => {
   const {
-    whiteList: { frontmatter }
+    whiteList: { frontmatter },
   } = useStaticQuery(graphql`
     query {
       whiteList: markdownRemark(frontmatter: { type: { eq: "whiteList" } }) {
@@ -32,16 +32,16 @@ const WhiteList: React.FC = () => {
   const categories = [
     {
       title: "Еда",
-      items: [{ title: "O’Petit" }, { title: "OZ" }, { title: "Друзья" }]
+      items: [{ title: "O’Petit" }, { title: "OZ" }, { title: "Друзья" }],
     },
     {
       title: "Кафе",
-      items: [{ title: "O’Petit" }, { title: "OZ" }, { title: "Друзья" }]
+      items: [{ title: "O’Petit" }, { title: "OZ" }, { title: "Друзья" }],
     },
     {
       title: "Барухи",
-      items: [{ title: "O’Petit" }, { title: "OZ" }, { title: "Друзья" }]
-    }
+      items: [{ title: "O’Petit" }, { title: "OZ" }, { title: "Друзья" }],
+    },
   ];
 
   return (
