@@ -41,8 +41,8 @@ const BrandHeader: React.FC<BrandHeader> = (props) => {
           onLoad={(ymaps) => geocode(ymaps)}
           instanceRef={(ref: any) => { ref && ref.behaviors.disable('scrollZoom') }}
         >
-          {coordinates.length && brand.location.map((l: any, i: number) => (
-            <Placemark geometry={coordinates[i]} />
+          {brand.location.map((l: any, i: number) => (
+            <Placemark geometry={coordinates[i] || []} />
           ))}
         </Map>
       </YMaps>
