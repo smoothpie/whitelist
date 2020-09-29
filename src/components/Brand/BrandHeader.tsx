@@ -30,7 +30,7 @@ const BrandHeader: React.FC<BrandHeader> = (props) => {
 
   return (
     <BrandHeaderContainer>
-      <YMaps query={{ apikey: process.env.YANDEX_MAPS_API_KEY }}>
+      <YMaps query={{ apikey: "f90cd6b4-72c2-4b51-9607-3fae309e375af90cd6b4-72c2-4b51-9607-3fae309e375a" }}>
         <Map
           modules={["geocode"]}
           defaultState={{ center: coordinates[0] || [53.70, 27.95], zoom: coordinates[0] ? 14 : 7 }}
