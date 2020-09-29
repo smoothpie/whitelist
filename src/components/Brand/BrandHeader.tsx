@@ -26,6 +26,8 @@ const BrandHeader: React.FC<BrandHeader> = (props) => {
     )
   }
 
+  if (!brand) return null;
+
   return (
     <BrandHeaderContainer>
       <YMaps query={{ apikey: process.env.YANDEX_MAPS_API_KEY }}>
