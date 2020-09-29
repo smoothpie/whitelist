@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ArrowDownIcon from "../../assets/images/svg/arrow-down.svg";
 import { CategoryTitle } from "./styled";
 import WhiteListBrand from "./WhiteListBrand";
 
@@ -12,11 +13,14 @@ const WhiteListCategory: React.FC<Props> = props => {
   const [showBrands, setShowBrands] = useState<boolean>(false);
 
   return (
-    <div onClick={() => setShowBrands(!showBrands)}>
-      <CategoryTitle active={showBrands}>{category.title}</CategoryTitle>
+    <div>
+      <CategoryTitle active={showBrands} onClick={() => setShowBrands(!showBrands)}>
+        {category.name}
+        <ArrowDownIcon />
+      </CategoryTitle>
       {showBrands &&
-        category.items.map((item: any, i: number) => (
-          <WhiteListBrand key={i} brand={item} />
+        category.brand.map((brand: any, i: number) => (
+          <WhiteListBrand key={i} brand={brand} categoryName={category.name} />
         ))}
     </div>
   );

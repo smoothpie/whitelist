@@ -7,6 +7,13 @@ export const LayoutContainer = styled.div`
 `;
 
 export const Main = styled.main`
-  background-color: #fff;
-  margin: 0 auto;
+  
+`;
+
+export const PageContent = styled.main`
+  margin: 7rem auto;
+  max-width: 38rem;
+  @media (max-width: 767px) {
+    max-width: 90%;
+  }
 `;

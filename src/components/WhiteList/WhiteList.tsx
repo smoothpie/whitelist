@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import SearchIcon from "../../assets/images/svg/search.svg";
 import {
   WhiteListSection,
   Title,
   TitlePart1,
   TitlePart2,
   Description,
+  InputContainer,
   Input,
-  CategoriesTitle
+  CategoriesTitle,
 } from "./styled";
 import { useStaticQuery, graphql } from "gatsby";
 import WhiteListCategory from "./WhiteListCategory";
 
-const WhiteList: React.FC = () => {
+type WhiteList = {
+  categories: any[];
+}
+
+const WhiteList: React.FC<WhiteList> = (props) => {
+  const { categories } = props;
+  const categoriesWithBrands = categories.filter(c => c.brand.length);
+  const [ filteredCategories, setFilteredCategories ] = useState<any[]>(categoriesWithBrands);
+
   const {
-    whiteList: { frontmatter }
+    whiteList: { frontmatter },
   } = useStaticQuery(graphql`
     query {
       whiteList: markdownRemark(frontmatter: { type: { eq: "whiteList" } }) {
@@ -27,22 +37,23 @@ const WhiteList: React.FC = () => {
     }
   `);
 
-  const { titlePart1, titlePart2, description, categoriesTitle } = frontmatter;
+  const handleSearch = (e: any) => {
+    const { value } = e.target;
+    setFilteredCategories(
+      categoriesWithBrands
+        .filter(c => {
+          const categoryNameMatch = c.name.toLowerCase().includes(value.toLowerCase());
+          const brandNameMatch = c.brand.find((b: any) => b.name.toLowerCase().includes(value.toLowerCase()));
+          return categoryNameMatch || brandNameMatch;
+        })
+        .map(c => ({
+          ...c,
+          brand: c.brand.filter((b: any) => b.name.toLowerCase().includes(value.toLowerCase())),
+        }))
+    )
+  }
 
-  const categories = [
-    {
-      title: "Еда",
-      items: [{ title: "O’Petit" }, { title: "OZ" }, { title: "Друзья" }]
-    },
-    {
-      title: "Кафе",
-      items: [{ title: "O’Petit" }, { title: "OZ" }, { title: "Друзья" }]
-    },
-    {
-      title: "Барухи",
-      items: [{ title: "O’Petit" }, { title: "OZ" }, { title: "Друзья" }]
-    }
-  ];
+  const { titlePart1, titlePart2, description, categoriesTitle } = frontmatter;
 
   return (
     <WhiteListSection>
@@ -51,9 +62,15 @@ const WhiteList: React.FC = () => {
         <TitlePart2>{titlePart2}</TitlePart2>
       </Title>
       <Description>{description}</Description>
-      <Input placeholder="Поиск по категории или продукту" />
+      <InputContainer>
+        <Input
+          onChange={handleSearch}
+          placeholder="Поиск по категории или продукту"
+        />
+        <SearchIcon />
+      </InputContainer>
       <CategoriesTitle>{categoriesTitle}</CategoriesTitle>
-      {categories.map((category: any, i: number) => (
+      {filteredCategories.map((category: any, i: number) => (
         <WhiteListCategory key={i} category={category} />
       ))}
     </WhiteListSection>

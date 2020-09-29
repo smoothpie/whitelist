@@ -15,7 +15,8 @@ export const HeaderStyle = styled.header`
 
 export const HeaderContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1440px;
   margin: 0 auto;
   padding: ${({ view }: IView) => (view ? "15px 20px" : "10px 20px")};

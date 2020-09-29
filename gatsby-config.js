@@ -2,13 +2,17 @@
 /* eslint-disable @typescript-eslint/camelcase */
 const path = require("path");
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "Белый список",
     description:
       "Поддержим хороших людей",
     author: "@smoothpie",
-    siteUrl: "https://whitelist.by/",
+    siteUrl: "https://whitelist-by.netlify.app/",
     image: "./src/assets/images/logo.png"
   },
   plugins: [
@@ -81,7 +85,7 @@ module.exports = {
         background_color: "#ffffff",
         theme_color: "#ffffff",
         display: "minimal-ui",
-        icon: `src/assets/images/favicon.jpg`, // This path is relative to the root of the site.
+        icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
         icons: [
           {
             src: "/icons/icon-48x48.png",
@@ -137,6 +141,18 @@ module.exports = {
           failOnError: false
         }
       }
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "WhiteListApi",
+        fieldName: "whiteListApi",
+        url: process.env.API_URL,
+        // headers: {
+        //   // Learn about environment variables: https://gatsby.dev/env-vars
+        //   Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        // },
+      },
     },
     "gatsby-plugin-offline"
   ]
