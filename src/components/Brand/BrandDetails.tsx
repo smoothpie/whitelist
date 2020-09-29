@@ -14,6 +14,8 @@ type BrandDetails = {
 const BrandDetails: React.FC<BrandDetails> = (props) => {
   const { brand } = props;
 
+  if (!brand) return null;
+
   return (
     <BrandDetailsContainer>
       {brand.location.length ? (
