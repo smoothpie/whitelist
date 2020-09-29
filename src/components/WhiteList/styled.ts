@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
 import { H2, SectionTitle, H4 } from "../Typography";
 
 export const WhiteListSection = styled.section`
@@ -11,12 +12,14 @@ export const WhiteListSection = styled.section`
   }
 `;
 
-export const WhiteListBrandStyle = styled.section`
+export const WhiteListBrandStyle = styled(Link)`
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
   padding: 1rem;
   border: 1px solid #ededed;
+  text-decoration: none;
+  color: #3e4554;
   &:hover {
     border-color: #cd0000;
   }
@@ -76,6 +79,9 @@ export const CategoriesTitle = styled(SectionTitle)`
 `;
 
 export const CategoryTitle: any = styled(SectionTitle)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 0 0.5rem;
   padding: 1rem;
   font-weight: ${({ active }: any) => (active ? "bold" : "normal")};
@@ -89,6 +95,9 @@ export const CategoryTitle: any = styled(SectionTitle)`
   }
   @media (max-width: 767px) {
     font-size: 1rem;
+  }
+  svg {
+    transform: ${({ active }: any) => (active ? "rotate(180deg)" : "none")};
   }
 `;
 
@@ -124,9 +133,19 @@ export const BrandFeature = styled.div`
   font-size: 0.9rem;
 `;
 
+export const InputContainer = styled.div`
+  position: relative;
+  svg {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+  }
+`;
+
 export const Input = styled.input`
   margin-bottom: 2rem;
   padding: 1rem;
+  width: 100%;
   height: 4rem;
   border: 1px solid #ced1d6;
   box-shadow: 0px 16px 35px rgba(0, 0, 0, 0.07);

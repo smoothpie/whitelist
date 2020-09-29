@@ -53,34 +53,35 @@ export const StyledLink = styled(Link)`
 
 //**************** HEADINGS ******************
 export const H1 = styled.h1`
-  font-size: 3.5rem;
-  color: #eeeeee;
+  margin-bottom: 0.5rem;
   font-weight: 400;
-  @media (max-width: 1023px) {
-    font-size: 3.1rem;
-  }
+  font-size: 2.25rem;
+  font-weight: bold;
+  line-height: 3rem;
+  color: #3e4554;
   @media (max-width: 767px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   @media (max-width: 460px) {
-    font-weight: 300;
-    font-size: 2rem;
-    color: #cd0000;
-  }
-  @media (max-width: 360px) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
   }
 `;
 
 export const H2 = styled.h2`
-  font-size: 2.5rem;
-  color: #eeeeee;
-  @media (max-width: 1023px) {
-    font-size: 2.1rem;
-  }
-  @media (max-width: 767px) {
-    font-size: 1.8rem;
-  }
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 32px;
+  color: #3e4554;
+`;
+
+export const H3 = styled.h3`
+  font-size: 1.125rem;
+  font-weight: normal;
+  line-height: 24px;
+  letter-spacing: -0.41px;
+  color: #3e4554;
 `;
 //************************************/
 

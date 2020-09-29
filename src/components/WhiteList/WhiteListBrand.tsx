@@ -1,27 +1,20 @@
 import React from "react";
-import {
-  WhiteListBrandStyle,
-  BrandTitle,
-  BrandAddress,
-  BrandFeatures,
-  BrandFeature
-} from "./styled";
+import { WhiteListBrandStyle, BrandTitle, BrandAddress } from "./styled";
 
 type Props = {
   brand: any;
+  categoryName: string;
 };
 
 const WhiteListBrand: React.FC<Props> = props => {
-  const { brand } = props;
+  const { brand, categoryName } = props;
 
   return (
-    <WhiteListBrandStyle>
-      <BrandTitle>{brand.title}</BrandTitle>
-      <BrandAddress>пр-т. Победителей 3, Минск</BrandAddress>
-      <BrandFeatures>
-        <BrandFeature>✔ Еда в заведении</BrandFeature>
-        <BrandFeature>✔ Еда на вынос</BrandFeature>
-      </BrandFeatures>
+    <WhiteListBrandStyle to={`/brand/${brand._id}`} state={{ brand, categoryName }}>
+      <BrandTitle>{brand.name}</BrandTitle>
+      {brand.location.map((l: any) => (
+        <BrandAddress>{l.rawAddress}</BrandAddress>
+      ))}
     </WhiteListBrandStyle>
   );
 };

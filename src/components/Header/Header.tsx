@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Button from "../Button";
-import { HeaderStyle, HeaderContainer } from "./styled";
 import { Link } from "gatsby";
+import Button from "../Button";
+import AddIcon from "../../assets/images/svg/add.svg";
+import CloseIcon from "../../assets/images/svg/close.svg";
+import Logo from "../../assets/images/svg/logo.svg";
+import { HeaderStyle, HeaderContainer } from "./styled";
 
-const Header: React.FC<any> = () => {
+const Header: React.FC<any> = ({ location }) => {
   const [isScroll, setScroll] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +22,28 @@ const Header: React.FC<any> = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isScroll]);
 
+  const isMobile = window.innerWidth < 768;
+
+  const isFeedbackForm = window.location.pathname === '/feedback';
+  const isBrandPage = window.location.pathname.includes('/brand');
+
   return (
-    <HeaderStyle view={!isScroll}>
+    <HeaderStyle view={!isScroll} style={isBrandPage && !isScroll ? { backgroundColor: 'white' } : {}}>
       <HeaderContainer view={!isScroll}>
-        <Link to="/feedback">
-          <Button>Добавить компанию</Button>
-        </Link>
+        <Link to="/"><Logo /></Link>
+        {!isFeedbackForm ? (
+         <Link to="/feedback">
+            {isMobile ? (
+              <AddIcon />
+            ) : (
+              <Button>Добавить компанию</Button>
+            )}
+          </Link>
+        ) : (
+          <Link to="/">
+            <CloseIcon />
+          </Link>
+        )}
       </HeaderContainer>
     </HeaderStyle>
   );
