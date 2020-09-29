@@ -27,8 +27,6 @@ const IndexPage: React.FC = () => {
     }
   `);
 
-  console.log(categories);
-
   return (
     <Layout>
       <SEO title="Белый список" />

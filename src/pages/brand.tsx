@@ -9,7 +9,7 @@ type BrandPage = {
 }
 
 const BrandPage: React.FC<BrandPage> = ({ location }) => {
-  const { brand, categoryName } = location.state;
+  const { brand, categoryName } = location.state || {};
 
   return (
     <Layout>
