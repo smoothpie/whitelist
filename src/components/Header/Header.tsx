@@ -22,10 +22,10 @@ const Header: React.FC<any> = ({ location }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isScroll]);
 
-  const isMobile = window.innerWidth < 768;
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
-  const isFeedbackForm = window.location.pathname === '/feedback';
-  const isBrandPage = window.location.pathname.includes('/brand');
+  const isFeedbackForm = typeof window !== 'undefined' && window.location.pathname === '/feedback';
+  const isBrandPage = typeof window !== 'undefined' && window.location.pathname.includes('/brand');
 
   return (
     <HeaderStyle view={!isScroll} style={isBrandPage && !isScroll ? { backgroundColor: 'white' } : {}}>
