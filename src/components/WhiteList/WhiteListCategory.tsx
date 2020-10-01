@@ -14,7 +14,10 @@ const WhiteListCategory: React.FC<Props> = props => {
 
   return (
     <div>
-      <CategoryTitle active={showBrands} onClick={() => setShowBrands(!showBrands)}>
+      <CategoryTitle
+        active={showBrands}
+        onClick={() => setShowBrands(!showBrands)}
+      >
         {category.name}
         <ArrowDownIcon />
       </CategoryTitle>

@@ -6,9 +6,7 @@ export const LayoutContainer = styled.div`
   font-weight: 300;
 `;
 
-export const Main = styled.main`
-  
-`;
+export const Main = styled.main``;
 
 export const PageContent = styled.main`
   margin: 7rem auto;

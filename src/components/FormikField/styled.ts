@@ -44,4 +44,4 @@ export const Error = styled.div`
   margin-top: 0.25rem;
   font-size: 0.75rem;
   color: #cd0000;
-`
+`;

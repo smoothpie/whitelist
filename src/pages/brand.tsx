@@ -6,7 +6,7 @@ import BrandDetails from "../components/Brand/BrandDetails";
 
 type BrandPage = {
   location: any;
-}
+};
 
 const BrandPage: React.FC<BrandPage> = ({ location }) => {
   const { brand, categoryName } = location.state || {};

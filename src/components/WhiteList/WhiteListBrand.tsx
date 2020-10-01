@@ -10,10 +10,13 @@ const WhiteListBrand: React.FC<Props> = props => {
   const { brand, categoryName } = props;
 
   return (
-    <WhiteListBrandStyle to={`/brand/${brand._id}`} state={{ brand, categoryName }}>
+    <WhiteListBrandStyle
+      to={`/brand/${brand._id}`}
+      state={{ brand, categoryName }}
+    >
       <BrandTitle>{brand.name}</BrandTitle>
-      {brand.location.map((l: any) => (
-        <BrandAddress>{l.rawAddress}</BrandAddress>
+      {brand.location.map((l: any, i: number) => (
+        <BrandAddress key={i}>{l.rawAddress}</BrandAddress>
       ))}
     </WhiteListBrandStyle>
   );

@@ -6,7 +6,7 @@ import CloseIcon from "../../assets/images/svg/close.svg";
 import Logo from "../../assets/images/svg/logo.svg";
 import { HeaderStyle, HeaderContainer } from "./styled";
 
-const Header: React.FC<any> = ({ location }) => {
+const Header: React.FC<any> = () => {
   const [isScroll, setScroll] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -22,22 +22,26 @@ const Header: React.FC<any> = ({ location }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isScroll]);
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
-  const isFeedbackForm = typeof window !== 'undefined' && window.location.pathname === '/feedback';
-  const isBrandPage = typeof window !== 'undefined' && window.location.pathname.includes('/brand');
+  const isFeedbackForm =
+    typeof window !== "undefined" && window.location.pathname === "/feedback";
+  const isBrandPage =
+    typeof window !== "undefined" &&
+    window.location.pathname.includes("/brand");
 
   return (
-    <HeaderStyle view={!isScroll} style={isBrandPage && !isScroll ? { backgroundColor: 'white' } : {}}>
+    <HeaderStyle
+      view={!isScroll}
+      style={isBrandPage && !isScroll ? { backgroundColor: "white" } : {}}
+    >
       <HeaderContainer view={!isScroll}>
-        <Link to="/"><Logo /></Link>
+        <Link to="/">
+          <Logo />
+        </Link>
         {!isFeedbackForm ? (
-         <Link to="/feedback">
-            {isMobile ? (
-              <AddIcon />
-            ) : (
-              <Button>Добавить компанию</Button>
-            )}
+          <Link to="/feedback">
+            {isMobile ? <AddIcon /> : <Button>Добавить компанию</Button>}
           </Link>
         ) : (
           <Link to="/">

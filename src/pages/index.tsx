@@ -7,7 +7,7 @@ import WhiteList from "../components/WhiteList";
 
 const IndexPage: React.FC = () => {
   const {
-    whiteListApi: { categories },
+    whiteListApi: { categories }
   } = useStaticQuery(graphql`
     query {
       whiteListApi {
@@ -32,7 +32,7 @@ const IndexPage: React.FC = () => {
       <SEO title="Белый список" />
       <WhiteList categories={categories} />
     </Layout>
-  )
+  );
 };
 
 export default IndexPage;

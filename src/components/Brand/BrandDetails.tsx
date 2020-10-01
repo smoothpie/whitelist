@@ -4,14 +4,14 @@ import {
   BrandDetailsContainer,
   BrandDetailsRow,
   BrandReasonTitle,
-  BrandReason,
+  BrandReason
 } from "./styled";
 
 type BrandDetails = {
   brand: any;
-}
+};
 
-const BrandDetails: React.FC<BrandDetails> = (props) => {
+const BrandDetails: React.FC<BrandDetails> = props => {
   const { brand } = props;
 
   if (!brand) return null;
@@ -21,8 +21,8 @@ const BrandDetails: React.FC<BrandDetails> = (props) => {
       {brand.location.length ? (
         <BrandDetailsRow>
           <LocationIcon />
-          {brand.location.map((l: any) => (
-            <span>{l.rawAddress}</span>
+          {brand.location.map((l: any, i: number) => (
+            <span key={i}>{l.rawAddress}</span>
           ))}
         </BrandDetailsRow>
       ) : null}

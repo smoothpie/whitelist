@@ -13,13 +13,13 @@ const FormikFieldWithLabel: React.FC<Props> = ({
   name,
   label,
   placeholder,
-  as,
+  as
 }) => {
   return (
     <FormField>
       <label htmlFor={name}>{label}</label>
       <Field name={name} placeholder={placeholder} as={as} />
-      <ErrorMessage name={name}>{(msg) => <Error>{msg}</Error>}</ErrorMessage>
+      <ErrorMessage name={name}>{msg => <Error>{msg}</Error>}</ErrorMessage>
     </FormField>
   );
 };

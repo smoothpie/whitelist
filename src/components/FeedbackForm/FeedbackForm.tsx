@@ -6,32 +6,35 @@ import FormikFieldWithLabel from "../FormikField";
 import { FeedbackFormContainer } from "./styled";
 
 const FeedbackForm: React.FC = () => {
-
   const formConfig = [
     { name: "name", label: "Организация/бренд", placeholder: "ООО «Иванов»" },
-    { name: "category", label: "Категория продукции/услуги", placeholder: "Одежда/заказ еды" },
+    {
+      name: "category",
+      label: "Категория продукции/услуги",
+      placeholder: "Одежда/заказ еды"
+    },
     { name: "city", label: "Город", placeholder: "Минск" },
     { name: "address", label: "Адрес", placeholder: "пр. Независимости 111" },
     {
       name: "reason",
       label: "Почему эта организация/бренд",
       placeholder: "Cсылки на источник и описание причины попадания в каталог",
-      as: "textarea",
+      as: "textarea"
     },
     {
       name: "additional",
       label: "Дополнительно",
-      placeholder: "Любая дополнительная информация, замечания и предложения по улучшению каталога",
-      as: "textarea",
-    },
+      placeholder:
+        "Любая дополнительная информация, замечания и предложения по улучшению каталога",
+      as: "textarea"
+    }
   ];
-  
+
   const FeedbackFormSchema = Yup.object().shape({
     name: Yup.string()
       .max(50, "Слишком длинное название")
       .required("Обязательное поле"),
-    reason: Yup.string()
-      .required("Обязательное поле"),
+    reason: Yup.string().required("Обязательное поле")
   });
 
   return (
@@ -43,7 +46,7 @@ const FeedbackForm: React.FC = () => {
           city: "",
           address: "",
           reason: "",
-          additional: "",
+          additional: ""
         }}
         validationSchema={FeedbackFormSchema}
         onSubmit={values => {
@@ -51,7 +54,7 @@ const FeedbackForm: React.FC = () => {
           console.log(values);
         }}
       >
-        {({ errors, touched }) => (
+        {() => (
           <Form
             style={{ display: "flex", flexDirection: "column", width: "35%" }}
           >
