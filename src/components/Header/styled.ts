@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IView } from "../../interfaces";
+import AddIcon from "../../assets/images/svg/add.svg";
 
 export const HeaderStyle = styled.header`
   position: fixed;
@@ -32,5 +33,14 @@ export const HeaderContainer = styled.div`
   }
   @media (max-width: 460px) {
     padding: ${({ view }: IView) => (view ? "15px 20px" : "10px 20px")};
+  }
+`;
+
+export const ScrollingAddIcon = styled(AddIcon)`
+  circle {
+    fill: rgb(255, 255, 255);
+  }
+  path {
+    fill: rgb(205, 1, 2);
   }
 `;
