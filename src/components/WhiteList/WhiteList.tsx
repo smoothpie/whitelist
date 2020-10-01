@@ -8,22 +8,24 @@ import {
   Description,
   InputContainer,
   Input,
-  CategoriesTitle,
+  CategoriesTitle
 } from "./styled";
 import { useStaticQuery, graphql } from "gatsby";
 import WhiteListCategory from "./WhiteListCategory";
 
 type WhiteList = {
   categories: any[];
-}
+};
 
-const WhiteList: React.FC<WhiteList> = (props) => {
+const WhiteList: React.FC<WhiteList> = props => {
   const { categories } = props;
   const categoriesWithBrands = categories.filter(c => c.brand.length);
-  const [ filteredCategories, setFilteredCategories ] = useState<any[]>(categoriesWithBrands);
+  const [filteredCategories, setFilteredCategories] = useState<any[]>(
+    categoriesWithBrands
+  );
 
   const {
-    whiteList: { frontmatter },
+    whiteList: { frontmatter }
   } = useStaticQuery(graphql`
     query {
       whiteList: markdownRemark(frontmatter: { type: { eq: "whiteList" } }) {
@@ -42,16 +44,22 @@ const WhiteList: React.FC<WhiteList> = (props) => {
     setFilteredCategories(
       categoriesWithBrands
         .filter(c => {
-          const categoryNameMatch = c.name.toLowerCase().includes(value.toLowerCase());
-          const brandNameMatch = c.brand.find((b: any) => b.name.toLowerCase().includes(value.toLowerCase()));
+          const categoryNameMatch = c.name
+            .toLowerCase()
+            .includes(value.toLowerCase());
+          const brandNameMatch = c.brand.find((b: any) =>
+            b.name.toLowerCase().includes(value.toLowerCase())
+          );
           return categoryNameMatch || brandNameMatch;
         })
         .map(c => ({
           ...c,
-          brand: c.brand.filter((b: any) => b.name.toLowerCase().includes(value.toLowerCase())),
+          brand: c.brand.filter((b: any) =>
+            b.name.toLowerCase().includes(value.toLowerCase())
+          )
         }))
-    )
-  }
+    );
+  };
 
   const { titlePart1, titlePart2, description, categoriesTitle } = frontmatter;
 

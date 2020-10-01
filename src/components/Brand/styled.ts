@@ -29,9 +29,7 @@ export const BrandCard = styled.div`
   }
 `;
 
-export const BrandTitle = styled(H2)`
-  
-`;
+export const BrandTitle = styled(H2)``;
 
 export const BrandCategory = styled.span`
   font-size: 1rem;
