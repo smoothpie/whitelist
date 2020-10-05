@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import Button from "../Button";
 import AddIcon from "../../assets/images/svg/add.svg";
 import CloseIcon from "../../assets/images/svg/close.svg";
 import Logo from "../../assets/images/svg/logo.svg";
-import { HeaderStyle, HeaderContainer } from "./styled";
+import { HeaderStyle, HeaderContainer, ScrollingAddIcon } from "./styled";
 
 const Header: React.FC<any> = () => {
   const [isScroll, setScroll] = useState(false);
@@ -21,8 +20,6 @@ const Header: React.FC<any> = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isScroll]);
-
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const isFeedbackForm =
     typeof window !== "undefined" && window.location.pathname === "/feedback";
@@ -41,7 +38,7 @@ const Header: React.FC<any> = () => {
         </Link>
         {!isFeedbackForm ? (
           <Link to="/feedback">
-            {isMobile ? <AddIcon /> : <Button>Добавить компанию</Button>}
+            {isScroll ? <ScrollingAddIcon /> : <AddIcon />}
           </Link>
         ) : (
           <Link to="/">

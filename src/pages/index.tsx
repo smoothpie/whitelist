@@ -16,7 +16,9 @@ const IndexPage: React.FC = () => {
             _id
             description
             location {
-              rawAddress
+              lat
+              lng
+              address
             }
             name
             reason

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import SearchIcon from "../../assets/images/svg/search.svg";
+import { MaxWidth } from "../Layout/styled";
 import {
   WhiteListSection,
   Title,
@@ -10,7 +12,7 @@ import {
   Input,
   CategoriesTitle
 } from "./styled";
-import { useStaticQuery, graphql } from "gatsby";
+import BrandMap from "../BrandMap";
 import WhiteListCategory from "./WhiteListCategory";
 
 type WhiteList = {
@@ -52,35 +54,53 @@ const WhiteList: React.FC<WhiteList> = props => {
           );
           return categoryNameMatch || brandNameMatch;
         })
-        .map(c => ({
-          ...c,
-          brand: c.brand.filter((b: any) =>
-            b.name.toLowerCase().includes(value.toLowerCase())
-          )
-        }))
+        .map(c => {
+          const categoryNameMatch = c.name
+            .toLowerCase()
+            .includes(value.toLowerCase());
+          return {
+            ...c,
+            brand: categoryNameMatch
+              ? c.brand
+              : c.brand.filter((b: any) =>
+                  b.name.toLowerCase().includes(value.toLowerCase())
+                )
+          };
+        })
     );
   };
 
   const { titlePart1, titlePart2, description, categoriesTitle } = frontmatter;
 
+  const brands = [].concat(
+    ...filteredCategories.map(c =>
+      c.brand.map((b: any) => ({ ...b, categoryName: c.name }))
+    )
+  );
+
   return (
     <WhiteListSection>
-      <Title>
-        <TitlePart1>{titlePart1}</TitlePart1>
-        <TitlePart2>{titlePart2}</TitlePart2>
-      </Title>
-      <Description>{description}</Description>
-      <InputContainer>
-        <Input
-          onChange={handleSearch}
-          placeholder="Поиск по категории или продукту"
-        />
-        <SearchIcon />
-      </InputContainer>
-      <CategoriesTitle>{categoriesTitle}</CategoriesTitle>
-      {filteredCategories.map((category: any, i: number) => (
-        <WhiteListCategory key={i} category={category} />
-      ))}
+      <MaxWidth>
+        <Title>
+          <TitlePart1>{titlePart1}</TitlePart1>
+          <TitlePart2>{titlePart2}</TitlePart2>
+        </Title>
+        <Description>{description}</Description>
+        <InputContainer>
+          <Input
+            onChange={handleSearch}
+            placeholder="Поиск по категории или продукту"
+          />
+          <SearchIcon />
+        </InputContainer>
+      </MaxWidth>
+      <BrandMap brands={brands} />
+      <MaxWidth>
+        <CategoriesTitle>{categoriesTitle}</CategoriesTitle>
+        {filteredCategories.map((category: any, i: number) => (
+          <WhiteListCategory key={i} category={category} />
+        ))}
+      </MaxWidth>
     </WhiteListSection>
   );
 };
