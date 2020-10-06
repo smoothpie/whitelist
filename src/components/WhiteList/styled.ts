@@ -6,9 +6,8 @@ export const WhiteListSection = styled.section`
   display: flex;
   flex-direction: column;
   margin: 7rem auto;
-  max-width: 38rem;
   @media (max-width: 767px) {
-    max-width: 90%;
+    max-width: 100%;
   }
 `;
 
