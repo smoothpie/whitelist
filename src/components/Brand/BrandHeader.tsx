@@ -20,7 +20,6 @@ const BrandHeader: React.FC<BrandHeader> = props => {
     await Promise.all(
       brand.location.map(async (l: any) => {
         const result = await ymaps.geocode(l.rawAddress);
-        console.log(result);
         setCoordinates([
           ...coordinates,
           result.geoObjects.get(0).geometry.getCoordinates()
