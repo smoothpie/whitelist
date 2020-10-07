@@ -16,7 +16,7 @@ const WhiteListBrand: React.FC<Props> = props => {
     >
       <BrandTitle>{brand.name}</BrandTitle>
       {brand.location.map((l: any, i: number) => (
-        <BrandAddress key={i}>{l.rawAddress}</BrandAddress>
+        <BrandAddress key={i}>{l.address}</BrandAddress>
       ))}
     </WhiteListBrandStyle>
   );

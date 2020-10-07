@@ -1,4 +1,5 @@
 import React from "react";
+import { navigate } from "gatsby";
 import { YMaps, Map, Placemark } from "react-yandex-maps";
 import { BrandMapContainer } from "./styled";
 
@@ -8,6 +9,13 @@ type BrandMap = {
 
 const BrandMap: React.FC<BrandMap> = props => {
   const { brands } = props;
+
+  (window as any).openBrandPage = (brand: any) => {
+    const parsedBrand = JSON.parse(brand);
+    navigate(`/brand/${parsedBrand._id}`, {
+      state: { brand: parsedBrand }
+    });
+  };
 
   return (
     <BrandMapContainer>
@@ -43,7 +51,25 @@ const BrandMap: React.FC<BrandMap> = props => {
                 properties={{
                   balloonContentHeader: `${b.name} (${b.categoryName})`,
                   balloonContentBody: l.address,
-                  balloonContentFooter: b.reason
+                  balloonContentFooter: `
+                    ${b.reason} <br />
+                    <button onclick="openBrandPage('${JSON.stringify(b)
+                      .split('"')
+                      .join("&quot;")}')"
+                      style="
+                        margin-top: 8px;
+                        padding: 8px 16px;
+                        border: none;
+                        border-radius: 4px;
+                        outline: none;
+                        color: #fff;
+                        background-color: #cd0000;
+                        cursor: pointer;
+                      "
+                    >
+                      ПОДРОБНЕЕ
+                    </button>
+                  `
                 }}
                 modules={["geoObject.addon.balloon", "geoObject.addon.hint"]}
               />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { YMaps, Map, Placemark } from "react-yandex-maps";
 import {
   BrandHeaderContainer,
@@ -13,46 +13,38 @@ type BrandHeader = {
 };
 
 const BrandHeader: React.FC<BrandHeader> = props => {
-  const [coordinates, setCoordinates] = useState<any>([]);
   const { brand, categoryName } = props;
 
-  const geocode = async (ymaps: any) => {
-    await Promise.all(
-      brand.location.map(async (l: any) => {
-        const result = await ymaps.geocode(l.rawAddress);
-        setCoordinates([
-          ...coordinates,
-          result.geoObjects.get(0).geometry.getCoordinates()
-        ]);
-      })
-    );
-  };
-
   if (!brand) return null;
+
+  const brandMainLocation = brand.location && brand.location[0];
+
+  const mapCenter = (brandMainLocation && [
+    brandMainLocation?.lat,
+    brandMainLocation?.lng
+  ]) || [53.7, 27.95];
 
   return (
     <BrandHeaderContainer>
       <YMaps query={{ apikey: "f90cd6b4-72c2-4b51-9607-3fae309e375a" }}>
         <Map
-          modules={["geocode"]}
           defaultState={{
-            center: coordinates[0] || [53.7, 27.95],
-            zoom: coordinates[0] ? 14 : 7
+            center: mapCenter,
+            zoom: brand.location.length ? 14 : 7
           }}
-          state={{
-            center: coordinates[0] || [53.7, 27.95],
-            zoom: coordinates[0] ? 14 : 7
-          }}
+          state={{ center: mapCenter, zoom: brand.location.length ? 14 : 7 }}
           width="100%"
           height="100%"
           style={{ height: "26rem", position: "relative" }}
-          onLoad={ymaps => geocode(ymaps)}
           instanceRef={(ref: any) => {
             ref && ref.behaviors.disable("scrollZoom");
           }}
         >
           {brand.location.map((l: any, i: number) => (
-            <Placemark key={i} geometry={coordinates[i] || []} />
+            <Placemark
+              key={i}
+              geometry={[brand.location[i].lat, brand.location[i].lng] || []}
+            />
           ))}
         </Map>
       </YMaps>
