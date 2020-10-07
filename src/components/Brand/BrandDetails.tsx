@@ -22,12 +22,16 @@ const BrandDetails: React.FC<BrandDetails> = props => {
         <BrandDetailsRow>
           <LocationIcon />
           {brand.location.map((l: any, i: number) => (
-            <span key={i}>{l.rawAddress}</span>
+            <span key={i}>{l.address}</span>
           ))}
         </BrandDetailsRow>
       ) : null}
-      <BrandReasonTitle>ПОЧЕМУ В СПИСКЕ</BrandReasonTitle>
-      <BrandReason>{brand.reason}</BrandReason>
+      {brand.reason && (
+        <>
+          <BrandReasonTitle>ПОЧЕМУ В СПИСКЕ</BrandReasonTitle>
+          <BrandReason>{brand.reason}</BrandReason>
+        </>
+      )}
     </BrandDetailsContainer>
   );
 };

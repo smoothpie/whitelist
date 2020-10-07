@@ -3,14 +3,13 @@
 const path = require("path");
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+  path: `.env.${process.env.NODE_ENV}`
+});
 
 module.exports = {
   siteMetadata: {
     title: "Белый список",
-    description:
-      "Поддержим хороших людей",
+    description: "Поддержим хороших людей",
     author: "@smoothpie",
     siteUrl: "https://whitelist-by.netlify.app/",
     image: "./src/assets/images/logo.png"
@@ -147,13 +146,20 @@ module.exports = {
       options: {
         typeName: "WhiteListApi",
         fieldName: "whiteListApi",
-        url: process.env.API_URL,
+        url: process.env.API_URL
         // headers: {
         //   // Learn about environment variables: https://gatsby.dev/env-vars
         //   Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         // },
-      },
+      }
     },
-    "gatsby-plugin-offline"
+    "gatsby-plugin-offline",
+
+    {
+      resolve: "gatsby-plugin-apollo",
+      options: {
+        uri: `https://cors-anywhere.herokuapp.com/${process.env.API_URL}` // proxy for CORS till Yulia dont fix it on backend
+      }
+    }
   ]
 };
