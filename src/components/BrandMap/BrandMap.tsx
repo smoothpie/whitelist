@@ -10,12 +10,14 @@ type BrandMap = {
 const BrandMap: React.FC<BrandMap> = props => {
   const { brands } = props;
 
-  (window as any).openBrandPage = (brand: any) => {
-    const parsedBrand = JSON.parse(brand);
-    navigate(`/brand/${parsedBrand._id}`, {
-      state: { brand: parsedBrand }
-    });
-  };
+  if (typeof window !== "undefined") {
+    (window as any).openBrandPage = (brand: any) => {
+      const parsedBrand = JSON.parse(brand);
+      navigate(`/brand/${parsedBrand._id}`, {
+        state: { brand: parsedBrand }
+      });
+    };
+  }
 
   return (
     <BrandMapContainer>
