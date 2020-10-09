@@ -1,11 +1,15 @@
 import React from "react";
 import { navigate } from "gatsby";
 import { YMaps, Map, Placemark } from "react-yandex-maps";
+import distance from "@turf/distance";
+import { point } from "@turf/helpers";
 import { BrandMapContainer } from "./styled";
 
 type BrandMap = {
   brands: any[];
 };
+
+const minskCenter = [53.9, 27.55];
 
 const BrandMap: React.FC<BrandMap> = props => {
   const { brands } = props;
@@ -19,22 +23,30 @@ const BrandMap: React.FC<BrandMap> = props => {
     };
   }
 
+  if (!brands.length) return null;
+  
+  const locations = brands
+    .reduce((acc, brand) => acc.concat([...brand.location]), [])
+    .map((b: any) => [b.lat, b.lng]);
+
+  const mapCenterCoords = locations.sort((l1: any, l2: any) => {
+    const d1 = distance(point(l1), point(minskCenter));
+    const d2 = distance(point(l2), point(minskCenter));
+    return d1 - d2;
+  })[0];
+
   return (
     <BrandMapContainer>
       <YMaps query={{ apikey: "f90cd6b4-72c2-4b51-9607-3fae309e375a" }}>
         <Map
-          defaultState={{
-            center: [53.9, 27.55],
-            zoom: 12
-          }}
+          defaultState={{ center: mapCenterCoords, zoom: 12 }}
           state={{
-            center: [53.9, 27.55],
+            center: mapCenterCoords,
             zoom: 12,
             controls: ["zoomControl"]
           }}
           width="100%"
           height="100%"
-          style={{ height: "37rem", position: "relative" }}
           instanceRef={(ref: any) => {
             if (ref) {
               ref.behaviors.disable("scrollZoom");
