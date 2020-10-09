@@ -18,7 +18,7 @@ const BrandDetails: React.FC<BrandDetails> = props => {
 
   return (
     <BrandDetailsContainer>
-      {brand.location.length ? (
+      {brand.location.length && brand.location[0].address ? (
         <BrandDetailsRow>
           <LocationIcon />
           {brand.location.map((l: any, i: number) => (

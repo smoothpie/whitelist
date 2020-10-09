@@ -20,6 +20,9 @@ const IndexPage: React.FC = () => {
               lng
               address
             }
+            tag {
+              name
+            }
             name
             reason
           }

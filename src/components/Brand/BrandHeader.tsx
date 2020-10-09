@@ -19,10 +19,12 @@ const BrandHeader: React.FC<BrandHeader> = props => {
 
   const brandMainLocation = brand.location && brand.location[0];
 
-  const mapCenter = (brandMainLocation && [
+  const mapCenter = (brandMainLocation && brandMainLocation.lat && [
     brandMainLocation?.lat,
     brandMainLocation?.lng
   ]) || [53.7, 27.95];
+
+  const brandAddress = brand.location.length && brand.location[0].address;
 
   return (
     <BrandHeaderContainer>
@@ -30,9 +32,9 @@ const BrandHeader: React.FC<BrandHeader> = props => {
         <Map
           defaultState={{
             center: mapCenter,
-            zoom: brand.location.length ? 14 : 7
+            zoom: brandAddress ? 14 : 7
           }}
-          state={{ center: mapCenter, zoom: brand.location.length ? 14 : 7 }}
+          state={{ center: mapCenter, zoom: brandAddress ? 14 : 7 }}
           width="100%"
           height="100%"
           style={{ height: "26rem", position: "relative" }}
@@ -40,7 +42,7 @@ const BrandHeader: React.FC<BrandHeader> = props => {
             ref && ref.behaviors.disable("scrollZoom");
           }}
         >
-          {brand.location.map((l: any, i: number) => (
+          {brandAddress && brand.location.map((l: any, i: number) => (
             <Placemark
               key={i}
               geometry={[brand.location[i].lat, brand.location[i].lng] || []}
