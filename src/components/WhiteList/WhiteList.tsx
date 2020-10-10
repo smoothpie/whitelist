@@ -10,7 +10,10 @@ import {
   Description,
   InputContainer,
   Input,
-  CategoriesTitle
+  CategoriesTitle,
+  Tags,
+  Tag,
+  Suggestions
 } from "./styled";
 import BrandMap from "../BrandMap";
 import WhiteListCategory from "./WhiteListCategory";
@@ -25,6 +28,7 @@ const WhiteList: React.FC<WhiteList> = props => {
   const [filteredCategories, setFilteredCategories] = useState<any[]>(
     categoriesWithBrands
   );
+  const [searchValue, setSearchValue] = useState<string>("");
 
   const {
     whiteList: { frontmatter }
@@ -41,8 +45,8 @@ const WhiteList: React.FC<WhiteList> = props => {
     }
   `);
 
-  const handleSearch = (e: any) => {
-    const { value } = e.target;
+  const handleSearch = (value: string) => {
+    setSearchValue(value);
     setFilteredCategories(
       categoriesWithBrands
         .filter(c => {
@@ -50,8 +54,12 @@ const WhiteList: React.FC<WhiteList> = props => {
             .toLowerCase()
             .includes(value.toLowerCase());
           const brandNameOrTagMatch = c.brand.find((b: any) => {
-            const nameMatch = b.name.toLowerCase().includes(value.toLowerCase());
-            const tagMatch = b.tag.find((t: any) => t.name.includes(value.toLowerCase()));
+            const nameMatch = b.name
+              .toLowerCase()
+              .includes(value.toLowerCase());
+            const tagMatch = b.tag.find((t: any) =>
+              t.name.includes(value.toLowerCase())
+            );
             return nameMatch || tagMatch;
           });
           return categoryNameMatch || brandNameOrTagMatch;
@@ -65,10 +73,14 @@ const WhiteList: React.FC<WhiteList> = props => {
             brand: categoryNameMatch
               ? c.brand
               : c.brand.filter((b: any) => {
-                const nameMatch = b.name.toLowerCase().includes(value.toLowerCase());
-                const tagMatch = b.tag.find((t: any) => t.name.includes(value.toLowerCase()));
-                return nameMatch || tagMatch;
-              })
+                  const nameMatch = b.name
+                    .toLowerCase()
+                    .includes(value.toLowerCase());
+                  const tagMatch = b.tag.find((t: any) =>
+                    t.name.includes(value.toLowerCase())
+                  );
+                  return nameMatch || tagMatch;
+                })
           };
         })
     );
@@ -92,18 +104,34 @@ const WhiteList: React.FC<WhiteList> = props => {
         <Description>{description}</Description>
         <InputContainer>
           <Input
-            onChange={handleSearch}
+            value={searchValue}
+            onChange={e => handleSearch(e.target.value)}
             placeholder="Поиск по категории или продукту"
           />
           <SearchIcon />
         </InputContainer>
+        <CategoriesTitle>ТОП ПОИСКА</CategoriesTitle>
+        <Tags>
+          <Tag onClick={() => handleSearch("кофе")}>Кофе</Tag>
+          <Tag onClick={() => handleSearch("еда")}>Еда</Tag>
+          <Tag onClick={() => handleSearch("алкоголь")}>Алкоголь</Tag>
+          <Tag onClick={() => handleSearch("чай")}>Чай</Tag>
+        </Tags>
       </MaxWidth>
-      <BrandMap brands={brands.filter((b: any) => b.location.length && b.location[0].lat)} />
+      <BrandMap
+        brands={brands.filter(
+          (b: any) => b.location.length && b.location[0].lat
+        )}
+      />
       <MaxWidth>
         <CategoriesTitle>{categoriesTitle}</CategoriesTitle>
         {filteredCategories.map((category: any, i: number) => (
           <WhiteListCategory key={i} category={category} />
         ))}
+        <Suggestions>
+          Есть идеи по улучшению проекта? Пишите нам:
+          <a href="mailto:whitelist@gmail.com"> whitelist@gmail.com</a>
+        </Suggestions>
       </MaxWidth>
     </WhiteListSection>
   );
