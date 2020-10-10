@@ -24,7 +24,7 @@ const BrandMap: React.FC<BrandMap> = props => {
   }
 
   if (!brands.length) return null;
-  
+
   const locations = brands
     .reduce((acc, brand) => acc.concat([...brand.location]), [])
     .map((b: any) => [b.lat, b.lng]);

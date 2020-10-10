@@ -153,3 +153,27 @@ export const Input = styled.input`
     border-color: #cd0000;
   }
 `;
+
+export const Tags = styled.div`
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  overflow-x: auto;
+`;
+
+export const Tag = styled.div`
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ced1d6;
+  border-radius: 50px;
+  cursor: pointer;
+`;
+
+export const Suggestions = styled.div`
+  margin-top: 2rem;
+  line-height 24px;
+  a {
+    text-decoration: none;
+    color: #cd0000;
+  }
+`;

@@ -10,7 +10,8 @@ export const BrandMapContainer = styled.div`
     & > div {
       height: 16rem !important;
     }
-    & > div > ymaps, & > div > ymaps > ymaps {
+    & > div > ymaps,
+    & > div > ymaps > ymaps {
       height: 16rem !important;
     }
   }

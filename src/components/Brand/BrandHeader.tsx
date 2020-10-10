@@ -19,10 +19,11 @@ const BrandHeader: React.FC<BrandHeader> = props => {
 
   const brandMainLocation = brand.location && brand.location[0];
 
-  const mapCenter = (brandMainLocation && brandMainLocation.lat && [
-    brandMainLocation?.lat,
-    brandMainLocation?.lng
-  ]) || [53.7, 27.95];
+  const mapCenter = (brandMainLocation &&
+    brandMainLocation.lat && [
+      brandMainLocation?.lat,
+      brandMainLocation?.lng
+    ]) || [53.7, 27.95];
 
   const brandAddress = brand.location.length && brand.location[0].address;
 
@@ -42,12 +43,13 @@ const BrandHeader: React.FC<BrandHeader> = props => {
             ref && ref.behaviors.disable("scrollZoom");
           }}
         >
-          {brandAddress && brand.location.map((l: any, i: number) => (
-            <Placemark
-              key={i}
-              geometry={[brand.location[i].lat, brand.location[i].lng] || []}
-            />
-          ))}
+          {brandAddress &&
+            brand.location.map((l: any, i: number) => (
+              <Placemark
+                key={i}
+                geometry={[brand.location[i].lat, brand.location[i].lng] || []}
+              />
+            ))}
         </Map>
       </YMaps>
       <BrandCard>

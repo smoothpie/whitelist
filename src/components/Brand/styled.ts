@@ -69,3 +69,26 @@ export const BrandReason = styled.span`
   line-height: 21px;
   color: #3e4554;
 `;
+
+export const BrandTags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2rem;
+`;
+
+export const BrandTag = styled.span`
+  margin-right: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #cd0000;
+`;
+
+export const Suggestions = styled.div`
+  margin-top: 2rem;
+  line-height 24px;
+  a {
+    text-decoration: none;
+    color: #cd0000;
+  }
+`;

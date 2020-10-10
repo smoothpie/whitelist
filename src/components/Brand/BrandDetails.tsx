@@ -4,7 +4,10 @@ import {
   BrandDetailsContainer,
   BrandDetailsRow,
   BrandReasonTitle,
-  BrandReason
+  BrandReason,
+  BrandTags,
+  BrandTag,
+  Suggestions
 } from "./styled";
 
 type BrandDetails = {
@@ -26,12 +29,21 @@ const BrandDetails: React.FC<BrandDetails> = props => {
           ))}
         </BrandDetailsRow>
       ) : null}
+      <BrandTags>
+        {brand.tag.map((t: any, i: number) => (
+          <BrandTag key={i}>#{t.name}</BrandTag>
+        ))}
+      </BrandTags>
       {brand.reason && (
         <>
           <BrandReasonTitle>ПОЧЕМУ В СПИСКЕ</BrandReasonTitle>
           <BrandReason>{brand.reason}</BrandReason>
         </>
       )}
+      <Suggestions>
+        Есть идеи по улучшению проекта? Пишите нам:
+        <a href="mailto:whitelist@gmail.com"> whitelist@gmail.com</a>
+      </Suggestions>
     </BrandDetailsContainer>
   );
 };
