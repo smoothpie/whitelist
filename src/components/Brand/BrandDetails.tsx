@@ -42,7 +42,7 @@ const BrandDetails: React.FC<BrandDetails> = props => {
       )}
       <Suggestions>
         Есть идеи по улучшению проекта? Пишите нам:
-        <a href="mailto:whitelist@gmail.com"> whitelist@gmail.com</a>
+        <a href="mailto:whitelist.by@gmail.com"> whitelist.by@gmail.com</a>
       </Suggestions>
     </BrandDetailsContainer>
   );
