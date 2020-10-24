@@ -78,7 +78,7 @@ const FeedbackForm: React.FC = () => {
           additional: ""
         }}
         validationSchema={FeedbackFormSchema}
-        onSubmit={values => {
+        onSubmit={(values: any, { resetForm }) => {
           CreateChallenger({
             variables: {
               name: values.name,
@@ -90,6 +90,7 @@ const FeedbackForm: React.FC = () => {
               category: values.category
             }
           });
+          resetForm({ values: "" });
         }}
       >
         {() => (
